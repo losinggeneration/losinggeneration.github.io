@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Akismet on Losinggeneration Coding Blog</title>
+    <link>https://losinggeneration.com/tags/akismet/</link>
+    <description>Recent content in Akismet on Losinggeneration Coding Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>©2009-2020 Harley Laue</copyright>
+    <lastBuildDate>Fri, 08 Jul 2011 16:18:03 +0000</lastBuildDate>
+    
+	<atom:link href="https://losinggeneration.com/tags/akismet/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Spam Detection</title>
+      <link>https://losinggeneration.com/2011/07/08/spam-detection/</link>
+      <pubDate>Fri, 08 Jul 2011 16:18:03 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2011/07/08/spam-detection/</guid>
+      <description>I just thought I&amp;rsquo;d make a quick post about two WordPress plugins which seem to work great for spam detection. The first one is Akismet. Alone it seems to catch most spam here. The problem with this plugin alone is, there may still be false positives. This requires more time on my part to skim over my spam to see if there was any legit comments.
+This brings me to the second plugin, Conditional CAPTCHA.</description>
+    </item>
+    
+  </channel>
+</rss>

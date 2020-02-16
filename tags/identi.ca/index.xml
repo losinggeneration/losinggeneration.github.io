@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>identi.ca on Losinggeneration Coding Blog</title>
+    <link>https://losinggeneration.com/tags/identi.ca/</link>
+    <description>Recent content in identi.ca on Losinggeneration Coding Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>©2009-2020 Harley Laue</copyright>
+    <lastBuildDate>Sat, 03 Oct 2009 08:45:30 +0000</lastBuildDate>
+    
+	<atom:link href="https://losinggeneration.com/tags/identi.ca/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Server hammered</title>
+      <link>https://losinggeneration.com/2009/10/03/server-hammered/</link>
+      <pubDate>Sat, 03 Oct 2009 08:45:30 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/10/03/server-hammered/</guid>
+      <description>So, I recently set a link to my discussion of Linux, GNU, and OS&amp;rsquo;s to someone on Identi.ca. I made a point not to add groups to !linux and !gnu because I knew my server would probably get hit hard (if you&amp;rsquo;ve looked at my server&amp;rsquo;s specs, you&amp;rsquo;ll know it doesn&amp;rsquo;t take much to be considered hit hard.) Well, they read it, after which they posted a link to my blog with the groups !</description>
+    </item>
+    
+  </channel>
+</rss>

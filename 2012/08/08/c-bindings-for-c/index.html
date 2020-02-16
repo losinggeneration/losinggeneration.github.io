@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>C Bindings for C&#43;&#43; :: Losinggeneration Coding Blog —  Imperfect software for an imperfect world.</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="Lately I&amp;rsquo;ve been playing around with writing C bindings for a C&#43;&#43; library. Your first thought might be, &amp;ldquo;Why would you bind a C&#43;&#43; to C?&amp;rdquo; Those of you who have ever had to do bindings to other languages may already know the answer. In general, it&amp;rsquo;s much easier to bind C to another language than it is to bind C&#43;&#43; directly. Another, albeit less likely, reason might be because a client wants a C interface instead."/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://losinggeneration.com/2012/08/08/c-bindings-for-c/" />
+
+
+
+
+<link rel="stylesheet" href="https://losinggeneration.com/assets/style.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://losinggeneration.com/img/apple-touch-icon-144-precomposed.png">
+
+<link rel="shortcut icon" href="https://losinggeneration.com/img/favicon/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="C Bindings for C&#43;&#43; :: Losinggeneration Coding Blog —  Imperfect software for an imperfect world." />
+<meta name="twitter:description" content="Lately I&amp;rsquo;ve been playing around with writing C bindings for a C&#43;&#43; library. Your first thought might be, &amp;ldquo;Why would you bind a C&#43;&#43; to C?&amp;rdquo; Those of you who have ever had to do bindings to other languages may already know the answer. In general, it&amp;rsquo;s much easier to bind C to another language than it is to bind C&#43;&#43; directly. Another, albeit less likely, reason might be because a client wants a C interface instead." />
+<meta name="twitter:site" content="https://losinggeneration.com/" />
+<meta name="twitter:creator" content="losinggeneration" />
+<meta name="twitter:image" content="">
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="C Bindings for C&#43;&#43; :: Losinggeneration Coding Blog —  Imperfect software for an imperfect world.">
+<meta property="og:description" content="Lately I&amp;rsquo;ve been playing around with writing C bindings for a C&#43;&#43; library. Your first thought might be, &amp;ldquo;Why would you bind a C&#43;&#43; to C?&amp;rdquo; Those of you who have ever had to do bindings to other languages may already know the answer. In general, it&amp;rsquo;s much easier to bind C to another language than it is to bind C&#43;&#43; directly. Another, albeit less likely, reason might be because a client wants a C interface instead." />
+<meta property="og:url" content="https://losinggeneration.com/2012/08/08/c-bindings-for-c/" />
+<meta property="og:site_name" content="C Bindings for C&#43;&#43;" />
+<meta property="og:image" content="">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+<meta property="article:section" content="C" /><meta property="article:section" content="C&#43;&#43;" /><meta property="article:section" content="Go" /><meta property="article:section" content="Lua" /><meta property="article:section" content="Programming" />
+<meta property="article:published_time" content="2012-08-08 16:49:44 &#43;0000 &#43;0000" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="">
+
+
+<div class="container full headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    ~
+  </div>
+</a>
+
+    </div>
+    <div class="menu-trigger">menu</div>
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://losinggeneration.com/2012/08/08/c-bindings-for-c/">C Bindings for C++</a></h1>
+  <div class="post-meta">
+      
+    <span class="post-date">
+      2012-08-08
+    </span>
+    
+    
+    <span class="post-author">::
+      losinggeneration
+    </span>
+    
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="https://losinggeneration.com/tags/c/">C</a>&nbsp;
+    
+    #<a href="https://losinggeneration.com/tags/go/">Go</a>&nbsp;
+    
+    #<a href="https://losinggeneration.com/tags/lua/">Lua</a>&nbsp;
+    
+  </span>
+  
+
+  
+
+  <div class="post-content"><div>
+        <p>Lately I&rsquo;ve been playing around with writing C bindings for a C++ library. Your first thought might be, &ldquo;Why would you bind a C++ to C?&rdquo; Those of you who have ever had to do bindings to other languages may already know the answer. In general, it&rsquo;s much easier to bind C to another language than it is to bind C++ directly. Another, albeit less likely, reason might be because a client wants a C interface instead.</p>
+<p>You may be asking your self at this point, &ldquo;Why not using SWIG or (insert specific language binding tools/libraries here)?&rdquo; and that&rsquo;s an extremely valid question. In general, I&rsquo;d say, use SWIG, unless you&rsquo;re unhappy with the bindings they generate. As a specific example for C++ to Lua binding, OOLua did a benchmark of <a href="http://code.google.com/p/oolua/wiki/Speed_comparisons">OOLua and SWIG (as well as Luabind)</a> in which OOLua typically did better then the other two bindings as far as execution speed. That&rsquo;s not to say that in real world cases you&rsquo;re going to see considerable improvements over SWIG by writing your own bindings (or using something else), but it could be a reason to consider it.</p>
+<p>The reason I&rsquo;ve personally chosen to write my own is to have complete control of the resulting binding(s). With Go in particular, I don&rsquo;t care for the resulting API.</p>
+<p>There are some things you&rsquo;ll want to consider when taking this route. First and foremost. You&rsquo;ll have to explicitly handle each binding you may do. A change to the original API may result in breakage and the need to refactor several bindings (depending on how many you want to support.) On the other hand, SWIG allows your to fairly easily only have to change things in one location and potentially have support for as many languages as SWIG supports (though, you&rsquo;re likely to only support a few, or perhaps even just one.)</p>
+<p>Next, it&rsquo;s possible your bindings may actually be slower than one&rsquo;s generated by SWIG. As SWIG is a mature project, a lot of work has been put into SWIG to make it efficient and also portable. While this isn&rsquo;t exactly a killer, some care must be taken to make sure your bindings don&rsquo;t become a jumbled mess of non-portable/slow code.</p>
+<p>Finally, it&rsquo;s going to take considerably more time to write and maintain your own bindings in comparison to SWIG. The main reason is that SWIG obviously does 95% of the work for you with the last 5% being tweaks you may want or need. With your own bindings, you not only have to carefuly plan out your own API&rsquo;s (for C as well as any additional bindings), but any refactoring has to be done in more places. SWIG is a clear winner in this case (as mentioned before.)</p>
+<p>Now, that&rsquo;s not to say SWIG is without faults. One instance in particular (for Go) the SWIG documentation has this to say:</p>
+<blockquote>
+<p>Often the APIs generated by swig are not very natural in Go, especially if there are output arguments.</p>
+</blockquote>
+<p>As well as:</p>
+<blockquote>
+<p>For classes, since swig generates an interface, you can add additional methods by defining another interface that includes the swig-generated interface. Of course, if you have to rewrite most of the methods, instead of just a few, then you might as well define your own struct that includes the swig-wrapped object, instead of adding methods to the swig-generated object. This only works if your wrappers do not need to import other go modules. There is at present no way to insert import statements in the correct place in swig-generated Go. If you need to do that, you must put your Go code in a separate file.</p>
+</blockquote>
+<p><a href="http://www.swig.org/Doc2.0/SWIGDocumentation.html#Go_adding_additional_code">SWIG Documentation: Go adding additional code</a></p>
+<p>Basically this means if the resulting binding is very unnatural, extend or wrap the wrapper. Also, in this case, you&rsquo;re starting to need special logic on a per-language binding basis. For many, this is still a cheaper situation for large code bases. For smaller code bases that need a lot of this added code in the SWIG interface file could argue there&rsquo;s less reason to use SWIG.</p>
+<p>All of that aside, you may still decide to write your own C bindings. The process is actually quite straight forward in many cases. Though, there are some things to keep in mind. For instance, templates cannot be used in C bindings. You can however bind specific types instances templates. The reasons should be obvious to anyone who understands the various stages of the C++ compiler. In short, templates are only evaluated at compile time and only for instances. Bindings in general require that type information to be compiled into the binary to be referenced later. This isn&rsquo;t unique to writing your own C bindings, SWIG, OOLua, and others will all require these types to be declared ahead of time. As an example, you can&rsquo;t bind std::vector without first knowing the type. You&rsquo;re free to bind std::vector<!-- raw HTML omitted -->, std::vector&lt;char *&gt;, std::vector<!-- raw HTML omitted -->, etc. These will all resolve to a specific type, and thus can be bound. You can&rsquo;t, however, expect std::vector<!-- raw HTML omitted --> to work if the template was never compiled for that type.</p>
+<p>What I&rsquo;ll cover in the rest of the post are some of the basics. A full example with source is included at the end of the post that you can download and examine. It&rsquo;s thoroughly commented and is actually quite straight forward. The very first thing you should know, the C bindings are written in C++, but provide C linkage. If you don&rsquo;t already, is that C++ has built in support for generating C linkage with:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">extern</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">C</span><span style="color:#e6db74">&#34;</span>
+</code></pre></div><p>You can either put this in front of a function or type or enclose multiple statements with curly braces. Now, because you&rsquo;re still in C++, you can leverage a lot of the library without having to drop to C-ism&rsquo;s unless needed. For instance, when creating new C structs, you may use new/delete instead of malloc/free. Inside the C binding functions you may also use std::strings, std::vectors, and other C++ containers if convenient. Keep in mind you&rsquo;ll really want to do as little in the C binding interface as possible to keep overhead to a minimum. Another thing you&rsquo;ll need to do is protect the C library from seeing the &lsquo;extern &ldquo;C&rdquo; {&rsquo; lines. These will cause parse errors in C. That&rsquo;s why you should protect it with:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">ifdef __cplusplus</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">extern</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">C</span><span style="color:#e6db74">&#34;</span> {
+<span style="color:#75715e">#</span><span style="color:#75715e">endif</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> someCLinkageFunction();
+<span style="color:#75715e">#</span><span style="color:#75715e">ifndef __cplusplus</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>}
+<span style="color:#75715e">#</span><span style="color:#75715e">endif</span><span style="color:#75715e">
+</span></code></pre></div><p>Next, if you have complete control over both the library your binding as well as the C binding, you may want to take a bit of time to pull all enums into one file. The reason for this is that it will allow your C++ and C code to much more easily share the enums without having to redeclare them. In at least the case where you just copy the enum over to the C header, you must protect against letting it be included twice. While compiling your C interface, you&rsquo;ll see &ldquo;duplicate definition of FU&rdquo; if you&rsquo;re including the enum twice. One way around this is to put an #ifndef around it. Then, while compiling our C interface, only the C++ one is included. Note that this works because enums do not create a type that is put into the library.</p>
+<p>Free functions tend to be fairly straight forward. The only really tricky part might be if you pass data in that must be converted. For example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">sum</span>(<span style="color:#66d9ef">const</span> std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">&amp;</span>x) {
+	<span style="color:#66d9ef">int</span> sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> x.size(); i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) {
+		sum <span style="color:#f92672">+</span><span style="color:#f92672">=</span> x.at(i);
+	}
+	<span style="color:#66d9ef">return</span> sum;
+}
+</code></pre></div><p>Might be wrapped in C like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">c_sum</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>x, size_t i) {
+	std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> v(x, x <span style="color:#f92672">+</span> i);
+	<span style="color:#66d9ef">return</span> sum(v);
+}
+</code></pre></div><p>Because you&rsquo;re writing your own C bindings, you have a bit of flexibility with how you implement your C interface. This would also work:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> {
+	<span style="color:#66d9ef">int</span> x[<span style="color:#ae81ff">10</span>];
+} Sum_t;
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">c_struct_sum</span>(<span style="color:#66d9ef">const</span> Sum_t <span style="color:#f92672">*</span>x) {
+	std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> v(x<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>x, x<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>x <span style="color:#f92672">+</span> <span style="color:#66d9ef">sizeof</span>(x<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>x)<span style="color:#f92672">/</span><span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>));
+	<span style="color:#66d9ef">return</span> sum(v);
+}
+</code></pre></div><p>Here&rsquo;s an example of how a C++ class might be wrapped:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Test</span> {
+<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+	Test();
+	<span style="color:#66d9ef">virtual</span> <span style="color:#f92672">~</span>Test();
+	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">AFunction</span>();
+<span style="color:#66d9ef">protected</span><span style="color:#f92672">:</span>
+	<span style="color:#66d9ef">int</span> x;
+};
+</code></pre></div><p>Might have this for the C API:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> Test_s Test_t;
+Test_t <span style="color:#f92672">*</span><span style="color:#a6e22e">Test_New</span>();
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">Test_Free</span>(Test_t <span style="color:#f92672">*</span>t);
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">Test_AFunction</span>(Test_t <span style="color:#f92672">*</span>t);
+</code></pre></div><p>The method I&rsquo;ve chosen here is to hide the internal interface of the struct from the user and we take care of the internal details of the struct within the wrapper. While this method still allows for inherited types to be passed as base types, this style of C wrapper does effectively hide the object hierarchy. While this might be a bit confusing if someone opts to use the C wrapper for something other than bindings, that percentage will actually be very small to non-existent. Since you have the C++ (at least headers) in front of you, you&rsquo;re free to hide the details in the C wrapper.</p>
+<p>For the implementation of the above C interface, I&rsquo;ve implemented it like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Test_s</span> {
+	Test <span style="color:#f92672">*</span>t;
+} Test_t;
+Test_t <span style="color:#f92672">*</span><span style="color:#a6e22e">Test_New</span>() {
+	Test_t <span style="color:#f92672">*</span>t <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Test_t;
+	t<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>t <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Test();
+	<span style="color:#66d9ef">return</span> t;
+}
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">Test_Free</span>(Test_t <span style="color:#f92672">*</span>t) {
+	<span style="color:#66d9ef">delete</span> t<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>t;
+	<span style="color:#66d9ef">delete</span> t;
+}
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">Test_AFunction</span>(Test_t <span style="color:#f92672">*</span>t) {
+	t<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>t<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>AFunction();
+}
+</code></pre></div><p>As you can see, The C struct has a pointer to the wrapped class. We then create a new structure and new instance of the class and pass back the struct in the _New() function. In _Delete we clean up the implementation class and wrapper struct. Finally, the _AFunction we just call the function like a normal function in C++, the only difference is we&rsquo;re passing the class wrapped in a struct to a function to make the call for us instead of calling it directly.</p>
+<p>As a sort of note, inheritance works exactly the same. You can even pass the child struct to Test_AFunction with a type cast and it will work as you&rsquo;d expect it. In this case, you may want to provide a function or define to do the typecast automatically so you can pass it to a class prefixed with the same class name (so if you have &ldquo;class Inher : public Test;&rdquo; You might &ldquo;#define Inher_AFunction(i) Test_AFunction((Test_t *)i)&quot;)</p>
+<p>When you get to polymorphic abstract classes, things get a bit more tricky. The method I&rsquo;ve opted to use is have one struct which like before hides the underlying implementation, and a second which provides function pointers to the C functions which are to be used by the object. This second struct is then passed to the _New function and a specific instance of the abstract class is created using that struct with a pointer put in the first struct and passed back tho be used as before. Perhaps an example will be clearer. Given the following C++ abstract class:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TestAbst</span> {
+<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+	<span style="color:#66d9ef">virtual</span> <span style="color:#f92672">~</span>TestAbst() {}
+	<span style="color:#66d9ef">virtual</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">Print</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>str) <span style="color:#66d9ef">const</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+};
+</code></pre></div><p>I&rsquo;d define this in the C header:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">TestAbst_s</span> TestAbst_t;
+<span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">TestAbst_Impl_s</span> {
+	<span style="color:#66d9ef">void</span> (<span style="color:#f92672">*</span>Print)(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>str);
+} TestAbst_Impl_t;
+</code></pre></div><p>You can see that the implementing structure provides a function pointer that must be setup by the implementing code. The implementation wrapper will be defined like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">_implTestAbst</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">public</span> TestAbst {
+<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+	_implTestAbst(TestAbst_Impl_t <span style="color:#f92672">*</span>tai) <span style="color:#f92672">:</span> tai(tai) {}
+	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">Print</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>str) <span style="color:#66d9ef">const</span> {
+		tai<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>Print(str);
+	}
+<span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
+	TestAbst_Impl_t <span style="color:#f92672">*</span>tai;
+};
+<span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">TestAbst_s</span> {
+	TestAbst <span style="color:#f92672">*</span>ta;
+} TestAbst_t;
+TestAbst_t <span style="color:#f92672">*</span><span style="color:#a6e22e">TestAbst_New</span>(TestAbst_Impl_t <span style="color:#f92672">*</span>tai) {
+	TestAbst_t <span style="color:#f92672">*</span>ta <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TestAbst_t;
+	ta<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>ta <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> _implTestAbst(tai);
+	<span style="color:#66d9ef">return</span> ta;
+}
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">TestAbst_Free</span>(TestAbst_t <span style="color:#f92672">*</span>ta) {
+	<span style="color:#66d9ef">delete</span> ta<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>ta;
+	<span style="color:#66d9ef">delete</span> ta;
+}
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">TestAbst_Print</span>(TestAbst_t <span style="color:#f92672">*</span>ta, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>str) {
+	ta<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>ta<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>Print(str);
+}
+</code></pre></div><p>So, as I said before, we create a derived class from the abstract class which takes the implementation struct for its constructor and store the pointer to that struct internally. (Note this is a trivial example. You may actually want to either copy the struct or maintain ownership of the struct so it can be properly freed. This currently assumes either the caller is going to explicitly delete the struct or that it was a non pointer passed by address.)</p>
+<p>If you&rsquo;re wanting to bind C++ to C for other language bindings, this should give you a good idea on how to start. That said, after having done this for a current project, I&rsquo;d recommend against manually doing this.</p>
+<p>As an anecdote to finish this off, I&rsquo;ll provide a description of the project for which I used this technique. Basically the game engine has two parts: the core which deals will all the low-level stuff (such as setting up the rendering context, provides input handling, resource loading, etc) and the other part are helper classes that make dealing with fonts, particle effects, etc easier. The core is basically a singleton class which was trivial to wrap to C. The helpers were kind of here-and-there. Most are single classes, but there&rsquo;s some obvious interaction between them and a few that implement GUI controls make use of inheritance. As you&rsquo;ve seen, inheritance isn&rsquo;t trivial, and handling this correctly for various cases can be error prone. The route I ended up going was wrapping the core class to C, binding the C to Go, and then porting the helpers to Go.</p>
+<p>This has an immediate obvious drawback. We now have two implementations. A bug in one, may or may not show up in the other, so it&rsquo;s twice as much work to make sure everything is working as it should. Another issue is that any other binding will now need to reimplement all these helpers as well. Because of this later point, I ended up wrapping all the C++ classes to C (well I didn&rsquo;t actually finish, but I was close enough for now.) This way, any other binding can use the wrapped C if desired. There was one reason for me to port the C++ over to Go instead of using the wrapped C; because I wanted to improve my understanding of Go. This also had an added bonus of verifying the Go binding of the core wrapped and bound class from C++ as working correctly in Go. It also allowed me to tweak the API a bit because I was already using the main API in the target language! Obviously if I had interest in binding to other languages, such as Lua, I&rsquo;d probably want all of them using the same C wrapper (or as I said before, SWIG), but since that&rsquo;s not really my plan at the moment, my current approach seems to be working well enough.</p>
+<p>I&rsquo;ll leave it at that for now. This wasn&rsquo;t a full tutorial of binding C++ to C, but it should give you a pretty good start if you&rsquo;re really interested in taking this route but aren&rsquo;t exactly sure where to begin. (Note that this was written oven several weeks when I had a few minutes here and there, so please let me know if you spot any glaring issue with this post.)</p>
+<p>Source code for this post: <a href="/wp-upload/c_binding-0.1.tar.gz" title="c_binding-0.1.tar.gz">c_binding-0.1.tar.gz</a></p>
+
+      </div></div>
+  
+  <div class="pagination">
+    <div class="pagination__title">
+      <span
+        class="pagination__title-h">Read other posts</span>
+      <hr />
+    </div>
+    <div class="pagination__buttons">
+      
+      <span class="button previous">
+        <a href="https://losinggeneration.com/2012/11/27/hge-go-work/">
+          <span class="button__icon">←</span>
+          <span class="button__text">HGE Go work</span>
+        </a>
+      </span>
+      
+      
+      <span class="button next">
+        <a href="https://losinggeneration.com/2011/10/18/guitar-painting-and-modifications/">
+          <span class="button__text">Guitar Painting and Modifications</span>
+          <span class="button__icon">→</span>
+        </a>
+      </span>
+      
+    </div>
+  </div>
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>©2009-2020 Harley Laue</span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://losinggeneration.com/assets/main.js"></script>
+<script src="https://losinggeneration.com/assets/prism.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

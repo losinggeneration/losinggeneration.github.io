@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>FreeDNS on Losinggeneration Coding Blog</title>
+    <link>https://losinggeneration.com/tags/freedns/</link>
+    <description>Recent content in FreeDNS on Losinggeneration Coding Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>©2009-2020 Harley Laue</copyright>
+    <lastBuildDate>Thu, 04 Jul 2013 09:45:09 +0000</lastBuildDate>
+    
+	<atom:link href="https://losinggeneration.com/tags/freedns/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Down but not out</title>
+      <link>https://losinggeneration.com/2013/07/04/down-but-not-out/</link>
+      <pubDate>Thu, 04 Jul 2013 09:45:09 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2013/07/04/down-but-not-out/</guid>
+      <description>On the 28th of last month (2013/06/28) I lost my subdomain name that I had previously been getting for Dyn for free. For a long time Dyn offered free dynamic DNS. I setup my subdomain with them on their homelinux.org. This was initially needed because the server was being run from my, well, home. This provided a convenient method to automatically update the DNS records when my IP would change. This worked well, and it worked well for a long time.</description>
+    </item>
+    
+  </channel>
+</rss>

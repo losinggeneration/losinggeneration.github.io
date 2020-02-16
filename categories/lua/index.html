@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Lua :: Losinggeneration Coding Blog —  Imperfect software for an imperfect world.</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://losinggeneration.com/categories/lua/" />
+
+
+
+
+<link rel="stylesheet" href="https://losinggeneration.com/assets/style.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://losinggeneration.com/img/apple-touch-icon-144-precomposed.png">
+
+<link rel="shortcut icon" href="https://losinggeneration.com/img/favicon/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Lua :: Losinggeneration Coding Blog —  Imperfect software for an imperfect world." />
+<meta name="twitter:description" content="" />
+<meta name="twitter:site" content="https://losinggeneration.com/" />
+<meta name="twitter:creator" content="" />
+<meta name="twitter:image" content="">
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Lua :: Losinggeneration Coding Blog —  Imperfect software for an imperfect world.">
+<meta property="og:description" content="" />
+<meta property="og:url" content="https://losinggeneration.com/categories/lua/" />
+<meta property="og:site_name" content="Lua" />
+<meta property="og:image" content="">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+
+
+
+  <link href="/categories/lua/index.xml" rel="alternate" type="application/rss+xml" title="Losinggeneration Coding Blog" />
+
+
+
+
+
+
+
+
+
+</head>
+<body class="">
+
+
+<div class="container full headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    ~
+  </div>
+</a>
+
+    </div>
+    <div class="menu-trigger">menu</div>
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="posts">
+  
+  
+
+  
+  
+  
+
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://losinggeneration.com/2014/01/11/boostrapping-a-forth-in-46-lines-of-moonscript-code/">Boostrapping a Forth in 46 lines of Moonscript code</a></h1>
+    <div class="post-meta">
+      <span class="post-date">
+        2014-01-11
+      </span>
+      <span class="post-author">::
+        losinggeneration</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="https://losinggeneration.com/tags/forth/">Forth</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/lua/">Lua</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/moonscript/">Moonscript</a>&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      
+      
+      There’s an article called Boostrapping a Forth in 40 lines of Lua code that’s been around since around 2007. It’s a great article and I’d highly recommend reading it. However, I only recently found it after some interest in Forth.
+This is the Forth outer interpreter in Lua from the above article reformatted a bit:
+eval = function (str) return assert(loadstring(str))() end subj = &quot;&quot; pos = 1 parsebypattern = function (pat) local capture, newpos = string.
+      
+      
+    </div>
+
+    
+    <div>
+      <a class="read-more button"
+        href="/2014/01/11/boostrapping-a-forth-in-46-lines-of-moonscript-code/">Read more →</a>
+    </div>
+    
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://losinggeneration.com/2012/08/08/c-bindings-for-c/">C Bindings for C++</a></h1>
+    <div class="post-meta">
+      <span class="post-date">
+        2012-08-08
+      </span>
+      <span class="post-author">::
+        losinggeneration</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="https://losinggeneration.com/tags/c/">C</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/go/">Go</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/lua/">Lua</a>&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      
+      
+      Lately I’ve been playing around with writing C bindings for a C++ library. Your first thought might be, “Why would you bind a C++ to C?” Those of you who have ever had to do bindings to other languages may already know the answer. In general, it’s much easier to bind C to another language than it is to bind C++ directly. Another, albeit less likely, reason might be because a client wants a C interface instead.
+      
+      
+    </div>
+
+    
+    <div>
+      <a class="read-more button"
+        href="/2012/08/08/c-bindings-for-c/">Read more →</a>
+    </div>
+    
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://losinggeneration.com/2010/12/02/adventures-in-lua-binding/">Adventures in Lua Binding</a></h1>
+    <div class="post-meta">
+      <span class="post-date">
+        2010-12-02
+      </span>
+      <span class="post-author">::
+        losinggeneration</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="https://losinggeneration.com/tags/binding/">Binding</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/c/">C</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/lua/">Lua</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/luabind/">Luabind</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/oolua/">OOLua</a>&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      
+      
+      I’ve mentioned before (actually, probably only in that last post) about a game I’ve been working on on and off for the last few years (I think I said three, but it’s actually been five, with it being inactive for most of that time.) I had decided long ago that it would probably be scripted with Lua and I’m just now finally getting around to experimenting with that. I’ve ultimately decided it’s going to either be using OOLua or Luabind.
+      
+      
+    </div>
+
+    
+    <div>
+      <a class="read-more button"
+        href="/2010/12/02/adventures-in-lua-binding/">Read more →</a>
+    </div>
+    
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://losinggeneration.com/2010/11/10/adventures-in-lua-embedding/">Adventures in Lua Embedding</a></h1>
+    <div class="post-meta">
+      <span class="post-date">
+        2010-11-11
+      </span>
+      <span class="post-author">::
+        losinggeneration</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="https://losinggeneration.com/tags/c/">C</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/lessons-learned/">Lessons Learned</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/lua/">Lua</a>&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      
+      
+      In a personal project which I’ve been working on and off on for the last three or so years (without really getting much done to be totally honest), I’ve decided to use Lua for the configuration file. The project itself is in C++, so this lead me to use the Lua C API to embed it in the project. Prior to deciding on Lua, I was using a manually parsed key/value format.
+      
+      
+    </div>
+
+    
+    <div>
+      <a class="read-more button"
+        href="/2010/11/10/adventures-in-lua-embedding/">Read more →</a>
+    </div>
+    
+  </div>
+  
+  <div class="pagination">
+  <div class="pagination__buttons">
+    
+    
+  </div>
+</div>
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>©2009-2020 Harley Laue</span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://losinggeneration.com/assets/main.js"></script>
+<script src="https://losinggeneration.com/assets/prism.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

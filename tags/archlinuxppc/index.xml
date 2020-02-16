@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ArchLinuxPPC on Losinggeneration Coding Blog</title>
+    <link>https://losinggeneration.com/tags/archlinuxppc/</link>
+    <description>Recent content in ArchLinuxPPC on Losinggeneration Coding Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>©2009-2020 Harley Laue</copyright>
+    <lastBuildDate>Mon, 26 Oct 2009 03:54:59 +0000</lastBuildDate>
+    
+	<atom:link href="https://losinggeneration.com/tags/archlinuxppc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Arch Linux PPC KDELibs</title>
+      <link>https://losinggeneration.com/2009/10/25/arch-linux-ppc-kdelibs/</link>
+      <pubDate>Mon, 26 Oct 2009 03:54:59 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/10/25/arch-linux-ppc-kdelibs/</guid>
+      <description>So, while I&amp;rsquo;ve been trying to get kdelibs 4.3.2 built on Arch Linux PPC. I decided since Arch PPC hasn&amp;rsquo;t had any packages updated in about six months that I should probably do something crazy like grab the official Arch&amp;rsquo;s ABS to build all the packages from. Now, 130 built packages later I&amp;rsquo;m close. Perhaps I should put into perspective what was needed to be updated. The packages ranged from GCC, Binutils, &amp;amp; Glibc, to xulrunner, to hal, to mysql, to pygtk, to gnome-vfs.</description>
+    </item>
+    
+  </channel>
+</rss>

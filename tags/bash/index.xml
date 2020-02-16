@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bash on Losinggeneration Coding Blog</title>
+    <link>https://losinggeneration.com/tags/bash/</link>
+    <description>Recent content in Bash on Losinggeneration Coding Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>©2009-2020 Harley Laue</copyright>
+    <lastBuildDate>Thu, 14 Jul 2011 16:16:34 +0000</lastBuildDate>
+    
+	<atom:link href="https://losinggeneration.com/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>WordPress Backup Script</title>
+      <link>https://losinggeneration.com/2011/07/14/wordpress-backup-script/</link>
+      <pubDate>Thu, 14 Jul 2011 16:16:34 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2011/07/14/wordpress-backup-script/</guid>
+      <description>After my server was down for a couple days (because I was physically moving the machine to another location) I decided to check if there were any updates. Sure enough, there just happened to be an update for 3.2 and it had the usual warning of &amp;ldquo;be sure to backup your database and files&amp;rdquo; which I either ignore or partially ignore. I do typically do a mysqldump before running any of the updates, but I almost never backup the WordPress directory itself.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Backups :: Losinggeneration Coding Blog —  Imperfect software for an imperfect world.</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="I decided it was time to have some form of backups in place. Currently all I&amp;rsquo;m really (automatically) backing up is the WordPress MySQL table since it&amp;rsquo;s the thing to changes on a regular basis. Everything else on this server can be backed up by hand when/if I make changes. It would be faster if/when something does fail (hard drive most likely) to have a recent full backup image to restore from, but really, a good backup of the MySQL table(s), a backup of important configuration files (since they rarely change, I back them up manually after change(s)), and a backup up various directories that&amp;rsquo;d be nice to restore quickly (most of which change infrequently."/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://losinggeneration.com/2009/12/22/backups/" />
+
+
+
+
+<link rel="stylesheet" href="https://losinggeneration.com/assets/style.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://losinggeneration.com/img/apple-touch-icon-144-precomposed.png">
+
+<link rel="shortcut icon" href="https://losinggeneration.com/img/favicon/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Backups :: Losinggeneration Coding Blog —  Imperfect software for an imperfect world." />
+<meta name="twitter:description" content="I decided it was time to have some form of backups in place. Currently all I&amp;rsquo;m really (automatically) backing up is the WordPress MySQL table since it&amp;rsquo;s the thing to changes on a regular basis. Everything else on this server can be backed up by hand when/if I make changes. It would be faster if/when something does fail (hard drive most likely) to have a recent full backup image to restore from, but really, a good backup of the MySQL table(s), a backup of important configuration files (since they rarely change, I back them up manually after change(s)), and a backup up various directories that&amp;rsquo;d be nice to restore quickly (most of which change infrequently." />
+<meta name="twitter:site" content="https://losinggeneration.com/" />
+<meta name="twitter:creator" content="losinggeneration" />
+<meta name="twitter:image" content="">
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Backups :: Losinggeneration Coding Blog —  Imperfect software for an imperfect world.">
+<meta property="og:description" content="I decided it was time to have some form of backups in place. Currently all I&amp;rsquo;m really (automatically) backing up is the WordPress MySQL table since it&amp;rsquo;s the thing to changes on a regular basis. Everything else on this server can be backed up by hand when/if I make changes. It would be faster if/when something does fail (hard drive most likely) to have a recent full backup image to restore from, but really, a good backup of the MySQL table(s), a backup of important configuration files (since they rarely change, I back them up manually after change(s)), and a backup up various directories that&amp;rsquo;d be nice to restore quickly (most of which change infrequently." />
+<meta property="og:url" content="https://losinggeneration.com/2009/12/22/backups/" />
+<meta property="og:site_name" content="Backups" />
+<meta property="og:image" content="">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+<meta property="article:section" content="Servers" />
+<meta property="article:published_time" content="2009-12-22 18:33:50 &#43;0000 &#43;0000" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="">
+
+
+<div class="container full headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    ~
+  </div>
+</a>
+
+    </div>
+    <div class="menu-trigger">menu</div>
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://losinggeneration.com/2009/12/22/backups/">Backups</a></h1>
+  <div class="post-meta">
+      
+    <span class="post-date">
+      2009-12-22
+    </span>
+    
+    
+    <span class="post-author">::
+      losinggeneration
+    </span>
+    
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="https://losinggeneration.com/tags/backups/">Backups</a>&nbsp;
+    
+    #<a href="https://losinggeneration.com/tags/debian/">Debian</a>&nbsp;
+    
+    #<a href="https://losinggeneration.com/tags/myqsl/">MyQSL</a>&nbsp;
+    
+    #<a href="https://losinggeneration.com/tags/server/">server</a>&nbsp;
+    
+    #<a href="https://losinggeneration.com/tags/wordpress/">wordpress</a>&nbsp;
+    
+  </span>
+  
+
+  
+
+  <div class="post-content"><div>
+        <p>I decided it was time to have some form of backups in place. Currently all I&rsquo;m really (automatically) backing up is the WordPress MySQL table since it&rsquo;s the thing to changes on a regular basis. Everything else on this server can be backed up by hand when/if I make changes. It would be faster if/when something does fail (hard drive most likely) to have a recent full backup image to restore from, but really, a good backup of the MySQL table(s), a backup of important configuration files (since they rarely change, I back them up manually after change(s)), and a backup up various directories that&rsquo;d be nice to restore quickly (most of which change infrequently.) Since the server is so small, and non-mission critical, this is a very satisfactory backup solution since I&rsquo;ll be able to reinstall and restore things quite quickly when/if it&rsquo;s needed.</p>
+
+      </div></div>
+  
+  <div class="pagination">
+    <div class="pagination__title">
+      <span
+        class="pagination__title-h">Read other posts</span>
+      <hr />
+    </div>
+    <div class="pagination__buttons">
+      
+      <span class="button previous">
+        <a href="https://losinggeneration.com/2009/12/29/uzebox/">
+          <span class="button__icon">←</span>
+          <span class="button__text">Uzebox</span>
+        </a>
+      </span>
+      
+      
+      <span class="button next">
+        <a href="https://losinggeneration.com/2009/12/22/pleased-with-servers-performance/">
+          <span class="button__text">Pleased with Server’s Performance</span>
+          <span class="button__icon">→</span>
+        </a>
+      </span>
+      
+    </div>
+  </div>
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>©2009-2020 Harley Laue</span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://losinggeneration.com/assets/main.js"></script>
+<script src="https://losinggeneration.com/assets/prism.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

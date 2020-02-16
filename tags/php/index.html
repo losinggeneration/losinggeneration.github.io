@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>php :: Losinggeneration Coding Blog —  Imperfect software for an imperfect world.</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://losinggeneration.com/tags/php/" />
+
+
+
+
+<link rel="stylesheet" href="https://losinggeneration.com/assets/style.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://losinggeneration.com/img/apple-touch-icon-144-precomposed.png">
+
+<link rel="shortcut icon" href="https://losinggeneration.com/img/favicon/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="php :: Losinggeneration Coding Blog —  Imperfect software for an imperfect world." />
+<meta name="twitter:description" content="" />
+<meta name="twitter:site" content="https://losinggeneration.com/" />
+<meta name="twitter:creator" content="" />
+<meta name="twitter:image" content="">
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="php :: Losinggeneration Coding Blog —  Imperfect software for an imperfect world.">
+<meta property="og:description" content="" />
+<meta property="og:url" content="https://losinggeneration.com/tags/php/" />
+<meta property="og:site_name" content="php" />
+<meta property="og:image" content="">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+
+
+
+  <link href="/tags/php/index.xml" rel="alternate" type="application/rss+xml" title="Losinggeneration Coding Blog" />
+
+
+
+
+
+
+
+
+
+</head>
+<body class="">
+
+
+<div class="container full headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    ~
+  </div>
+</a>
+
+    </div>
+    <div class="menu-trigger">menu</div>
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="posts">
+  
+  
+
+  
+  
+  
+
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://losinggeneration.com/2009/12/22/pleased-with-servers-performance/">Pleased with Server’s Performance</a></h1>
+    <div class="post-meta">
+      <span class="post-date">
+        2009-12-22
+      </span>
+      <span class="post-author">::
+        losinggeneration</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="https://losinggeneration.com/tags/apache/">apache</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/debian/">Debian</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/mysql/">mysql</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/php/">php</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/server/">server</a>&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      
+      
+      I have to say, my server is performing beyond my initial expectations! I think I have everything tweaked to not use massive amounts of RAM (<em>cough</em>MySQL<em>cough</em>.) Here’s how the free -m currently looks: $ free -m&lt;br /&gt; total used free shared buffers cached&lt;br /&gt; Mem: 121 90 31 0 2 46&lt;br /&gt; -/+ buffers/cache: 41 80&lt;br /&gt; Swap: 1121 14 1107 As you can see, it’s doing pretty good. I’ve even upped the maximum simultaneous Apache connections since it seems to be able to handle that a better now (rather then bringing the server to its knees when something like 10-15 people tried to access it at once.
+      
+      
+    </div>
+
+    
+    <div>
+      <a class="read-more button"
+        href="/2009/12/22/pleased-with-servers-performance/">Read more →</a>
+    </div>
+    
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://losinggeneration.com/2009/09/15/taken-care-of/">Taken care of</a></h1>
+    <div class="post-meta">
+      <span class="post-date">
+        2009-09-16
+      </span>
+      <span class="post-author">::
+        losinggeneration</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="https://losinggeneration.com/tags/dns/">DNS</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/mod_chroot/">mod_chroot</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/php/">php</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/server/">server</a>&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      
+      
+      Well, I think I have all the previous issues taken care of. Caching may or may not work, but it’s supposed to be happening now. So mail and DNS lookups work now (DNS only being useful from my side.) So, all-in-all I hope this beast can just run for several months and I’ll see what (if anything) needs to be done in that time. So now that my server should be stable, I’m free to work on other endevors!
+      
+      
+    </div>
+
+    
+    <div>
+      <a class="read-more button"
+        href="/2009/09/15/taken-care-of/">Read more →</a>
+    </div>
+    
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://losinggeneration.com/2009/09/15/few-more-things-that-i-should-fix-yet/">Few more things that I should fix yet</a></h1>
+    <div class="post-meta">
+      <span class="post-date">
+        2009-09-15
+      </span>
+      <span class="post-author">::
+        losinggeneration</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="https://losinggeneration.com/tags/apache/">apache</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/dns/">DNS</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/mod_chroot/">mod_chroot</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/mysql/">mysql</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/php/">php</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/wordpress/">wordpress</a>&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      
+      
+      Well now that the system is live, I think there’s going to be a few things I’m going to need to fix. Most all of them are from using mod_chroot. Most aren’t anything critical, but things that should be addressed (sooner rather than later.) For instance, I think DNS lookups are failing from inside WordPress. I breifly read in the mod_chroot caveates that this may happen, and I think this is happening now.
+      
+      
+    </div>
+
+    
+    <div>
+      <a class="read-more button"
+        href="/2009/09/15/few-more-things-that-i-should-fix-yet/">Read more →</a>
+    </div>
+    
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://losinggeneration.com/2009/09/13/zoneinfo/">Zoneinfo</a></h1>
+    <div class="post-meta">
+      <span class="post-date">
+        2009-09-13
+      </span>
+      <span class="post-author">::
+        losinggeneration</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="https://losinggeneration.com/tags/php/">php</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/wordpress/">wordpress</a>&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      
+      
+      
+    </div>
+
+    
+    <div>
+      <a class="read-more button"
+        href="/2009/09/13/zoneinfo/">Read more →</a>
+    </div>
+    
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://losinggeneration.com/2009/09/13/chrooted-apache/">Chrooted Apache</a></h1>
+    <div class="post-meta">
+      <span class="post-date">
+        2009-09-13
+      </span>
+      <span class="post-author">::
+        losinggeneration</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="https://losinggeneration.com/tags/apache/">apache</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/mysql/">mysql</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/php/">php</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/server/">server</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/wordpress/">wordpress</a>&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      
+      
+      ﻿
+As I prepare to have my server public, I’ve chrooted my server’s Apache with mod_chroot. This allows me to have the advantages of a chroot environment without as many of the draw backs. There is still some strangeness to work out. For instance “Warning: timezone_open() [function.timezone-open]: Unknown or bad timezone (America/Chicago) in /wp/wp-includes/functions.phpon line 3160”
+I’ll get this figured out, but honestly, it’s not a huge deal. I may have to have Apache load the zoneinfo file, or perhaps not… Really, the only change I had to make to WordPress was to have it connect to the MySQL database on 127.
+      
+      
+    </div>
+
+    
+    <div>
+      <a class="read-more button"
+        href="/2009/09/13/chrooted-apache/">Read more →</a>
+    </div>
+    
+  </div>
+  
+  <div class="pagination">
+  <div class="pagination__buttons">
+    
+    
+  </div>
+</div>
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>©2009-2020 Harley Laue</span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://losinggeneration.com/assets/main.js"></script>
+<script src="https://losinggeneration.com/assets/prism.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

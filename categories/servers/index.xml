@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Servers on Losinggeneration Coding Blog</title>
+    <link>https://losinggeneration.com/categories/servers/</link>
+    <description>Recent content in Servers on Losinggeneration Coding Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>©2009-2020 Harley Laue</copyright>
+    <lastBuildDate>Thu, 04 Jul 2013 09:45:09 +0000</lastBuildDate>
+    
+	<atom:link href="https://losinggeneration.com/categories/servers/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Down but not out</title>
+      <link>https://losinggeneration.com/2013/07/04/down-but-not-out/</link>
+      <pubDate>Thu, 04 Jul 2013 09:45:09 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2013/07/04/down-but-not-out/</guid>
+      <description>On the 28th of last month (2013/06/28) I lost my subdomain name that I had previously been getting for Dyn for free. For a long time Dyn offered free dynamic DNS. I setup my subdomain with them on their homelinux.org. This was initially needed because the server was being run from my, well, home. This provided a convenient method to automatically update the DNS records when my IP would change. This worked well, and it worked well for a long time.</description>
+    </item>
+    
+    <item>
+      <title>WordPress Backup Script</title>
+      <link>https://losinggeneration.com/2011/07/14/wordpress-backup-script/</link>
+      <pubDate>Thu, 14 Jul 2011 16:16:34 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2011/07/14/wordpress-backup-script/</guid>
+      <description>After my server was down for a couple days (because I was physically moving the machine to another location) I decided to check if there were any updates. Sure enough, there just happened to be an update for 3.2 and it had the usual warning of &amp;ldquo;be sure to backup your database and files&amp;rdquo; which I either ignore or partially ignore. I do typically do a mysqldump before running any of the updates, but I almost never backup the WordPress directory itself.</description>
+    </item>
+    
+    <item>
+      <title>Server updated</title>
+      <link>https://losinggeneration.com/2011/03/03/server-updated/</link>
+      <pubDate>Thu, 03 Mar 2011 21:46:52 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2011/03/03/server-updated/</guid>
+      <description>I&amp;rsquo;ve now updated my home server to Debian 6.0. In the process I&amp;rsquo;ve decided to also switch to lighttpd from Apache HTTP. I do miss the fact that mod_chroot in Apache was able to basically take care of the dependencies for me and build the chroot daemon startup, but it wasn&amp;rsquo;t too much work to get everything up and going in a chroot. It ended up one of my plugins (Last.</description>
+    </item>
+    
+    <item>
+      <title>New Temporary Server</title>
+      <link>https://losinggeneration.com/2010/07/09/new-temporary-server/</link>
+      <pubDate>Fri, 09 Jul 2010 22:45:53 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2010/07/09/new-temporary-server/</guid>
+      <description>I&amp;rsquo;m going to be without internet at home for awhile it looks like. The server this blog was run from was just a computer I had in my apartment. Since that&amp;rsquo;s going to be down sometime in the near future I decided it was time to figure out something to do in the meantime. The solution was to move this blog to a server I know will stay up while I&amp;rsquo;m moving.</description>
+    </item>
+    
+    <item>
+      <title>Backups</title>
+      <link>https://losinggeneration.com/2009/12/22/backups/</link>
+      <pubDate>Tue, 22 Dec 2009 18:33:50 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/12/22/backups/</guid>
+      <description>I decided it was time to have some form of backups in place. Currently all I&amp;rsquo;m really (automatically) backing up is the WordPress MySQL table since it&amp;rsquo;s the thing to changes on a regular basis. Everything else on this server can be backed up by hand when/if I make changes. It would be faster if/when something does fail (hard drive most likely) to have a recent full backup image to restore from, but really, a good backup of the MySQL table(s), a backup of important configuration files (since they rarely change, I back them up manually after change(s)), and a backup up various directories that&amp;rsquo;d be nice to restore quickly (most of which change infrequently.</description>
+    </item>
+    
+    <item>
+      <title>Pleased with Server’s Performance</title>
+      <link>https://losinggeneration.com/2009/12/22/pleased-with-servers-performance/</link>
+      <pubDate>Tue, 22 Dec 2009 16:15:23 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/12/22/pleased-with-servers-performance/</guid>
+      <description>I have to say, my server is performing beyond my initial expectations! I think I have everything tweaked to not use massive amounts of RAM (*cough*MySQL*cough*.) Here&amp;rsquo;s how the free -m currently looks: $ free -m&amp;lt;br /&amp;gt; total used free shared buffers cached&amp;lt;br /&amp;gt; Mem: 121 90 31 0 2 46&amp;lt;br /&amp;gt; -/+ buffers/cache: 41 80&amp;lt;br /&amp;gt; Swap: 1121 14 1107 As you can see, it&amp;rsquo;s doing pretty good. I&amp;rsquo;ve even upped the maximum simultaneous Apache connections since it seems to be able to handle that a better now (rather then bringing the server to its knees when something like 10-15 people tried to access it at once.</description>
+    </item>
+    
+    <item>
+      <title>Spam and SI Captcha</title>
+      <link>https://losinggeneration.com/2009/10/14/spam-and-si-captcha/</link>
+      <pubDate>Wed, 14 Oct 2009 21:02:24 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/10/14/spam-and-si-captcha/</guid>
+      <description>Well, I&amp;rsquo;m going to try to cut down on the spam (only a few spam bots so far have attempted to post, but I know there will be more.) I&amp;rsquo;m trying out SI Captcha to see if that helps. I just wish it had an option to still email upon failed comment posts (or something similar till I&amp;rsquo;m sure it&amp;rsquo;s working.) Oh well, I&amp;rsquo;ll still be moderating comments, but I hope this will help cut down on the amount of spam comments I have to moderate.</description>
+    </item>
+    
+    <item>
+      <title>Server hammered</title>
+      <link>https://losinggeneration.com/2009/10/03/server-hammered/</link>
+      <pubDate>Sat, 03 Oct 2009 08:45:30 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/10/03/server-hammered/</guid>
+      <description>So, I recently set a link to my discussion of Linux, GNU, and OS&amp;rsquo;s to someone on Identi.ca. I made a point not to add groups to !linux and !gnu because I knew my server would probably get hit hard (if you&amp;rsquo;ve looked at my server&amp;rsquo;s specs, you&amp;rsquo;ll know it doesn&amp;rsquo;t take much to be considered hit hard.) Well, they read it, after which they posted a link to my blog with the groups !</description>
+    </item>
+    
+    <item>
+      <title>Spam and Server stuff</title>
+      <link>https://losinggeneration.com/2009/09/28/spam-and-server-stuff/</link>
+      <pubDate>Mon, 28 Sep 2009 23:36:41 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/09/28/spam-and-server-stuff/</guid>
+      <description>So, I&amp;rsquo;ve only been up for about three weeks and I&amp;rsquo;ve already got my first spam comment (which is why I moderate all comments ATM.) Also, it was kind of strange, I went to go here at work today and I wasn&amp;rsquo;t able to connect. So, I logged into my router. I thought that my iptables were screwy again, so I started trying to fix them by hand. Deleted a rule and BAM no more connectivity to my router (at all.</description>
+    </item>
+    
+    <item>
+      <title>Taken care of</title>
+      <link>https://losinggeneration.com/2009/09/15/taken-care-of/</link>
+      <pubDate>Wed, 16 Sep 2009 02:39:36 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/09/15/taken-care-of/</guid>
+      <description>Well, I think I have all the previous issues taken care of. Caching may or may not work, but it&amp;rsquo;s supposed to be happening now. So mail and DNS lookups work now (DNS only being useful from my side.) So, all-in-all I hope this beast can just run for several months and I&amp;rsquo;ll see what (if anything) needs to be done in that time. So now that my server should be stable, I&amp;rsquo;m free to work on other endevors!</description>
+    </item>
+    
+    <item>
+      <title>Few more things that I should fix yet</title>
+      <link>https://losinggeneration.com/2009/09/15/few-more-things-that-i-should-fix-yet/</link>
+      <pubDate>Tue, 15 Sep 2009 14:56:30 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/09/15/few-more-things-that-i-should-fix-yet/</guid>
+      <description>Well now that the system is live, I think there&amp;rsquo;s going to be a few things I&amp;rsquo;m going to need to fix. Most all of them are from using mod_chroot. Most aren&amp;rsquo;t anything critical, but things that should be addressed (sooner rather than later.) For instance, I think DNS lookups are failing from inside WordPress. I breifly read in the mod_chroot caveates that this may happen, and I think this is happening now.</description>
+    </item>
+    
+    <item>
+      <title>We are live!</title>
+      <link>https://losinggeneration.com/2009/09/15/we-are-live/</link>
+      <pubDate>Tue, 15 Sep 2009 05:00:44 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/09/15/we-are-live/</guid>
+      <description>Well, technically we&amp;rsquo;ve been live for about 4 hours, but I didn&amp;rsquo;t realize at the time that using DNAT with iptables actually caused the NATed server to become unavailable from the LAN. I was actually trying to get everything setup in FwBuilder, but I may have hit a limitation since I could not find a way to do &amp;ldquo;-A POSTROUTING -s 192.168.0.0/16 -j SNAT —to-source 206.127.184.118&amp;rdquo; I must say this was an interesting learning experience.</description>
+    </item>
+    
+    <item>
+      <title>Pretty much ready</title>
+      <link>https://losinggeneration.com/2009/09/13/pretty-much-ready/</link>
+      <pubDate>Sun, 13 Sep 2009 21:19:42 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/09/13/pretty-much-ready/</guid>
+      <description>Well, my server is pretty much ready I now. Apache is chrooted and seems to be working well. I also did a self-signed cert in hopes that&amp;rsquo;ll make my remote logins even more secure to WordPress. SSH access is limited to keyed logins. Ntpd is running in hopes of keeping the system&amp;rsquo;s clock sane. I&amp;rsquo;ve moved all my Git repos here and even have my CGit vhost running/working. Git daemon is also running.</description>
+    </item>
+    
+    <item>
+      <title>Zoneinfo</title>
+      <link>https://losinggeneration.com/2009/09/13/zoneinfo/</link>
+      <pubDate>Sun, 13 Sep 2009 09:05:56 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/09/13/zoneinfo/</guid>
+      <description>Ok, it looks like I just needed to add /usr/share/zoneinfo/America/Chicago to my chroot, and I think that solved that issue. Simple enough really.</description>
+    </item>
+    
+    <item>
+      <title>Chrooted Apache</title>
+      <link>https://losinggeneration.com/2009/09/13/chrooted-apache/</link>
+      <pubDate>Sun, 13 Sep 2009 03:37:11 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/09/13/chrooted-apache/</guid>
+      <description>﻿
+As I prepare to have my server public, I&amp;rsquo;ve chrooted my server&amp;rsquo;s Apache with mod_chroot. This allows me to have the advantages of a chroot environment without as many of the draw backs. There is still some strangeness to work out. For instance &amp;ldquo;Warning: timezone_open() [function.timezone-open]: Unknown or bad timezone (America/Chicago) in /wp/wp-includes/functions.phpon line 3160&amp;rdquo;
+I&amp;rsquo;ll get this figured out, but honestly, it&amp;rsquo;s not a huge deal. I may have to have Apache load the zoneinfo file, or perhaps not… Really, the only change I had to make to WordPress was to have it connect to the MySQL database on 127.</description>
+    </item>
+    
+    <item>
+      <title>First post on my new server</title>
+      <link>https://losinggeneration.com/2009/09/11/first-post-on-my-new-server/</link>
+      <pubDate>Fri, 11 Sep 2009 22:37:08 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/09/11/first-post-on-my-new-server/</guid>
+      <description>Well, I have my new server up and running (though it&amp;rsquo;ll probably be awhile before anyone will be able to see this since I&amp;rsquo;m not done securing it making it a dmz so people can access it.) I&amp;rsquo;m not sure why I decided to setup a blog, but I did, and I&amp;rsquo;m going to see how it goes.</description>
+    </item>
+    
+  </channel>
+</rss>

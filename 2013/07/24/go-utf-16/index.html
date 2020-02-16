@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Go UTF-16 :: Losinggeneration Coding Blog —  Imperfect software for an imperfect world.</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="This is just a small code fragment that prints out the Unicode characters from the Fullwidth Latin Letters (range 0xFF01-0xFFEF). This works on little &amp;amp; big endian machines (tested with qemu-arm &amp;amp; qemu-mips compiled using gccgo 4.7.) I thought it might have issues with the way it decodes the int32 into a byte array and re-encodes it to a uint16 array.
+package main import ( &amp;#34;bytes&amp;#34; &amp;#34;encoding/binary&amp;#34; &amp;#34;fmt&amp;#34; &amp;#34;unicode/utf16&amp;#34; ) func main() { for i := int32(0xFF00); i &amp;lt;= 0xFFEF; i&#43;&#43; { c := new(bytes."/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://losinggeneration.com/2013/07/24/go-utf-16/" />
+
+
+
+
+<link rel="stylesheet" href="https://losinggeneration.com/assets/style.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://losinggeneration.com/img/apple-touch-icon-144-precomposed.png">
+
+<link rel="shortcut icon" href="https://losinggeneration.com/img/favicon/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Go UTF-16 :: Losinggeneration Coding Blog —  Imperfect software for an imperfect world." />
+<meta name="twitter:description" content="This is just a small code fragment that prints out the Unicode characters from the Fullwidth Latin Letters (range 0xFF01-0xFFEF). This works on little &amp;amp; big endian machines (tested with qemu-arm &amp;amp; qemu-mips compiled using gccgo 4.7.) I thought it might have issues with the way it decodes the int32 into a byte array and re-encodes it to a uint16 array.
+package main import ( &amp;#34;bytes&amp;#34; &amp;#34;encoding/binary&amp;#34; &amp;#34;fmt&amp;#34; &amp;#34;unicode/utf16&amp;#34; ) func main() { for i := int32(0xFF00); i &amp;lt;= 0xFFEF; i&#43;&#43; { c := new(bytes." />
+<meta name="twitter:site" content="https://losinggeneration.com/" />
+<meta name="twitter:creator" content="losinggeneration" />
+<meta name="twitter:image" content="">
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Go UTF-16 :: Losinggeneration Coding Blog —  Imperfect software for an imperfect world.">
+<meta property="og:description" content="This is just a small code fragment that prints out the Unicode characters from the Fullwidth Latin Letters (range 0xFF01-0xFFEF). This works on little &amp;amp; big endian machines (tested with qemu-arm &amp;amp; qemu-mips compiled using gccgo 4.7.) I thought it might have issues with the way it decodes the int32 into a byte array and re-encodes it to a uint16 array.
+package main import ( &amp;#34;bytes&amp;#34; &amp;#34;encoding/binary&amp;#34; &amp;#34;fmt&amp;#34; &amp;#34;unicode/utf16&amp;#34; ) func main() { for i := int32(0xFF00); i &amp;lt;= 0xFFEF; i&#43;&#43; { c := new(bytes." />
+<meta property="og:url" content="https://losinggeneration.com/2013/07/24/go-utf-16/" />
+<meta property="og:site_name" content="Go UTF-16" />
+<meta property="og:image" content="">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+<meta property="article:section" content="Go" /><meta property="article:section" content="Programming" />
+<meta property="article:published_time" content="2013-07-24 19:20:04 &#43;0000 &#43;0000" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="">
+
+
+<div class="container full headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    ~
+  </div>
+</a>
+
+    </div>
+    <div class="menu-trigger">menu</div>
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://losinggeneration.com/2013/07/24/go-utf-16/">Go UTF-16</a></h1>
+  <div class="post-meta">
+      
+    <span class="post-date">
+      2013-07-24
+    </span>
+    
+    
+    <span class="post-author">::
+      losinggeneration
+    </span>
+    
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="https://losinggeneration.com/tags/go/">Go</a>&nbsp;
+    
+    #<a href="https://losinggeneration.com/tags/unicode/">Unicode</a>&nbsp;
+    
+    #<a href="https://losinggeneration.com/tags/utf-16/">UTF-16</a>&nbsp;
+    
+  </span>
+  
+
+  
+
+  <div class="post-content"><div>
+        <p>This is just a small code fragment that prints out the <a href="http://www.unicode.org/charts/">Unicode</a> characters from the <a href="http://www.unicode.org/charts/PDF/UFF00.pdf">Fullwidth Latin Letters</a> (range 0xFF01-0xFFEF). This works on little &amp; big endian machines (tested with qemu-arm &amp; qemu-mips compiled using gccgo 4.7.) I thought it might have issues with the way it decodes the int32 into a byte array and re-encodes it to a uint16 array.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> (
+	<span style="color:#e6db74">&#34;bytes&#34;</span>
+	<span style="color:#e6db74">&#34;encoding/binary&#34;</span>
+	<span style="color:#e6db74">&#34;fmt&#34;</span>
+	<span style="color:#e6db74">&#34;unicode/utf16&#34;</span>
+)
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> int32(<span style="color:#ae81ff">0xFF00</span>); <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">0xFFEF</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+		<span style="color:#a6e22e">c</span> <span style="color:#f92672">:=</span> new(<span style="color:#a6e22e">bytes</span>.<span style="color:#a6e22e">Buffer</span>)
+		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">binary</span>.<span style="color:#a6e22e">Write</span>(<span style="color:#a6e22e">c</span>, <span style="color:#a6e22e">binary</span>.<span style="color:#a6e22e">BigEndian</span>, <span style="color:#a6e22e">i</span>); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+			<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;binary.Write failed:&#34;</span>, <span style="color:#a6e22e">err</span>)
+			<span style="color:#66d9ef">return</span>
+		}
+		<span style="color:#a6e22e">ui16</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">uint16</span>, <span style="color:#ae81ff">2</span>)
+		<span style="color:#a6e22e">binary</span>.<span style="color:#a6e22e">Read</span>(<span style="color:#a6e22e">c</span>, <span style="color:#a6e22e">binary</span>.<span style="color:#a6e22e">BigEndian</span>, <span style="color:#a6e22e">ui16</span>)
+		<span style="color:#a6e22e">r</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">utf16</span>.<span style="color:#a6e22e">Decode</span>(<span style="color:#a6e22e">ui16</span>)
+		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;0x%4x: %c\n&#34;</span>, <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">r</span>[<span style="color:#ae81ff">1</span>])
+	}
+}
+</code></pre></div>
+      </div></div>
+  
+  <div class="pagination">
+    <div class="pagination__title">
+      <span
+        class="pagination__title-h">Read other posts</span>
+      <hr />
+    </div>
+    <div class="pagination__buttons">
+      
+      <span class="button previous">
+        <a href="https://losinggeneration.com/2014/01/11/boostrapping-a-forth-in-46-lines-of-moonscript-code/">
+          <span class="button__icon">←</span>
+          <span class="button__text">Boostrapping a Forth in 46 lines of Moonscript code</span>
+        </a>
+      </span>
+      
+      
+      <span class="button next">
+        <a href="https://losinggeneration.com/2013/07/04/down-but-not-out/">
+          <span class="button__text">Down but not out</span>
+          <span class="button__icon">→</span>
+        </a>
+      </span>
+      
+    </div>
+  </div>
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>©2009-2020 Harley Laue</span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://losinggeneration.com/assets/main.js"></script>
+<script src="https://losinggeneration.com/assets/prism.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

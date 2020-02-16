@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Didj on Losinggeneration Coding Blog</title>
+    <link>https://losinggeneration.com/tags/didj/</link>
+    <description>Recent content in Didj on Losinggeneration Coding Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>©2009-2020 Harley Laue</copyright>
+    <lastBuildDate>Thu, 28 Apr 2011 18:33:49 +0000</lastBuildDate>
+    
+	<atom:link href="https://losinggeneration.com/tags/didj/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CrabEmu for the Didj</title>
+      <link>https://losinggeneration.com/2011/04/28/crabemu-for-the-didj/</link>
+      <pubDate>Thu, 28 Apr 2011 18:33:49 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2011/04/28/crabemu-for-the-didj/</guid>
+      <description>Well, I&amp;rsquo;m releasing what I&amp;rsquo;ll call version 0.1.0 of CrabEmu for the Didj. It includes a custom built rootfs with no questionable code from the LF distribution (for instance, their scripts for checking various things like USB connections.) This initial release requires a DJHI or other third party card that is SD capable. The SD must also have two partitions: Fat32 &amp;amp; Ext 3. Because of the later, you&amp;rsquo;ll also need an OS that&amp;rsquo;s able to read/write to Ext 3 file systems.</description>
+    </item>
+    
+    <item>
+      <title>Didj OpenGL ES</title>
+      <link>https://losinggeneration.com/2010/04/29/didj-opengl-es/</link>
+      <pubDate>Thu, 29 Apr 2010 06:13:40 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2010/04/29/didj-opengl-es/</guid>
+      <description>Well, I may be the first to get even basic OpenGL ES primitives to render. I can now make my claim that NeHe lesson02 works for the Didj. Some others have things such as OpenGL version strings, but I believe this is the first actual rendering for Didj homebrew. I&amp;rsquo;ve gone a slightly different route then what others have done. I&amp;rsquo;ve used Brio directly to satisfy some of the OpenGL ES dependencies.</description>
+    </item>
+    
+    <item>
+      <title>DJHI</title>
+      <link>https://losinggeneration.com/2010/04/21/djhi/</link>
+      <pubDate>Wed, 21 Apr 2010 06:02:09 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2010/04/21/djhi/</guid>
+      <description>Well, I now have my Didj, a Serial-&amp;gt;USB breakoutboard, and a DJHI v2.0 prototype board. With these I&amp;rsquo;m able to get serial access to the Didj. I&amp;rsquo;ve flashed a new version of the Lightning Boot bootloader which jburks has been hard at work on. It adds a boot menu which is very useful for booting new kernels off of an SD card. jburks also has a preliminary kernel driver to access the SD card from within Linux.</description>
+    </item>
+    
+    <item>
+      <title>Didj</title>
+      <link>https://losinggeneration.com/2010/03/30/didj/</link>
+      <pubDate>Tue, 30 Mar 2010 13:39:10 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2010/03/30/didj/</guid>
+      <description>On Woot yesterday they had these Didj systems. I&amp;rsquo;ve read about it on Hack a Day several times, and I decided to get one and (hopefully) join in with some of the fun. I don&amp;rsquo;t have any real concrete plans for this cool little Linux device. I just want to see what cool things can be done with it (first hand.)</description>
+    </item>
+    
+  </channel>
+</rss>

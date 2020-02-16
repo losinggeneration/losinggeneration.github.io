@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Chipmunk Physics :: Losinggeneration Coding Blog —  Imperfect software for an imperfect world.</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="I&amp;rsquo;ve been hard at work at my project which I&amp;rsquo;m yet to call by name on here (and will continue to be that way until I have a playable demo.) First, a status update. I&amp;rsquo;ve ditched the idea of doing the entire engine myself and have now migrated to HGE (Haaf&amp;rsquo;s Game Engine) which fairly recently had a port to *nix and OS X by Ryan C. Gordon. I&amp;rsquo;ve worked a bit on the engine itself after the source release and my changes were pulled in upstream (mostly it adding a CMake build system, but I also did some things like get the tutorial/examples working, silenced warnings, etc."/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://losinggeneration.com/2011/09/08/chipmunk-physics/" />
+
+
+
+
+<link rel="stylesheet" href="https://losinggeneration.com/assets/style.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://losinggeneration.com/img/apple-touch-icon-144-precomposed.png">
+
+<link rel="shortcut icon" href="https://losinggeneration.com/img/favicon/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Chipmunk Physics :: Losinggeneration Coding Blog —  Imperfect software for an imperfect world." />
+<meta name="twitter:description" content="I&amp;rsquo;ve been hard at work at my project which I&amp;rsquo;m yet to call by name on here (and will continue to be that way until I have a playable demo.) First, a status update. I&amp;rsquo;ve ditched the idea of doing the entire engine myself and have now migrated to HGE (Haaf&amp;rsquo;s Game Engine) which fairly recently had a port to *nix and OS X by Ryan C. Gordon. I&amp;rsquo;ve worked a bit on the engine itself after the source release and my changes were pulled in upstream (mostly it adding a CMake build system, but I also did some things like get the tutorial/examples working, silenced warnings, etc." />
+<meta name="twitter:site" content="https://losinggeneration.com/" />
+<meta name="twitter:creator" content="losinggeneration" />
+<meta name="twitter:image" content="">
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Chipmunk Physics :: Losinggeneration Coding Blog —  Imperfect software for an imperfect world.">
+<meta property="og:description" content="I&amp;rsquo;ve been hard at work at my project which I&amp;rsquo;m yet to call by name on here (and will continue to be that way until I have a playable demo.) First, a status update. I&amp;rsquo;ve ditched the idea of doing the entire engine myself and have now migrated to HGE (Haaf&amp;rsquo;s Game Engine) which fairly recently had a port to *nix and OS X by Ryan C. Gordon. I&amp;rsquo;ve worked a bit on the engine itself after the source release and my changes were pulled in upstream (mostly it adding a CMake build system, but I also did some things like get the tutorial/examples working, silenced warnings, etc." />
+<meta property="og:url" content="https://losinggeneration.com/2011/09/08/chipmunk-physics/" />
+<meta property="og:site_name" content="Chipmunk Physics" />
+<meta property="og:image" content="">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+<meta property="article:section" content="C" /><meta property="article:section" content="C&#43;&#43;" /><meta property="article:section" content="Programming" />
+<meta property="article:published_time" content="2011-09-08 09:42:56 &#43;0000 &#43;0000" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="">
+
+
+<div class="container full headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    ~
+  </div>
+</a>
+
+    </div>
+    <div class="menu-trigger">menu</div>
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://losinggeneration.com/2011/09/08/chipmunk-physics/">Chipmunk Physics</a></h1>
+  <div class="post-meta">
+      
+    <span class="post-date">
+      2011-09-08
+    </span>
+    
+    
+    <span class="post-author">::
+      losinggeneration
+    </span>
+    
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="https://losinggeneration.com/tags/chipmunk/">Chipmunk</a>&nbsp;
+    
+    #<a href="https://losinggeneration.com/tags/demo/">Demo</a>&nbsp;
+    
+    #<a href="https://losinggeneration.com/tags/hge/">HGE</a>&nbsp;
+    
+    #<a href="https://losinggeneration.com/tags/physics/">physics</a>&nbsp;
+    
+  </span>
+  
+
+  
+
+  <div class="post-content"><div>
+        <p>I&rsquo;ve been hard at work at my project which I&rsquo;m yet to call by name on here (and will continue to be that way until I have a playable demo.) First, a status update. I&rsquo;ve ditched the idea of doing the entire engine myself and have now migrated to HGE (Haaf&rsquo;s Game Engine) which fairly recently had a port to *nix and OS X by Ryan C. Gordon. I&rsquo;ve worked a bit on the engine itself after the source release and my changes were pulled in upstream (mostly it adding a CMake build system, but I also did some things like get the tutorial/examples working, silenced warnings, etc.) Basically, I was pretty impressed with the engine and its features. Using OpenGL for 2D rendering was something I had kind of wanted to do, but had decided to just do software SDL rendering. That, in addition to being a pretty nice all-in-one 2D engine, had me sold on it. I was able to pretty quickly rip out the SDL work and put HGE in its place. What I currently have is a player that has basic animations. When I say basic, I mean, you press left, and one animation is played. You press up, and another is played. I also have the level layout rendering, and can change the (currently single) level file and have the changes take effect on the next run.</p>
+<p>At this point I thought it would be prudent to the project to take the plunge into 2D physics engines. It was either that, or implement some basic physics myself (which wouldn&rsquo;t be too big of a deal in this case, at least to begin with.) So, I did some research. The first one that I knew of off the top of my head was Box2D. The other one I found for this project was Chipmunk Physics. Honestly, this isn&rsquo;t going to be a comparison between the two, because quite frankly, I didn&rsquo;t even give Box2D a proper try. Not to mention that after I did a few tests with Chipmunk, it seemed like a good fit. It has a very easy to use C API, a very permissive license (MIT), it seems quite fast, and like I said, it seems like it&rsquo;ll be a good fit.</p>
+<p>The first thing I did was do a quick test with a single box that was affected by gravity. It was simple enough to implement. Next, I put the logic for the box into a class that would then take care of the Chipmunk memory management in the constructor and destructor. So far, so good. Next I added these boxes to a vector dynamically when the mouse is clicked. I then observed how the boxes reacted as they fell and collided with each other. This all seemed to work well, which made me want to try to add some things like being able to clear out the boxes without having to restart the program, giving all the boxes a random velocity, and simulating a explosion at the mouse pointer on a click. All-in-all, this all went together fairly quickly (few hours at most.)</p>
+<p>I thought this simple demo might be of interest to others as well. So I&rsquo;m going to post the code here. It requires HGE (I&rsquo;ve only tested against hge-unix) and Chipmunk. Other than that, it require C++ and uses std::vector for dynamic storage. All the features I described above are implemented, and it comes in at just under 300 lines of code. The buttons for various actions are as follows:</p>
+<ul>
+<li>Space: clears all boxes from the screen</li>
+<li>Left click: adds boxes at the current mouse possition</li>
+<li>Right click: gives all boxes a random velocity</li>
+<li>Middle click: simulate an explosion at the mouse&rsquo;s location</li>
+<li>Mousewheel: Increases/decreases size of boxes spawned (v0.2+)</li>
+<li>Backspace: Removes some of the most recent boxes (v0.2+)</li>
+<li>Delete: Removes some of the first boxes spawned (v0.2+)</li>
+<li>c: Changes from box-&gt;circle or circle-&gt;box (v0.3+)</li>
+</ul>
+<!-- raw HTML omitted -->
+<p><a href="/wp-upload/chipmunk_demo-0.3.2.tar.bz2">chipmunk_demo-0.3.2.tar.bz2</a></p>
+<h3 id="updated">Updated<a href="#updated" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>Changelog:
+0.1 Initial release
+0.2 Added proper box rotation, ability to remove boxes (from front or back of vector), ability to change box size, and varying box mass based on size.
+0.3 Ability to add circles as well (requires the image be in the same directory as the executable.)
+0.3.1 final This is most likely the final release. It basically just corrects the mass of the objects.
+0.3.2 Very minor update to CMake FindHGE.cmake to define HGE_HELPERS_LIBRARY as well and HGE_LIBRARIES (instead of HGE_LIBRARY) includes both.</p>
+<p>Enjoy.</p>
+
+      </div></div>
+  
+  <div class="pagination">
+    <div class="pagination__title">
+      <span
+        class="pagination__title-h">Read other posts</span>
+      <hr />
+    </div>
+    <div class="pagination__buttons">
+      
+      <span class="button previous">
+        <a href="https://losinggeneration.com/2011/10/18/guitar-painting-and-modifications/">
+          <span class="button__icon">←</span>
+          <span class="button__text">Guitar Painting and Modifications</span>
+        </a>
+      </span>
+      
+      
+      <span class="button next">
+        <a href="https://losinggeneration.com/2011/07/14/wordpress-backup-script/">
+          <span class="button__text">WordPress Backup Script</span>
+          <span class="button__icon">→</span>
+        </a>
+      </span>
+      
+    </div>
+  </div>
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>©2009-2020 Harley Laue</span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://losinggeneration.com/assets/main.js"></script>
+<script src="https://losinggeneration.com/assets/prism.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

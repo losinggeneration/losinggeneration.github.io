@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>public server on Losinggeneration Coding Blog</title>
+    <link>https://losinggeneration.com/tags/public-server/</link>
+    <description>Recent content in public server on Losinggeneration Coding Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>©2009-2020 Harley Laue</copyright>
+    <lastBuildDate>Sun, 13 Sep 2009 21:19:42 +0000</lastBuildDate>
+    
+	<atom:link href="https://losinggeneration.com/tags/public-server/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Pretty much ready</title>
+      <link>https://losinggeneration.com/2009/09/13/pretty-much-ready/</link>
+      <pubDate>Sun, 13 Sep 2009 21:19:42 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/09/13/pretty-much-ready/</guid>
+      <description>Well, my server is pretty much ready I now. Apache is chrooted and seems to be working well. I also did a self-signed cert in hopes that&amp;rsquo;ll make my remote logins even more secure to WordPress. SSH access is limited to keyed logins. Ntpd is running in hopes of keeping the system&amp;rsquo;s clock sane. I&amp;rsquo;ve moved all my Git repos here and even have my CGit vhost running/working. Git daemon is also running.</description>
+    </item>
+    
+  </channel>
+</rss>

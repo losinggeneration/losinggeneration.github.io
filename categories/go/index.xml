@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Go on Losinggeneration Coding Blog</title>
+    <link>https://losinggeneration.com/categories/go/</link>
+    <description>Recent content in Go on Losinggeneration Coding Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>©2009-2020 Harley Laue</copyright>
+    <lastBuildDate>Tue, 12 Jan 2016 05:58:49 +0000</lastBuildDate>
+    
+	<atom:link href="https://losinggeneration.com/categories/go/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Go GCC vs GC</title>
+      <link>https://losinggeneration.com/2016/01/11/go-gcc-vs-gc/</link>
+      <pubDate>Tue, 12 Jan 2016 05:58:49 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2016/01/11/go-gcc-vs-gc/</guid>
+      <description>For awhile now I&amp;rsquo;ve been playing around with a stack based language written in Go. The specifics of that project aren&amp;rsquo;t too important here, but I did notice something interesting today as I tried GCC for the first time with the project. First I wanted to make sure it worked so I ran go-5 test and happily all tests passed. Next, I thought I&amp;rsquo;d see how the benchmark looked. Here I think I was most surprised.</description>
+    </item>
+    
+    <item>
+      <title>Go UTF-16</title>
+      <link>https://losinggeneration.com/2013/07/24/go-utf-16/</link>
+      <pubDate>Wed, 24 Jul 2013 19:20:04 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2013/07/24/go-utf-16/</guid>
+      <description>This is just a small code fragment that prints out the Unicode characters from the Fullwidth Latin Letters (range 0xFF01-0xFFEF). This works on little &amp;amp; big endian machines (tested with qemu-arm &amp;amp; qemu-mips compiled using gccgo 4.7.) I thought it might have issues with the way it decodes the int32 into a byte array and re-encodes it to a uint16 array.
+package main import ( &amp;#34;bytes&amp;#34; &amp;#34;encoding/binary&amp;#34; &amp;#34;fmt&amp;#34; &amp;#34;unicode/utf16&amp;#34; ) func main() { for i := int32(0xFF00); i &amp;lt;= 0xFFEF; i++ { c := new(bytes.</description>
+    </item>
+    
+    <item>
+      <title>HGE Go work</title>
+      <link>https://losinggeneration.com/2012/11/27/hge-go-work/</link>
+      <pubDate>Tue, 27 Nov 2012 07:55:16 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2012/11/27/hge-go-work/</guid>
+      <description>I just realized I never actually posted about why I was doing a C binding of C++. Basically I bound most of Haaf&amp;rsquo;s Game Engine (HGE) from C++ to C. I ended up getting a bit stuck on the GUI elements and getting a nice way to let them do simple inheritance and polymorphism based on the current C++ classes. This actually wasn&amp;rsquo;t a problem for my end-game which was to take that C binding and make a Go version with cgo.</description>
+    </item>
+    
+    <item>
+      <title>C Bindings for C&#43;&#43;</title>
+      <link>https://losinggeneration.com/2012/08/08/c-bindings-for-c/</link>
+      <pubDate>Wed, 08 Aug 2012 16:49:44 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2012/08/08/c-bindings-for-c/</guid>
+      <description>Lately I&amp;rsquo;ve been playing around with writing C bindings for a C++ library. Your first thought might be, &amp;ldquo;Why would you bind a C++ to C?&amp;rdquo; Those of you who have ever had to do bindings to other languages may already know the answer. In general, it&amp;rsquo;s much easier to bind C to another language than it is to bind C++ directly. Another, albeit less likely, reason might be because a client wants a C interface instead.</description>
+    </item>
+    
+  </channel>
+</rss>

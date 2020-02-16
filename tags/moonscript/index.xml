@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Moonscript on Losinggeneration Coding Blog</title>
+    <link>https://losinggeneration.com/tags/moonscript/</link>
+    <description>Recent content in Moonscript on Losinggeneration Coding Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>©2009-2020 Harley Laue</copyright>
+    <lastBuildDate>Sat, 11 Jan 2014 08:35:04 +0000</lastBuildDate>
+    
+	<atom:link href="https://losinggeneration.com/tags/moonscript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Boostrapping a Forth in 46 lines of Moonscript code</title>
+      <link>https://losinggeneration.com/2014/01/11/boostrapping-a-forth-in-46-lines-of-moonscript-code/</link>
+      <pubDate>Sat, 11 Jan 2014 08:35:04 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2014/01/11/boostrapping-a-forth-in-46-lines-of-moonscript-code/</guid>
+      <description>There&amp;rsquo;s an article called Boostrapping a Forth in 40 lines of Lua code that&amp;rsquo;s been around since around 2007. It&amp;rsquo;s a great article and I&amp;rsquo;d highly recommend reading it. However, I only recently found it after some interest in Forth.
+This is the Forth outer interpreter in Lua from the above article reformatted a bit:
+eval = function (str) return assert(loadstring(str))() end subj = &amp;#34;&amp;#34; pos = 1 parsebypattern = function (pat) local capture, newpos = string.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Game Gear Coding :: Losinggeneration Coding Blog —  Imperfect software for an imperfect world.</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="About a year or so back I got a book that the public library was giving away after a book sale on Z80 assembly. I read it, but never really did anything with that knowledge. The thought was always in the back of my head to eventually apply that and play around with some SEGA Master System/Game Gear coding. Unfortunately time has a way of getting away from you.
+The library had a book sale about a month or so back and they had quite a few books."/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://losinggeneration.com/2010/06/10/game-gear-coding/" />
+
+
+
+
+<link rel="stylesheet" href="https://losinggeneration.com/assets/style.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://losinggeneration.com/img/apple-touch-icon-144-precomposed.png">
+
+<link rel="shortcut icon" href="https://losinggeneration.com/img/favicon/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Game Gear Coding :: Losinggeneration Coding Blog —  Imperfect software for an imperfect world." />
+<meta name="twitter:description" content="About a year or so back I got a book that the public library was giving away after a book sale on Z80 assembly. I read it, but never really did anything with that knowledge. The thought was always in the back of my head to eventually apply that and play around with some SEGA Master System/Game Gear coding. Unfortunately time has a way of getting away from you.
+The library had a book sale about a month or so back and they had quite a few books." />
+<meta name="twitter:site" content="https://losinggeneration.com/" />
+<meta name="twitter:creator" content="losinggeneration" />
+<meta name="twitter:image" content="">
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Game Gear Coding :: Losinggeneration Coding Blog —  Imperfect software for an imperfect world.">
+<meta property="og:description" content="About a year or so back I got a book that the public library was giving away after a book sale on Z80 assembly. I read it, but never really did anything with that knowledge. The thought was always in the back of my head to eventually apply that and play around with some SEGA Master System/Game Gear coding. Unfortunately time has a way of getting away from you.
+The library had a book sale about a month or so back and they had quite a few books." />
+<meta property="og:url" content="https://losinggeneration.com/2010/06/10/game-gear-coding/" />
+<meta property="og:site_name" content="Game Gear Coding" />
+<meta property="og:image" content="">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+<meta property="article:section" content="Programming" /><meta property="article:section" content="Z80 Assembly" />
+<meta property="article:published_time" content="2010-06-10 22:30:50 &#43;0000 &#43;0000" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="">
+
+
+<div class="container full headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    ~
+  </div>
+</a>
+
+    </div>
+    <div class="menu-trigger">menu</div>
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://losinggeneration.com/2010/06/10/game-gear-coding/">Game Gear Coding</a></h1>
+  <div class="post-meta">
+      
+    <span class="post-date">
+      2010-06-10
+    </span>
+    
+    
+    <span class="post-author">::
+      losinggeneration
+    </span>
+    
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="https://losinggeneration.com/tags/assembly/">Assembly</a>&nbsp;
+    
+    #<a href="https://losinggeneration.com/tags/game-gear/">Game Gear</a>&nbsp;
+    
+    #<a href="https://losinggeneration.com/tags/sega-master-system/">Sega Master System</a>&nbsp;
+    
+    #<a href="https://losinggeneration.com/tags/z80/">Z80</a>&nbsp;
+    
+  </span>
+  
+
+  
+
+  <div class="post-content"><div>
+        <p>About a year or so back I got a book that the public library was giving away after a book sale on Z80 assembly. I read it, but never really did anything with that knowledge. The thought was always in the back of my head to eventually apply that and play around with some SEGA Master System/Game Gear coding. Unfortunately time has a way of getting away from you.</p>
+<p>The library had a book sale about a month or so back and they had quite a few books. Among the ones I got for a dollar or so each include: 68K Assembly, Z80 Assembly (a much thicker, more complete reference), 100 Z80 projects (hw &amp; software from the looks of it), X86 MS-DOS assembly, C standardize library reference, and a few others. The addition of a couple more Z80 books gave me a bit of a push to look back into SMS/GG coding.</p>
+<p>Because this is basically my first time with any kind of assembly, things have been going a bit slow, but steady. I have a basic skeleton at this point that does things like setup the stack pointer, wait for the VDP (Video Display Processor) to come to a sane state (which it isn&rsquo;t always after power on), put the interrupt at 0x0038 as it should be, bail out/halt the cpu if we&rsquo;re in PAL mode (just for fun for now), and loop endlessly calling a function to read input from player one. Even though the guys at SMS Power recommend WLA-DX, I decided to go with z80asm which comes with z80pack. It wasn&rsquo;t easy goings at first because without actually looking at the source to see what the command line parameters mean. Let me show you what the console help looks like:<code>./z80asm&lt;br /&gt; no input file&lt;br /&gt; usage: z80asm -f[b|m|h] -s[n|a] {-x} -v -ofile -l[file] -dsymbol ... file ...</code>
+Now, what is -f? what is -s? what about -x, -v, or -l? I edited z80asm&rsquo;s source to now output this <code>./z80asm&lt;br /&gt; no input file&lt;br /&gt; usage: z80asm -f[b|m|h] -s[n|a] {-x} -v -ofile -l[file] -dsymbol ... file ...&lt;br /&gt; -f      Format: [m]os (default),&lt;br /&gt; [b]inary,&lt;br /&gt; [h]ex&lt;br /&gt; -s      Symbol: [blank] unsorted,&lt;br /&gt; [n] symbol table sorted by name,&lt;br /&gt; [a] symbol table sorted by address&lt;br /&gt; -x      Dump?&lt;br /&gt; -v      Version&lt;br /&gt; -o      Output file.[format]&lt;br /&gt; -l      List file&lt;br /&gt; -d      Define [symbol]</code> It&rsquo;s not exactly clear on what everything means, but it&rsquo;s better than before. The problem I had with my program misbehaving in CrabEmu was actually due to the fact that the output format, by default, is mos binaries (not entirely sure what mos stands for to be honest.) It was an &ldquo;AHA!&rdquo; moment when I realized this by looking at the source. I switched to -fb (straight binary) and all of a sudden things are working so much better! I had a few initial bugs because, like I said, it&rsquo;s the first time I&rsquo;m really doing assembly coding, and it ended up I miscounted and was off by one bit on the bit I was wanting to look at for the GG display type (NTSC/PAL.) After I fixed that things appear to be working as they should (I don&rsquo;t have any kind of visual output yet, but stepping through the code, everything looks to be as it should.)</p>
+<p>So where do I go from here? Since I think I have a pretty good handle on the initial setup, I think it&rsquo;s time to move to some VDP code so it can display something useful. After that, it&rsquo;s onwards to the PSG (Programmable Sound Generator) to have some fun with sound. Input with obviously be in there too, but I feel like I have an understanding on how to handle it. There are still some things which I don&rsquo;t totally understand yet, like ROM banking, but in time I&rsquo;m sure I&rsquo;ll become quite familiar with this system. I&rsquo;d also like to return to my idea to use SDCC as a compiler for the SMS/GG. It looks like it should be doable, but I&rsquo;m not sure if I want to invest the time to make it so right away. Another thing which I may have to work on are tools for things like tiles and such. All the graphics tools listed on smspower.org are Windows only it seems.</p>
+<p>In the distant future I hope to buy a <a href="http://www.tototek.com/store/index.php?main_page=product_info&amp;cPath=1_17_31&amp;products_id=82">GG Pro 32M Cart</a> for testing on actual hardware, but at $85 it will be no less than a few months out (giving me plenty of time to get something to actually test.) I hope to have something to show for this by the end of the year. That said, there are other projects which I want to work on that might end up taking precedence. For instance, there&rsquo;s the S.A.T.U.R.N. coding competition going on currently that I&rsquo;d really like to have something to submit. I should try to start that this weekend…</p>
+
+      </div></div>
+  
+  <div class="pagination">
+    <div class="pagination__title">
+      <span
+        class="pagination__title-h">Read other posts</span>
+      <hr />
+    </div>
+    <div class="pagination__buttons">
+      
+      <span class="button previous">
+        <a href="https://losinggeneration.com/2010/07/02/msp430-launchpad-on-linux/">
+          <span class="button__icon">←</span>
+          <span class="button__text">MSP430 Launchpad on Linux</span>
+        </a>
+      </span>
+      
+      
+      <span class="button next">
+        <a href="https://losinggeneration.com/2010/04/29/didj-opengl-es/">
+          <span class="button__text">Didj OpenGL ES</span>
+          <span class="button__icon">→</span>
+        </a>
+      </span>
+      
+    </div>
+  </div>
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>©2009-2020 Harley Laue</span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://losinggeneration.com/assets/main.js"></script>
+<script src="https://losinggeneration.com/assets/prism.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

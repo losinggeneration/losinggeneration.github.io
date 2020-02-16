@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lessons Learned on Losinggeneration Coding Blog</title>
+    <link>https://losinggeneration.com/tags/lessons-learned/</link>
+    <description>Recent content in Lessons Learned on Losinggeneration Coding Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>©2009-2020 Harley Laue</copyright>
+    <lastBuildDate>Thu, 11 Nov 2010 04:36:35 +0000</lastBuildDate>
+    
+	<atom:link href="https://losinggeneration.com/tags/lessons-learned/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Adventures in Lua Embedding</title>
+      <link>https://losinggeneration.com/2010/11/10/adventures-in-lua-embedding/</link>
+      <pubDate>Thu, 11 Nov 2010 04:36:35 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2010/11/10/adventures-in-lua-embedding/</guid>
+      <description>In a personal project which I&amp;rsquo;ve been working on and off on for the last three or so years (without really getting much done to be totally honest), I&amp;rsquo;ve decided to use Lua for the configuration file. The project itself is in C++, so this lead me to use the Lua C API to embed it in the project. Prior to deciding on Lua, I was using a manually parsed key/value format.</description>
+    </item>
+    
+  </channel>
+</rss>

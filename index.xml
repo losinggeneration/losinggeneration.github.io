@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Losinggeneration Coding Blog</title>
+    <link>https://losinggeneration.com/</link>
+    <description>Recent content on Losinggeneration Coding Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>©2009-2020 Harley Laue</copyright>
+    <lastBuildDate>Tue, 12 Jan 2016 05:58:49 +0000</lastBuildDate>
+    
+	<atom:link href="https://losinggeneration.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Go GCC vs GC</title>
+      <link>https://losinggeneration.com/2016/01/11/go-gcc-vs-gc/</link>
+      <pubDate>Tue, 12 Jan 2016 05:58:49 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2016/01/11/go-gcc-vs-gc/</guid>
+      <description>For awhile now I&amp;rsquo;ve been playing around with a stack based language written in Go. The specifics of that project aren&amp;rsquo;t too important here, but I did notice something interesting today as I tried GCC for the first time with the project. First I wanted to make sure it worked so I ran go-5 test and happily all tests passed. Next, I thought I&amp;rsquo;d see how the benchmark looked. Here I think I was most surprised.</description>
+    </item>
+    
+    <item>
+      <title>Boostrapping a Forth in 46 lines of Moonscript code</title>
+      <link>https://losinggeneration.com/2014/01/11/boostrapping-a-forth-in-46-lines-of-moonscript-code/</link>
+      <pubDate>Sat, 11 Jan 2014 08:35:04 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2014/01/11/boostrapping-a-forth-in-46-lines-of-moonscript-code/</guid>
+      <description>There&amp;rsquo;s an article called Boostrapping a Forth in 40 lines of Lua code that&amp;rsquo;s been around since around 2007. It&amp;rsquo;s a great article and I&amp;rsquo;d highly recommend reading it. However, I only recently found it after some interest in Forth.
+This is the Forth outer interpreter in Lua from the above article reformatted a bit:
+eval = function (str) return assert(loadstring(str))() end subj = &amp;#34;&amp;#34; pos = 1 parsebypattern = function (pat) local capture, newpos = string.</description>
+    </item>
+    
+    <item>
+      <title>Go UTF-16</title>
+      <link>https://losinggeneration.com/2013/07/24/go-utf-16/</link>
+      <pubDate>Wed, 24 Jul 2013 19:20:04 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2013/07/24/go-utf-16/</guid>
+      <description>This is just a small code fragment that prints out the Unicode characters from the Fullwidth Latin Letters (range 0xFF01-0xFFEF). This works on little &amp;amp; big endian machines (tested with qemu-arm &amp;amp; qemu-mips compiled using gccgo 4.7.) I thought it might have issues with the way it decodes the int32 into a byte array and re-encodes it to a uint16 array.
+package main import ( &amp;#34;bytes&amp;#34; &amp;#34;encoding/binary&amp;#34; &amp;#34;fmt&amp;#34; &amp;#34;unicode/utf16&amp;#34; ) func main() { for i := int32(0xFF00); i &amp;lt;= 0xFFEF; i++ { c := new(bytes.</description>
+    </item>
+    
+    <item>
+      <title>Down but not out</title>
+      <link>https://losinggeneration.com/2013/07/04/down-but-not-out/</link>
+      <pubDate>Thu, 04 Jul 2013 09:45:09 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2013/07/04/down-but-not-out/</guid>
+      <description>On the 28th of last month (2013/06/28) I lost my subdomain name that I had previously been getting for Dyn for free. For a long time Dyn offered free dynamic DNS. I setup my subdomain with them on their homelinux.org. This was initially needed because the server was being run from my, well, home. This provided a convenient method to automatically update the DNS records when my IP would change. This worked well, and it worked well for a long time.</description>
+    </item>
+    
+    <item>
+      <title>HGE Go work</title>
+      <link>https://losinggeneration.com/2012/11/27/hge-go-work/</link>
+      <pubDate>Tue, 27 Nov 2012 07:55:16 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2012/11/27/hge-go-work/</guid>
+      <description>I just realized I never actually posted about why I was doing a C binding of C++. Basically I bound most of Haaf&amp;rsquo;s Game Engine (HGE) from C++ to C. I ended up getting a bit stuck on the GUI elements and getting a nice way to let them do simple inheritance and polymorphism based on the current C++ classes. This actually wasn&amp;rsquo;t a problem for my end-game which was to take that C binding and make a Go version with cgo.</description>
+    </item>
+    
+    <item>
+      <title>C Bindings for C&#43;&#43;</title>
+      <link>https://losinggeneration.com/2012/08/08/c-bindings-for-c/</link>
+      <pubDate>Wed, 08 Aug 2012 16:49:44 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2012/08/08/c-bindings-for-c/</guid>
+      <description>Lately I&amp;rsquo;ve been playing around with writing C bindings for a C++ library. Your first thought might be, &amp;ldquo;Why would you bind a C++ to C?&amp;rdquo; Those of you who have ever had to do bindings to other languages may already know the answer. In general, it&amp;rsquo;s much easier to bind C to another language than it is to bind C++ directly. Another, albeit less likely, reason might be because a client wants a C interface instead.</description>
+    </item>
+    
+    <item>
+      <title>Guitar Painting and Modifications</title>
+      <link>https://losinggeneration.com/2011/10/18/guitar-painting-and-modifications/</link>
+      <pubDate>Tue, 18 Oct 2011 07:23:30 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2011/10/18/guitar-painting-and-modifications/</guid>
+      <description>This post is a bit different than what I normally write about. This post is about my guitar that I&amp;rsquo;ve had now for about eight years. It was a birthday present and was basically refurbished by one of the guitar shops in my home town. The guitar, a Peavey Raptor Exp Plus, originally looked like this:
+This was fine and all, but after eight years and quite frankly wanting to upgrade the internals, I decided I&amp;rsquo;d take the time to first paint the guitar and also modify the pickguard.</description>
+    </item>
+    
+    <item>
+      <title>Chipmunk Physics</title>
+      <link>https://losinggeneration.com/2011/09/08/chipmunk-physics/</link>
+      <pubDate>Thu, 08 Sep 2011 09:42:56 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2011/09/08/chipmunk-physics/</guid>
+      <description>I&amp;rsquo;ve been hard at work at my project which I&amp;rsquo;m yet to call by name on here (and will continue to be that way until I have a playable demo.) First, a status update. I&amp;rsquo;ve ditched the idea of doing the entire engine myself and have now migrated to HGE (Haaf&amp;rsquo;s Game Engine) which fairly recently had a port to *nix and OS X by Ryan C. Gordon. I&amp;rsquo;ve worked a bit on the engine itself after the source release and my changes were pulled in upstream (mostly it adding a CMake build system, but I also did some things like get the tutorial/examples working, silenced warnings, etc.</description>
+    </item>
+    
+    <item>
+      <title>WordPress Backup Script</title>
+      <link>https://losinggeneration.com/2011/07/14/wordpress-backup-script/</link>
+      <pubDate>Thu, 14 Jul 2011 16:16:34 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2011/07/14/wordpress-backup-script/</guid>
+      <description>After my server was down for a couple days (because I was physically moving the machine to another location) I decided to check if there were any updates. Sure enough, there just happened to be an update for 3.2 and it had the usual warning of &amp;ldquo;be sure to backup your database and files&amp;rdquo; which I either ignore or partially ignore. I do typically do a mysqldump before running any of the updates, but I almost never backup the WordPress directory itself.</description>
+    </item>
+    
+    <item>
+      <title>Spam Detection</title>
+      <link>https://losinggeneration.com/2011/07/08/spam-detection/</link>
+      <pubDate>Fri, 08 Jul 2011 16:18:03 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2011/07/08/spam-detection/</guid>
+      <description>I just thought I&amp;rsquo;d make a quick post about two WordPress plugins which seem to work great for spam detection. The first one is Akismet. Alone it seems to catch most spam here. The problem with this plugin alone is, there may still be false positives. This requires more time on my part to skim over my spam to see if there was any legit comments.
+This brings me to the second plugin, Conditional CAPTCHA.</description>
+    </item>
+    
+    <item>
+      <title>CrabEmu for the Didj</title>
+      <link>https://losinggeneration.com/2011/04/28/crabemu-for-the-didj/</link>
+      <pubDate>Thu, 28 Apr 2011 18:33:49 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2011/04/28/crabemu-for-the-didj/</guid>
+      <description>Well, I&amp;rsquo;m releasing what I&amp;rsquo;ll call version 0.1.0 of CrabEmu for the Didj. It includes a custom built rootfs with no questionable code from the LF distribution (for instance, their scripts for checking various things like USB connections.) This initial release requires a DJHI or other third party card that is SD capable. The SD must also have two partitions: Fat32 &amp;amp; Ext 3. Because of the later, you&amp;rsquo;ll also need an OS that&amp;rsquo;s able to read/write to Ext 3 file systems.</description>
+    </item>
+    
+    <item>
+      <title>Sega Master System Coding</title>
+      <link>https://losinggeneration.com/2011/03/04/sega-master-system-coding/</link>
+      <pubDate>Sat, 05 Mar 2011 00:00:40 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2011/03/04/sega-master-system-coding/</guid>
+      <description>Besides updating my server, I&amp;rsquo;ve been quite busy with some Sega Master System (SMS from here-on-out) coding. I&amp;rsquo;ve decided to switch to SMS for now instead of Game Gear for now. It seems I&amp;rsquo;ve kind of went my own way with this project. From the looks of it, most people either use WLA-DX or, to a much lesser extent, z88dk. I don&amp;rsquo;t see too much about any other assemblers/compilers. Granted, I haven&amp;rsquo;t looked terribly hard for the topics though.</description>
+    </item>
+    
+    <item>
+      <title>Server updated</title>
+      <link>https://losinggeneration.com/2011/03/03/server-updated/</link>
+      <pubDate>Thu, 03 Mar 2011 21:46:52 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2011/03/03/server-updated/</guid>
+      <description>I&amp;rsquo;ve now updated my home server to Debian 6.0. In the process I&amp;rsquo;ve decided to also switch to lighttpd from Apache HTTP. I do miss the fact that mod_chroot in Apache was able to basically take care of the dependencies for me and build the chroot daemon startup, but it wasn&amp;rsquo;t too much work to get everything up and going in a chroot. It ended up one of my plugins (Last.</description>
+    </item>
+    
+    <item>
+      <title>Adventures in Lua Binding</title>
+      <link>https://losinggeneration.com/2010/12/02/adventures-in-lua-binding/</link>
+      <pubDate>Thu, 02 Dec 2010 23:00:12 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2010/12/02/adventures-in-lua-binding/</guid>
+      <description>I&amp;rsquo;ve mentioned before (actually, probably only in that last post) about a game I&amp;rsquo;ve been working on on and off for the last few years (I think I said three, but it&amp;rsquo;s actually been five, with it being inactive for most of that time.) I had decided long ago that it would probably be scripted with Lua and I&amp;rsquo;m just now finally getting around to experimenting with that. I&amp;rsquo;ve ultimately decided it&amp;rsquo;s going to either be using OOLua or Luabind.</description>
+    </item>
+    
+    <item>
+      <title>Adventures in Lua Embedding</title>
+      <link>https://losinggeneration.com/2010/11/10/adventures-in-lua-embedding/</link>
+      <pubDate>Thu, 11 Nov 2010 04:36:35 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2010/11/10/adventures-in-lua-embedding/</guid>
+      <description>In a personal project which I&amp;rsquo;ve been working on and off on for the last three or so years (without really getting much done to be totally honest), I&amp;rsquo;ve decided to use Lua for the configuration file. The project itself is in C++, so this lead me to use the Lua C API to embed it in the project. Prior to deciding on Lua, I was using a manually parsed key/value format.</description>
+    </item>
+    
+    <item>
+      <title>New Temporary Server</title>
+      <link>https://losinggeneration.com/2010/07/09/new-temporary-server/</link>
+      <pubDate>Fri, 09 Jul 2010 22:45:53 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2010/07/09/new-temporary-server/</guid>
+      <description>I&amp;rsquo;m going to be without internet at home for awhile it looks like. The server this blog was run from was just a computer I had in my apartment. Since that&amp;rsquo;s going to be down sometime in the near future I decided it was time to figure out something to do in the meantime. The solution was to move this blog to a server I know will stay up while I&amp;rsquo;m moving.</description>
+    </item>
+    
+    <item>
+      <title>MSP430 Launchpad on Linux</title>
+      <link>https://losinggeneration.com/2010/07/02/msp430-launchpad-on-linux/</link>
+      <pubDate>Fri, 02 Jul 2010 09:33:17 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2010/07/02/msp430-launchpad-on-linux/</guid>
+      <description>I got an MSP430 Launchpad in the mail a couple of days ago. So I&amp;rsquo;ve been playing with that the last couple of days. The first day I went through the tools on the wiki and grabbed both IDE&amp;rsquo;s and all the downloadable links I could. This had to be done on Windows since it&amp;rsquo;s the only platform they support. Being a Linux user 99% of the time, I wasn&amp;rsquo;t too pleased with this situation, so I investigated the tools available for Linux, and that&amp;rsquo;s what I did all of yesterday.</description>
+    </item>
+    
+    <item>
+      <title>Game Gear Coding</title>
+      <link>https://losinggeneration.com/2010/06/10/game-gear-coding/</link>
+      <pubDate>Thu, 10 Jun 2010 22:30:50 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2010/06/10/game-gear-coding/</guid>
+      <description>About a year or so back I got a book that the public library was giving away after a book sale on Z80 assembly. I read it, but never really did anything with that knowledge. The thought was always in the back of my head to eventually apply that and play around with some SEGA Master System/Game Gear coding. Unfortunately time has a way of getting away from you.
+The library had a book sale about a month or so back and they had quite a few books.</description>
+    </item>
+    
+    <item>
+      <title>Didj OpenGL ES</title>
+      <link>https://losinggeneration.com/2010/04/29/didj-opengl-es/</link>
+      <pubDate>Thu, 29 Apr 2010 06:13:40 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2010/04/29/didj-opengl-es/</guid>
+      <description>Well, I may be the first to get even basic OpenGL ES primitives to render. I can now make my claim that NeHe lesson02 works for the Didj. Some others have things such as OpenGL version strings, but I believe this is the first actual rendering for Didj homebrew. I&amp;rsquo;ve gone a slightly different route then what others have done. I&amp;rsquo;ve used Brio directly to satisfy some of the OpenGL ES dependencies.</description>
+    </item>
+    
+    <item>
+      <title>Adafruit’s Captua</title>
+      <link>https://losinggeneration.com/2010/04/21/adafruits-captua/</link>
+      <pubDate>Wed, 21 Apr 2010 19:12:25 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2010/04/21/adafruits-captua/</guid>
+      <description>I agree it&amp;rsquo;s a cool and novel idea for a WordPress plugin and I do think you&amp;rsquo;ll have to continue moderating comments because like a few of us have said, it&amp;rsquo;s not a terribly effective CAPTCHA. Not to mention when you say &amp;ldquo;please make a bot that does this, we’d love to see it,&amp;rdquo; you can bet at least one or two people will do just that (if for no other reason because you said you&amp;rsquo;d love to see it, you know, to please you)</description>
+    </item>
+    
+    <item>
+      <title>DJHI</title>
+      <link>https://losinggeneration.com/2010/04/21/djhi/</link>
+      <pubDate>Wed, 21 Apr 2010 06:02:09 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2010/04/21/djhi/</guid>
+      <description>Well, I now have my Didj, a Serial-&amp;gt;USB breakoutboard, and a DJHI v2.0 prototype board. With these I&amp;rsquo;m able to get serial access to the Didj. I&amp;rsquo;ve flashed a new version of the Lightning Boot bootloader which jburks has been hard at work on. It adds a boot menu which is very useful for booting new kernels off of an SD card. jburks also has a preliminary kernel driver to access the SD card from within Linux.</description>
+    </item>
+    
+    <item>
+      <title>Didj</title>
+      <link>https://losinggeneration.com/2010/03/30/didj/</link>
+      <pubDate>Tue, 30 Mar 2010 13:39:10 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2010/03/30/didj/</guid>
+      <description>On Woot yesterday they had these Didj systems. I&amp;rsquo;ve read about it on Hack a Day several times, and I decided to get one and (hopefully) join in with some of the fun. I don&amp;rsquo;t have any real concrete plans for this cool little Linux device. I just want to see what cool things can be done with it (first hand.)</description>
+    </item>
+    
+    <item>
+      <title>Fuzebox</title>
+      <link>https://losinggeneration.com/2010/01/17/fuzebox/</link>
+      <pubDate>Sun, 17 Jan 2010 06:01:21 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2010/01/17/fuzebox/</guid>
+      <description>Yesterday I went ahead and bought a Fuzebox which is an open source 8-bit console that is compatible with the Uzebox. Sadly, it won&amp;rsquo;t be here till next month (most likely.) It&amp;rsquo;s currently back ordered (which I knew while ordering it) but is expected to be back in stock the 29th. So hopefully early next month it&amp;rsquo;ll be here. Of course, it&amp;rsquo;s probably better that it&amp;rsquo;ll be a couple weeks it gets here.</description>
+    </item>
+    
+    <item>
+      <title>Uzebox</title>
+      <link>https://losinggeneration.com/2009/12/29/uzebox/</link>
+      <pubDate>Tue, 29 Dec 2009 15:37:55 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/12/29/uzebox/</guid>
+      <description>I’ve been sort of obsessing over Uzebox lately. Even without purchasing the hardware yet, I’m getting a pretty excited about the possibilities of this small little console. Not just from the programming aspect, but also because Fuzebox looks like a great exercise in assembling/soldering. I’ve also been considering how/where I should cut the case that Fuzebox provides in their “Starter Kit.” For instance, the one of the things I imagine I’ll be using often is the FTDI to upload code to test and play with.</description>
+    </item>
+    
+    <item>
+      <title>Backups</title>
+      <link>https://losinggeneration.com/2009/12/22/backups/</link>
+      <pubDate>Tue, 22 Dec 2009 18:33:50 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/12/22/backups/</guid>
+      <description>I decided it was time to have some form of backups in place. Currently all I&amp;rsquo;m really (automatically) backing up is the WordPress MySQL table since it&amp;rsquo;s the thing to changes on a regular basis. Everything else on this server can be backed up by hand when/if I make changes. It would be faster if/when something does fail (hard drive most likely) to have a recent full backup image to restore from, but really, a good backup of the MySQL table(s), a backup of important configuration files (since they rarely change, I back them up manually after change(s)), and a backup up various directories that&amp;rsquo;d be nice to restore quickly (most of which change infrequently.</description>
+    </item>
+    
+    <item>
+      <title>Pleased with Server’s Performance</title>
+      <link>https://losinggeneration.com/2009/12/22/pleased-with-servers-performance/</link>
+      <pubDate>Tue, 22 Dec 2009 16:15:23 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/12/22/pleased-with-servers-performance/</guid>
+      <description>I have to say, my server is performing beyond my initial expectations! I think I have everything tweaked to not use massive amounts of RAM (*cough*MySQL*cough*.) Here&amp;rsquo;s how the free -m currently looks: $ free -m&amp;lt;br /&amp;gt; total used free shared buffers cached&amp;lt;br /&amp;gt; Mem: 121 90 31 0 2 46&amp;lt;br /&amp;gt; -/+ buffers/cache: 41 80&amp;lt;br /&amp;gt; Swap: 1121 14 1107 As you can see, it&amp;rsquo;s doing pretty good. I&amp;rsquo;ve even upped the maximum simultaneous Apache connections since it seems to be able to handle that a better now (rather then bringing the server to its knees when something like 10-15 people tried to access it at once.</description>
+    </item>
+    
+    <item>
+      <title>CrabEmu</title>
+      <link>https://losinggeneration.com/2009/11/22/crabemu/</link>
+      <pubDate>Sun, 22 Nov 2009 08:43:20 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/11/22/crabemu/</guid>
+      <description>Because of my renewed interest in Z80 and wanting to better learn assembly programming, I ultimately want to do a bit with Game Gear/SMS coding. For this though, an emulator with at least some basic debugging facilities would be useful. After searching Linux Game Gear emulators, none really had what I was looking for.
+On my first attempt, I decided Dega looked interesting, it has source available. The two major turn offs of Dega was the Z80 core which is x86 assembly, which is obviously not portable and it&amp;rsquo;s license which basically says, do what you want to the source, as long as it&amp;rsquo;s not sold.</description>
+    </item>
+    
+    <item>
+      <title>Z80 Assembly</title>
+      <link>https://losinggeneration.com/2009/11/04/z80-assembly/</link>
+      <pubDate>Thu, 05 Nov 2009 05:04:13 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/11/04/z80-assembly/</guid>
+      <description>I&amp;rsquo;m currently learning Z80 assembly (I&amp;rsquo;ve read the book once, but now I&amp;rsquo;m actually working through the exercises.) I have to say, it&amp;rsquo;s fun and a bit challenging at times. The challenge is partly learning the tools. I&amp;rsquo;m currently using z80pack. From that I&amp;rsquo;m using z80asm and z80sim. I&amp;rsquo;ve played a bit with the cpm2&amp;amp;3sim emulator that comes with it, but I currently only really need z80sim. z80asm can be a bit strange at time (or perhaps just more strict then the book.</description>
+    </item>
+    
+    <item>
+      <title>Arch Linux PPC KDELibs</title>
+      <link>https://losinggeneration.com/2009/10/25/arch-linux-ppc-kdelibs/</link>
+      <pubDate>Mon, 26 Oct 2009 03:54:59 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/10/25/arch-linux-ppc-kdelibs/</guid>
+      <description>So, while I&amp;rsquo;ve been trying to get kdelibs 4.3.2 built on Arch Linux PPC. I decided since Arch PPC hasn&amp;rsquo;t had any packages updated in about six months that I should probably do something crazy like grab the official Arch&amp;rsquo;s ABS to build all the packages from. Now, 130 built packages later I&amp;rsquo;m close. Perhaps I should put into perspective what was needed to be updated. The packages ranged from GCC, Binutils, &amp;amp; Glibc, to xulrunner, to hal, to mysql, to pygtk, to gnome-vfs.</description>
+    </item>
+    
+    <item>
+      <title>Why Arch Linux’s Kernel Upgrades Suck</title>
+      <link>https://losinggeneration.com/2009/10/16/why-arch-linuxs-kernel-upgrades-suck/</link>
+      <pubDate>Fri, 16 Oct 2009 19:28:15 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/10/16/why-arch-linuxs-kernel-upgrades-suck/</guid>
+      <description>Update Sept 04, 2011 As this still gets comments occasionally, I should clearly note that this is (and has been for some time) an accepted issue on Arch&amp;rsquo;s bug tracker. There is a basic accepted game plan for how it will be implemented, but is currently marked as low-priority. If you&amp;rsquo;re interested in the details look at: https://bugs.archlinux.org/task/16702#comment80122. Also, please do not comment on that bug report because it&amp;rsquo;s very close to being closed just to keep people from further commenting &amp;ldquo;new &amp;lsquo;solutions&amp;rsquo; that we simply won&amp;rsquo;t implement.</description>
+    </item>
+    
+    <item>
+      <title>Spam and SI Captcha</title>
+      <link>https://losinggeneration.com/2009/10/14/spam-and-si-captcha/</link>
+      <pubDate>Wed, 14 Oct 2009 21:02:24 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/10/14/spam-and-si-captcha/</guid>
+      <description>Well, I&amp;rsquo;m going to try to cut down on the spam (only a few spam bots so far have attempted to post, but I know there will be more.) I&amp;rsquo;m trying out SI Captcha to see if that helps. I just wish it had an option to still email upon failed comment posts (or something similar till I&amp;rsquo;m sure it&amp;rsquo;s working.) Oh well, I&amp;rsquo;ll still be moderating comments, but I hope this will help cut down on the amount of spam comments I have to moderate.</description>
+    </item>
+    
+    <item>
+      <title>Halloween Theme</title>
+      <link>https://losinggeneration.com/2009/10/06/halloween-theme/</link>
+      <pubDate>Wed, 07 Oct 2009 00:27:24 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/10/06/halloween-theme/</guid>
+      <description>First off, I&amp;rsquo;m a big fan of Halloween to begin with, and I was kind of on the ropes if I should do a Halloween theme for this month or not. Well as you can tell, my girlfriend talked me into using this theme. Honestly, I do quite enjoy how it does quotes. When the month is over I think I know what theme I&amp;rsquo;ll be using for the foreseeable future.</description>
+    </item>
+    
+    <item>
+      <title>Server hammered</title>
+      <link>https://losinggeneration.com/2009/10/03/server-hammered/</link>
+      <pubDate>Sat, 03 Oct 2009 08:45:30 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/10/03/server-hammered/</guid>
+      <description>So, I recently set a link to my discussion of Linux, GNU, and OS&amp;rsquo;s to someone on Identi.ca. I made a point not to add groups to !linux and !gnu because I knew my server would probably get hit hard (if you&amp;rsquo;ve looked at my server&amp;rsquo;s specs, you&amp;rsquo;ll know it doesn&amp;rsquo;t take much to be considered hit hard.) Well, they read it, after which they posted a link to my blog with the groups !</description>
+    </item>
+    
+    <item>
+      <title>Linux is the OS</title>
+      <link>https://losinggeneration.com/2009/10/03/linux-is-the-os/</link>
+      <pubDate>Sat, 03 Oct 2009 08:22:21 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/10/03/linux-is-the-os/</guid>
+      <description>So, the comments got a bit long in the last post. I think I&amp;rsquo;ll clean it up, and get the interesting tidbits out of there and present them here in a clear fashion. Also, while I appreciate ﻿Michael B. Trausch&amp;rsquo;s discussion on the topic, and provided some interesting discussion points (which will be discussed further here.) Also, reading through my arguments that I put in the comments of the last post really didn&amp;rsquo;t flow together.</description>
+    </item>
+    
+    <item>
+      <title>It’s still Linux, not GNU/Linux.</title>
+      <link>https://losinggeneration.com/2009/09/30/its-still-linux-not-gnulinux/</link>
+      <pubDate>Thu, 01 Oct 2009 01:31:21 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/09/30/its-still-linux-not-gnulinux/</guid>
+      <description>I&amp;rsquo;m in the process of rewriting this with some information and rebuttals to some of the comments. Stay tuned for that later tonight. Sorry to anyone on identi.ca in !ubuntu !linux or !gnu that may be writting a comment now. I&amp;rsquo;m locking comments so the newer one will get the traffic (since it&amp;rsquo;s going to be much better written than this one which I spent all of 10 minutes on.) &amp;lt;/end edit&amp;gt; I don&amp;rsquo;t understand why there&amp;rsquo;s so much push to have the Linux OS, called GNU/Linux.</description>
+    </item>
+    
+    <item>
+      <title>Spam and Server stuff</title>
+      <link>https://losinggeneration.com/2009/09/28/spam-and-server-stuff/</link>
+      <pubDate>Mon, 28 Sep 2009 23:36:41 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/09/28/spam-and-server-stuff/</guid>
+      <description>So, I&amp;rsquo;ve only been up for about three weeks and I&amp;rsquo;ve already got my first spam comment (which is why I moderate all comments ATM.) Also, it was kind of strange, I went to go here at work today and I wasn&amp;rsquo;t able to connect. So, I logged into my router. I thought that my iptables were screwy again, so I started trying to fix them by hand. Deleted a rule and BAM no more connectivity to my router (at all.</description>
+    </item>
+    
+    <item>
+      <title>Taken care of</title>
+      <link>https://losinggeneration.com/2009/09/15/taken-care-of/</link>
+      <pubDate>Wed, 16 Sep 2009 02:39:36 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/09/15/taken-care-of/</guid>
+      <description>Well, I think I have all the previous issues taken care of. Caching may or may not work, but it&amp;rsquo;s supposed to be happening now. So mail and DNS lookups work now (DNS only being useful from my side.) So, all-in-all I hope this beast can just run for several months and I&amp;rsquo;ll see what (if anything) needs to be done in that time. So now that my server should be stable, I&amp;rsquo;m free to work on other endevors!</description>
+    </item>
+    
+    <item>
+      <title>Few more things that I should fix yet</title>
+      <link>https://losinggeneration.com/2009/09/15/few-more-things-that-i-should-fix-yet/</link>
+      <pubDate>Tue, 15 Sep 2009 14:56:30 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/09/15/few-more-things-that-i-should-fix-yet/</guid>
+      <description>Well now that the system is live, I think there&amp;rsquo;s going to be a few things I&amp;rsquo;m going to need to fix. Most all of them are from using mod_chroot. Most aren&amp;rsquo;t anything critical, but things that should be addressed (sooner rather than later.) For instance, I think DNS lookups are failing from inside WordPress. I breifly read in the mod_chroot caveates that this may happen, and I think this is happening now.</description>
+    </item>
+    
+    <item>
+      <title>We are live!</title>
+      <link>https://losinggeneration.com/2009/09/15/we-are-live/</link>
+      <pubDate>Tue, 15 Sep 2009 05:00:44 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/09/15/we-are-live/</guid>
+      <description>Well, technically we&amp;rsquo;ve been live for about 4 hours, but I didn&amp;rsquo;t realize at the time that using DNAT with iptables actually caused the NATed server to become unavailable from the LAN. I was actually trying to get everything setup in FwBuilder, but I may have hit a limitation since I could not find a way to do &amp;ldquo;-A POSTROUTING -s 192.168.0.0/16 -j SNAT —to-source 206.127.184.118&amp;rdquo; I must say this was an interesting learning experience.</description>
+    </item>
+    
+    <item>
+      <title>Pretty much ready</title>
+      <link>https://losinggeneration.com/2009/09/13/pretty-much-ready/</link>
+      <pubDate>Sun, 13 Sep 2009 21:19:42 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/09/13/pretty-much-ready/</guid>
+      <description>Well, my server is pretty much ready I now. Apache is chrooted and seems to be working well. I also did a self-signed cert in hopes that&amp;rsquo;ll make my remote logins even more secure to WordPress. SSH access is limited to keyed logins. Ntpd is running in hopes of keeping the system&amp;rsquo;s clock sane. I&amp;rsquo;ve moved all my Git repos here and even have my CGit vhost running/working. Git daemon is also running.</description>
+    </item>
+    
+    <item>
+      <title>Zoneinfo</title>
+      <link>https://losinggeneration.com/2009/09/13/zoneinfo/</link>
+      <pubDate>Sun, 13 Sep 2009 09:05:56 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/09/13/zoneinfo/</guid>
+      <description>Ok, it looks like I just needed to add /usr/share/zoneinfo/America/Chicago to my chroot, and I think that solved that issue. Simple enough really.</description>
+    </item>
+    
+    <item>
+      <title>Chrooted Apache</title>
+      <link>https://losinggeneration.com/2009/09/13/chrooted-apache/</link>
+      <pubDate>Sun, 13 Sep 2009 03:37:11 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/09/13/chrooted-apache/</guid>
+      <description>﻿
+As I prepare to have my server public, I&amp;rsquo;ve chrooted my server&amp;rsquo;s Apache with mod_chroot. This allows me to have the advantages of a chroot environment without as many of the draw backs. There is still some strangeness to work out. For instance &amp;ldquo;Warning: timezone_open() [function.timezone-open]: Unknown or bad timezone (America/Chicago) in /wp/wp-includes/functions.phpon line 3160&amp;rdquo;
+I&amp;rsquo;ll get this figured out, but honestly, it&amp;rsquo;s not a huge deal. I may have to have Apache load the zoneinfo file, or perhaps not… Really, the only change I had to make to WordPress was to have it connect to the MySQL database on 127.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://losinggeneration.com/about/</link>
+      <pubDate>Sat, 12 Sep 2009 00:06:29 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/about/</guid>
+      <description>I’m currently a developer in Oregon writing code in Go &amp;amp; some Javascript. My passion tends to be in languages like Go, Lua, and Forth to name a few. At some point I’d like to make a game or two. Sega Master System &amp;amp; Dreamcast homebrew are some things that I wish I had more time to work on.</description>
+    </item>
+    
+    <item>
+      <title>First post on my new server</title>
+      <link>https://losinggeneration.com/2009/09/11/first-post-on-my-new-server/</link>
+      <pubDate>Fri, 11 Sep 2009 22:37:08 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/09/11/first-post-on-my-new-server/</guid>
+      <description>Well, I have my new server up and running (though it&amp;rsquo;ll probably be awhile before anyone will be able to see this since I&amp;rsquo;m not done securing it making it a dmz so people can access it.) I&amp;rsquo;m not sure why I decided to setup a blog, but I did, and I&amp;rsquo;m going to see how it goes.</description>
+    </item>
+    
+  </channel>
+</rss>

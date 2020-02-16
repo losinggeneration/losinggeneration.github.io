@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Backups on Losinggeneration Coding Blog</title>
+    <link>https://losinggeneration.com/tags/backups/</link>
+    <description>Recent content in Backups on Losinggeneration Coding Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>©2009-2020 Harley Laue</copyright>
+    <lastBuildDate>Tue, 22 Dec 2009 18:33:50 +0000</lastBuildDate>
+    
+	<atom:link href="https://losinggeneration.com/tags/backups/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Backups</title>
+      <link>https://losinggeneration.com/2009/12/22/backups/</link>
+      <pubDate>Tue, 22 Dec 2009 18:33:50 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/12/22/backups/</guid>
+      <description>I decided it was time to have some form of backups in place. Currently all I&amp;rsquo;m really (automatically) backing up is the WordPress MySQL table since it&amp;rsquo;s the thing to changes on a regular basis. Everything else on this server can be backed up by hand when/if I make changes. It would be faster if/when something does fail (hard drive most likely) to have a recent full backup image to restore from, but really, a good backup of the MySQL table(s), a backup of important configuration files (since they rarely change, I back them up manually after change(s)), and a backup up various directories that&amp;rsquo;d be nice to restore quickly (most of which change infrequently.</description>
+    </item>
+    
+  </channel>
+</rss>

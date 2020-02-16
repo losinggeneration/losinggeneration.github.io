@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SMS on Losinggeneration Coding Blog</title>
+    <link>https://losinggeneration.com/tags/sms/</link>
+    <description>Recent content in SMS on Losinggeneration Coding Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>©2009-2020 Harley Laue</copyright>
+    <lastBuildDate>Sat, 05 Mar 2011 00:00:40 +0000</lastBuildDate>
+    
+	<atom:link href="https://losinggeneration.com/tags/sms/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Sega Master System Coding</title>
+      <link>https://losinggeneration.com/2011/03/04/sega-master-system-coding/</link>
+      <pubDate>Sat, 05 Mar 2011 00:00:40 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2011/03/04/sega-master-system-coding/</guid>
+      <description>Besides updating my server, I&amp;rsquo;ve been quite busy with some Sega Master System (SMS from here-on-out) coding. I&amp;rsquo;ve decided to switch to SMS for now instead of Game Gear for now. It seems I&amp;rsquo;ve kind of went my own way with this project. From the looks of it, most people either use WLA-DX or, to a much lesser extent, z88dk. I don&amp;rsquo;t see too much about any other assemblers/compilers. Granted, I haven&amp;rsquo;t looked terribly hard for the topics though.</description>
+    </item>
+    
+  </channel>
+</rss>

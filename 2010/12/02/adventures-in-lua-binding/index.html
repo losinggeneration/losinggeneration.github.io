@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Adventures in Lua Binding :: Losinggeneration Coding Blog —  Imperfect software for an imperfect world.</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="I&amp;rsquo;ve mentioned before (actually, probably only in that last post) about a game I&amp;rsquo;ve been working on on and off for the last few years (I think I said three, but it&amp;rsquo;s actually been five, with it being inactive for most of that time.) I had decided long ago that it would probably be scripted with Lua and I&amp;rsquo;m just now finally getting around to experimenting with that. I&amp;rsquo;ve ultimately decided it&amp;rsquo;s going to either be using OOLua or Luabind."/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://losinggeneration.com/2010/12/02/adventures-in-lua-binding/" />
+
+
+
+
+<link rel="stylesheet" href="https://losinggeneration.com/assets/style.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://losinggeneration.com/img/apple-touch-icon-144-precomposed.png">
+
+<link rel="shortcut icon" href="https://losinggeneration.com/img/favicon/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Adventures in Lua Binding :: Losinggeneration Coding Blog —  Imperfect software for an imperfect world." />
+<meta name="twitter:description" content="I&amp;rsquo;ve mentioned before (actually, probably only in that last post) about a game I&amp;rsquo;ve been working on on and off for the last few years (I think I said three, but it&amp;rsquo;s actually been five, with it being inactive for most of that time.) I had decided long ago that it would probably be scripted with Lua and I&amp;rsquo;m just now finally getting around to experimenting with that. I&amp;rsquo;ve ultimately decided it&amp;rsquo;s going to either be using OOLua or Luabind." />
+<meta name="twitter:site" content="https://losinggeneration.com/" />
+<meta name="twitter:creator" content="losinggeneration" />
+<meta name="twitter:image" content="">
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Adventures in Lua Binding :: Losinggeneration Coding Blog —  Imperfect software for an imperfect world.">
+<meta property="og:description" content="I&amp;rsquo;ve mentioned before (actually, probably only in that last post) about a game I&amp;rsquo;ve been working on on and off for the last few years (I think I said three, but it&amp;rsquo;s actually been five, with it being inactive for most of that time.) I had decided long ago that it would probably be scripted with Lua and I&amp;rsquo;m just now finally getting around to experimenting with that. I&amp;rsquo;ve ultimately decided it&amp;rsquo;s going to either be using OOLua or Luabind." />
+<meta property="og:url" content="https://losinggeneration.com/2010/12/02/adventures-in-lua-binding/" />
+<meta property="og:site_name" content="Adventures in Lua Binding" />
+<meta property="og:image" content="">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+<meta property="article:section" content="C&#43;&#43;" /><meta property="article:section" content="Lua" /><meta property="article:section" content="Programming" />
+<meta property="article:published_time" content="2010-12-02 23:00:12 &#43;0000 &#43;0000" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="">
+
+
+<div class="container full headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    ~
+  </div>
+</a>
+
+    </div>
+    <div class="menu-trigger">menu</div>
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://losinggeneration.com/2010/12/02/adventures-in-lua-binding/">Adventures in Lua Binding</a></h1>
+  <div class="post-meta">
+      
+    <span class="post-date">
+      2010-12-02
+    </span>
+    
+    
+    <span class="post-author">::
+      losinggeneration
+    </span>
+    
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="https://losinggeneration.com/tags/binding/">Binding</a>&nbsp;
+    
+    #<a href="https://losinggeneration.com/tags/c/">C</a>&nbsp;
+    
+    #<a href="https://losinggeneration.com/tags/lua/">Lua</a>&nbsp;
+    
+    #<a href="https://losinggeneration.com/tags/luabind/">Luabind</a>&nbsp;
+    
+    #<a href="https://losinggeneration.com/tags/oolua/">OOLua</a>&nbsp;
+    
+  </span>
+  
+
+  
+
+  <div class="post-content"><div>
+        <p>I&rsquo;ve mentioned before (actually, probably only in that last post) about a game I&rsquo;ve been working on on and off for the last few years (I think I said three, but it&rsquo;s actually been five, with it being inactive for most of that time.) I had decided long ago that it would probably be scripted with Lua and I&rsquo;m just now finally getting around to experimenting with that. I&rsquo;ve ultimately decided it&rsquo;s going to either be using OOLua or Luabind. I&rsquo;ve given both a fairly quick look over and attempted to use each to bind a specific class in my project.</p>
+<p>For the sake of conversation I&rsquo;m going to use a very basic C++ class that&rsquo;s based on my project&rsquo;s Configuration class. I&rsquo;ll go through and show how both libraries bind the class to Lua.</p>
+<p>First, here&rsquo;s the C++ class:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Configuration</span> {
+<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+	<span style="color:#66d9ef">enum</span> <span style="color:#a6e22e">ConfigurationValue</span> {
+		<span style="color:#75715e">// String values
+</span><span style="color:#75715e"></span>		DATADIR, MODE,
+		<span style="color:#75715e">// Int Values
+</span><span style="color:#75715e"></span>		RESOLUTIONX, RESOLUTIONY, DEPTH, WINDOWED, SOUND, MUSIC,
+		ENUMCONFLENGTH
+	};
+	Configuration(std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>string directory <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span>) {
+		<span style="color:#75715e">// if we don&#39;t have a path, save the config in the same dir
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span>(directory <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span>) {
+			m_Cfg <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">config.cfg</span><span style="color:#e6db74">&#34;</span>;
+		}
+		<span style="color:#66d9ef">else</span> {
+			m_Cfg <span style="color:#f92672">=</span> directory <span style="color:#f92672">+</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">/config.cfg</span><span style="color:#e6db74">&#34;</span>;
+		}
+		<span style="color:#75715e">// Then we&#39;d do things like loading the configuration/creating a new one
+</span><span style="color:#75715e"></span>	}
+	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">set</span>(ConfigurationValue cfg, std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>string value) {
+		m_ConfStr[cfg] <span style="color:#f92672">=</span> value;
+	}
+	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">set</span>(ConfigurationValue cfg, <span style="color:#66d9ef">int</span> value) {
+		m_ConfInt[cfg] <span style="color:#f92672">=</span> value;
+	}
+	std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>string getStr(ConfigurationValue cfg) <span style="color:#66d9ef">const</span> {
+		<span style="color:#66d9ef">return</span> m_ConfStr[cfg];
+	}
+	<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getInt</span>(ConfigurationValue cfg) <span style="color:#66d9ef">const</span> {
+		<span style="color:#66d9ef">return</span> m_ConfInt[cfg];
+	}
+	<span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">save</span>() {
+		std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Saving (but not really) Configuration</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>endl;
+		std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">datadir = </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> getStr(DATADIR) <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>endl
+			<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">mode = </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> getStr(MODE) <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>endl
+			<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">resolution_x = </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> getInt(RESOLUTIONX) <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>endl
+			<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">resolution_y = </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> getInt(RESOLUTIONY) <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>endl
+			<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">depth = </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> getInt(DEPTH) <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>endl
+			<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">windowed = </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> getInt(WINDOWED) <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>endl
+			<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">sound = </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> getInt(SOUND) <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>endl
+			<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">music = </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> getInt(MUSIC) <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>endl;
+		<span style="color:#66d9ef">return</span> true;
+	}
+
+	<span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">load</span>() {
+		set(DATADIR, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">/usr/local/game/some_game_dir</span><span style="color:#e6db74">&#34;</span>);
+		set(MODE, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">opengl</span><span style="color:#e6db74">&#34;</span>);
+		set(RESOLUTIONX, <span style="color:#ae81ff">800</span>);
+		set(RESOLUTIONY, <span style="color:#ae81ff">600</span>);
+		set(DEPTH, <span style="color:#ae81ff">32</span>);
+		set(WINDOWED, <span style="color:#ae81ff">1</span>);
+		set(SOUND, <span style="color:#ae81ff">1</span>);
+		set(MUSIC, <span style="color:#ae81ff">1</span>);
+		<span style="color:#66d9ef">return</span> true;
+	}
+
+<span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
+	std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>string m_Cfg;
+	std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>string m_ConfStr[ENUMCONFLENGTH];
+	<span style="color:#66d9ef">int</span> m_ConfInt[ENUMCONFLENGTH];
+};
+</code></pre></div><p>This code should look quite trivial to anyone with a background in C++, but not so trivial that it didn&rsquo;t introduce some challenges in binding them with each library (explained later.) All this class is doing is mimicing what a real configuration class might do, and that is, store and load configuration values. In this case, the data isn&rsquo;t saved to any kind of persistance. For the sake of an example, that would only complitate things.</p>
+<p>Here&rsquo;s the basic rundown of the code:</p>
+<ul>
+<li>A constructor with an argument (in this case, one that doesn&rsquo;t do anything useful.)</li>
+<li>An enumeration which is used to represent the values available in the configuration.</li>
+<li>Getters and setters for ints and strings.</li>
+<li>A Save function which prints out the configuration.</li>
+<li>A load function which sets some defaults to the configuration values.</li>
+<li>A few private variables to save the fake configuration path, and two arrays to store the configuration in memory.</li>
+</ul>
+<p>Now, we can start to get an idea of what the binding libraries are going to need to handle.</p>
+<ol>
+<li>Constructors &amp; overloaded constructors</li>
+<li>Enumerations (or at least being able to let the decay to ints)</li>
+<li>Member functions</li>
+<li>Overloaded member functions with differing parameters</li>
+</ol>
+<p>So, let&rsquo;s start with Luabind.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> luabind;
+<span style="color:#75715e">// assume s in defined as a lua_State*
+</span><span style="color:#75715e"></span>open(s);
+module(s)
+[
+	class_<span style="color:#f92672">&lt;</span>Configuration<span style="color:#f92672">&gt;</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Configuration</span><span style="color:#e6db74">&#34;</span>)
+		.def(constructor<span style="color:#f92672">&lt;</span>std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>string<span style="color:#f92672">&gt;</span>())
+		.def(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">getStr</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>Configuration<span style="color:#f92672">:</span><span style="color:#f92672">:</span>getStr)
+		.def(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">getInt</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>Configuration<span style="color:#f92672">:</span><span style="color:#f92672">:</span>getInt)
+		.def(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">setInt</span><span style="color:#e6db74">&#34;</span>, (<span style="color:#66d9ef">void</span>(Configuration<span style="color:#f92672">:</span><span style="color:#f92672">:</span><span style="color:#f92672">*</span>)(Configuration<span style="color:#f92672">:</span><span style="color:#f92672">:</span>ConfigurationValue, <span style="color:#66d9ef">int</span>))<span style="color:#f92672">&amp;</span>Configuration<span style="color:#f92672">:</span><span style="color:#f92672">:</span>set)
+		.def(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">setStr</span><span style="color:#e6db74">&#34;</span>, (<span style="color:#66d9ef">void</span>(Configuration<span style="color:#f92672">:</span><span style="color:#f92672">:</span><span style="color:#f92672">*</span>)(Configuration<span style="color:#f92672">:</span><span style="color:#f92672">:</span>ConfigurationValue, std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>string))<span style="color:#f92672">&amp;</span>Configuration<span style="color:#f92672">:</span><span style="color:#f92672">:</span>set)
+		.def(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">save</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>Configuration<span style="color:#f92672">:</span><span style="color:#f92672">:</span>save)
+		.def(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">load</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>Configuration<span style="color:#f92672">:</span><span style="color:#f92672">:</span>load)
+		.enum_(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">ConfigurationValue</span><span style="color:#e6db74">&#34;</span>)
+		[
+			value(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">DATADIR</span><span style="color:#e6db74">&#34;</span>, Configuration<span style="color:#f92672">:</span><span style="color:#f92672">:</span>DATADIR),
+			value(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">MODE</span><span style="color:#e6db74">&#34;</span>, Configuration<span style="color:#f92672">:</span><span style="color:#f92672">:</span>MODE),
+			value(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">RESOLUTIONX</span><span style="color:#e6db74">&#34;</span>, Configuration<span style="color:#f92672">:</span><span style="color:#f92672">:</span>RESOLUTIONX),
+			value(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">RESOLUTIONY</span><span style="color:#e6db74">&#34;</span>, Configuration<span style="color:#f92672">:</span><span style="color:#f92672">:</span>RESOLUTIONY),
+			value(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">DEPTH</span><span style="color:#e6db74">&#34;</span>, Configuration<span style="color:#f92672">:</span><span style="color:#f92672">:</span>DEPTH),
+			value(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">WINDOWED</span><span style="color:#e6db74">&#34;</span>, Configuration<span style="color:#f92672">:</span><span style="color:#f92672">:</span>WINDOWED),
+			value(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">SOUND</span><span style="color:#e6db74">&#34;</span>, Configuration<span style="color:#f92672">:</span><span style="color:#f92672">:</span>SOUND),
+			value(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">MUSIC</span><span style="color:#e6db74">&#34;</span>, Configuration<span style="color:#f92672">:</span><span style="color:#f92672">:</span>MUSIC)
+		]
+];
+</code></pre></div><p>So lets go through the above requirements:</p>
+<ol>
+<li>Supported. Luabind looks to provide good support for constructors and multiple constructors.</li>
+<li>Supported. Again, Luabind has a built-in method for dealing with enumerations.</li>
+<li>Supported. This one should obviously be supported by any C++ Lua binding library worth a damn.</li>
+<li>Supported. As you can see, Luabind allows/requires you to tell it what the function will be called in Lua, thus allowing overloaded member functions without any issue.</li>
+</ol>
+<p>Other thoughts: Luabind seems to have pretty good support for binding C++ classes, functions, and enums to Lua. The syntax for the binding seems quite clean and well thought out.</p>
+<p>So now lets do a binding to the same class in OOLua</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// I use the Varadic macros, otherwise, I&#39;d have to give the length of each
+</span><span style="color:#75715e"></span><span style="color:#75715e">// function/constructor definition (and also to the EXPORT* macros)
+</span><span style="color:#75715e"></span>OOLUA_CLASS_NO_BASES(Configuration)
+	<span style="color:#75715e">// most likely not really needed in our example here, but it forces the use
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">// of Configuration(std::string)
+</span><span style="color:#75715e"></span>	OOLUA_TYPEDEFS No_default_constructor OOLUA_END_TYPES
+	OOLUA_CONSTRUCTORS_BEGIN
+		OOLUA_CONSTRUCTOR(std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>string)
+	OOLUA_CONSTRUCTORS_END
+	OOLUA_MEM_FUNC(<span style="color:#66d9ef">bool</span>, load)
+	OOLUA_MEM_FUNC(<span style="color:#66d9ef">bool</span>, save)
+	OOLUA_MEM_FUNC_CONST(std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>string, getStr, Configuration<span style="color:#f92672">:</span><span style="color:#f92672">:</span>ConfigurationValue)
+	OOLUA_MEM_FUNC_CONST(<span style="color:#66d9ef">int</span>, getInt, Configuration<span style="color:#f92672">:</span><span style="color:#f92672">:</span>ConfigurationValue)
+ 	OOLUA_MEM_FUNC_RENAME(setInt, <span style="color:#66d9ef">void</span>, set, Configuration<span style="color:#f92672">:</span><span style="color:#f92672">:</span>ConfigurationValue, <span style="color:#66d9ef">int</span>)
+ 	OOLUA_MEM_FUNC_RENAME(setStr, <span style="color:#66d9ef">void</span>, set, Configuration<span style="color:#f92672">:</span><span style="color:#f92672">:</span>ConfigurationValue, std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>string)
+OOLUA_CLASS_END
+EXPORT_OOLUA_FUNCTIONS_CONST(Configuration, getStr, getInt)
+EXPORT_OOLUA_FUNCTIONS_NON_CONST(Configuration, load, save, setInt, setStr)
+OOLUA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Script s;
+s.register_class<span style="color:#f92672">&lt;</span>Configuration<span style="color:#f92672">&gt;</span>();
+s.register_class_static<span style="color:#f92672">&lt;</span>Configuration<span style="color:#f92672">&gt;</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">DATADIR</span><span style="color:#e6db74">&#34;</span>, Configuration<span style="color:#f92672">:</span><span style="color:#f92672">:</span>DATADIR);
+s.register_class_static<span style="color:#f92672">&lt;</span>Configuration<span style="color:#f92672">&gt;</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">MODE</span><span style="color:#e6db74">&#34;</span>, Configuration<span style="color:#f92672">:</span><span style="color:#f92672">:</span>MODE);
+s.register_class_static<span style="color:#f92672">&lt;</span>Configuration<span style="color:#f92672">&gt;</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">RESOLUTIONX</span><span style="color:#e6db74">&#34;</span>, Configuration<span style="color:#f92672">:</span><span style="color:#f92672">:</span>RESOLUTIONX);
+s.register_class_static<span style="color:#f92672">&lt;</span>Configuration<span style="color:#f92672">&gt;</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">RESOLUTIONY</span><span style="color:#e6db74">&#34;</span>, Configuration<span style="color:#f92672">:</span><span style="color:#f92672">:</span>RESOLUTIONY);
+s.register_class_static<span style="color:#f92672">&lt;</span>Configuration<span style="color:#f92672">&gt;</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">DEPTH</span><span style="color:#e6db74">&#34;</span>, Configuration<span style="color:#f92672">:</span><span style="color:#f92672">:</span>DEPTH);
+s.register_class_static<span style="color:#f92672">&lt;</span>Configuration<span style="color:#f92672">&gt;</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">WINDOWED</span><span style="color:#e6db74">&#34;</span>, Configuration<span style="color:#f92672">:</span><span style="color:#f92672">:</span>WINDOWED);
+s.register_class_static<span style="color:#f92672">&lt;</span>Configuration<span style="color:#f92672">&gt;</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">SOUND</span><span style="color:#e6db74">&#34;</span>, Configuration<span style="color:#f92672">:</span><span style="color:#f92672">:</span>SOUND);
+s.register_class_static<span style="color:#f92672">&lt;</span>Configuration<span style="color:#f92672">&gt;</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">MUSIC</span><span style="color:#e6db74">&#34;</span>, Configuration<span style="color:#f92672">:</span><span style="color:#f92672">:</span>MUSIC);
+</code></pre></div><p>Again, we&rsquo;ll go through my above requirements:</p>
+<ol>
+<li>Supported. OOLua too has support for multiple constructors.</li>
+<li>Supported. At the time I started this post, it was actually broken. After asking about it on the mailing list, a bug report was filed for it, and it was fixed shortly after.</li>
+<li>Supported. Again, this should obviously be provided by any C++ to Lua library.</li>
+<li>Supported. OOLua uses a different macro than what&rsquo;s used to define normal functions.</li>
+</ol>
+<p>Other thoughts: What I really like about OOLua is how fast the developer&rsquo;s response time is for fixing bugs/issues. It&rsquo;s also nice that it strives to be as fast as possible. I also really like the Script class. Script-&gt;run_file(string) just feels like a natural way to run a Lua script. OOLua works, and works well. That said, I&rsquo;m not personally very fond of the syntax for declaring/exporting classes. Mostly, I&rsquo;d like to, just as an example, not have to type OOLUA_ as a prefix for every macro.</p>
+<p>For my pretty basic example both OOLua and Luabind support all four requirements. So I suppose you&rsquo;re now asking yourself, &ldquo;which is better?&rdquo; Ultimately, I think Luabind supports using more of C++'s features than OOLua. <!-- raw HTML omitted -->For instance, I don&rsquo;t believe OOLua supports overloaded operators, but Luabind does.<!-- raw HTML omitted --> Depending on the classes you&rsquo;re binding, OOLua may not be able to fully handle it, and you may be better off with Luabind. In most cases, Luabind will probably work for you. OOLua should not be overlooked though. Even though it may not support quite as many things as Luabind does, what it does support, it supports well and is fast. I also believe there&rsquo;s a lot of potential for OOLua. So go try them out for yourself.</p>
+<p>I&rsquo;ve included the full source to the above test bindings with a quick run of each. The code is licensed under the MIT liscense (just like Lua, Luabind, and OOLua.) It&rsquo;s also only been tested on Linux. The makefile should work for any POSIX environment, but the source is should be easy enough to compile anywhere. Lua, Luabind, and OOLua all need to have their headers &amp; libraries installed or put in the project path (or really anywhere) to be included by the compiler, as pointed out by Liam.</p>
+<p><a href="/wp-upload/adventuresInLuaBinding.tar.bz2">adventuresInLuaBinding.tar.bz2</a></p>
+
+      </div></div>
+  
+  <div class="pagination">
+    <div class="pagination__title">
+      <span
+        class="pagination__title-h">Read other posts</span>
+      <hr />
+    </div>
+    <div class="pagination__buttons">
+      
+      <span class="button previous">
+        <a href="https://losinggeneration.com/2011/03/03/server-updated/">
+          <span class="button__icon">←</span>
+          <span class="button__text">Server updated</span>
+        </a>
+      </span>
+      
+      
+      <span class="button next">
+        <a href="https://losinggeneration.com/2010/11/10/adventures-in-lua-embedding/">
+          <span class="button__text">Adventures in Lua Embedding</span>
+          <span class="button__icon">→</span>
+        </a>
+      </span>
+      
+    </div>
+  </div>
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>©2009-2020 Harley Laue</span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://losinggeneration.com/assets/main.js"></script>
+<script src="https://losinggeneration.com/assets/prism.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

@@ -1,0 +1,709 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Losinggeneration Coding Blog</title>
+    <link>https://losinggeneration.com/tags/</link>
+    <description>Recent content in Tags on Losinggeneration Coding Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>©2009-2020 Harley Laue</copyright>
+    <lastBuildDate>Tue, 12 Jan 2016 05:58:49 +0000</lastBuildDate>
+    
+	<atom:link href="https://losinggeneration.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Go</title>
+      <link>https://losinggeneration.com/tags/go/</link>
+      <pubDate>Tue, 12 Jan 2016 05:58:49 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Forth</title>
+      <link>https://losinggeneration.com/tags/forth/</link>
+      <pubDate>Sat, 11 Jan 2014 08:35:04 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/forth/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lua</title>
+      <link>https://losinggeneration.com/tags/lua/</link>
+      <pubDate>Sat, 11 Jan 2014 08:35:04 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/lua/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Moonscript</title>
+      <link>https://losinggeneration.com/tags/moonscript/</link>
+      <pubDate>Sat, 11 Jan 2014 08:35:04 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/moonscript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Unicode</title>
+      <link>https://losinggeneration.com/tags/unicode/</link>
+      <pubDate>Wed, 24 Jul 2013 19:20:04 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/unicode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UTF-16</title>
+      <link>https://losinggeneration.com/tags/utf-16/</link>
+      <pubDate>Wed, 24 Jul 2013 19:20:04 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/utf-16/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DNS</title>
+      <link>https://losinggeneration.com/tags/dns/</link>
+      <pubDate>Thu, 04 Jul 2013 09:45:09 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/dns/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dyn</title>
+      <link>https://losinggeneration.com/tags/dyn/</link>
+      <pubDate>Thu, 04 Jul 2013 09:45:09 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/dyn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>FreeDNS</title>
+      <link>https://losinggeneration.com/tags/freedns/</link>
+      <pubDate>Thu, 04 Jul 2013 09:45:09 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/freedns/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C</title>
+      <link>https://losinggeneration.com/tags/c/</link>
+      <pubDate>Wed, 08 Aug 2012 16:49:44 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Guitar</title>
+      <link>https://losinggeneration.com/tags/guitar/</link>
+      <pubDate>Tue, 18 Oct 2011 07:23:30 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/guitar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Paint</title>
+      <link>https://losinggeneration.com/tags/paint/</link>
+      <pubDate>Tue, 18 Oct 2011 07:23:30 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/paint/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Chipmunk</title>
+      <link>https://losinggeneration.com/tags/chipmunk/</link>
+      <pubDate>Thu, 08 Sep 2011 09:42:56 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/chipmunk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Demo</title>
+      <link>https://losinggeneration.com/tags/demo/</link>
+      <pubDate>Thu, 08 Sep 2011 09:42:56 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/demo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HGE</title>
+      <link>https://losinggeneration.com/tags/hge/</link>
+      <pubDate>Thu, 08 Sep 2011 09:42:56 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/hge/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>physics</title>
+      <link>https://losinggeneration.com/tags/physics/</link>
+      <pubDate>Thu, 08 Sep 2011 09:42:56 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/physics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Backup</title>
+      <link>https://losinggeneration.com/tags/backup/</link>
+      <pubDate>Thu, 14 Jul 2011 16:16:34 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/backup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bash</title>
+      <link>https://losinggeneration.com/tags/bash/</link>
+      <pubDate>Thu, 14 Jul 2011 16:16:34 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/bash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mysql</title>
+      <link>https://losinggeneration.com/tags/mysql/</link>
+      <pubDate>Thu, 14 Jul 2011 16:16:34 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/mysql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Shell Scripts</title>
+      <link>https://losinggeneration.com/tags/shell-scripts/</link>
+      <pubDate>Thu, 14 Jul 2011 16:16:34 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/shell-scripts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tips</title>
+      <link>https://losinggeneration.com/tags/tips/</link>
+      <pubDate>Thu, 14 Jul 2011 16:16:34 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/tips/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wordpress</title>
+      <link>https://losinggeneration.com/tags/wordpress/</link>
+      <pubDate>Thu, 14 Jul 2011 16:16:34 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/wordpress/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Akismet</title>
+      <link>https://losinggeneration.com/tags/akismet/</link>
+      <pubDate>Fri, 08 Jul 2011 16:18:03 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/akismet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CAPTCHA</title>
+      <link>https://losinggeneration.com/tags/captcha/</link>
+      <pubDate>Fri, 08 Jul 2011 16:18:03 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/captcha/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>spam</title>
+      <link>https://losinggeneration.com/tags/spam/</link>
+      <pubDate>Fri, 08 Jul 2011 16:18:03 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/spam/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WordPress Plugin</title>
+      <link>https://losinggeneration.com/tags/wordpress-plugin/</link>
+      <pubDate>Fri, 08 Jul 2011 16:18:03 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/wordpress-plugin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ARM</title>
+      <link>https://losinggeneration.com/tags/arm/</link>
+      <pubDate>Thu, 28 Apr 2011 18:33:49 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/arm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Buildroot</title>
+      <link>https://losinggeneration.com/tags/buildroot/</link>
+      <pubDate>Thu, 28 Apr 2011 18:33:49 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/buildroot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Didj</title>
+      <link>https://losinggeneration.com/tags/didj/</link>
+      <pubDate>Thu, 28 Apr 2011 18:33:49 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/didj/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DJHI</title>
+      <link>https://losinggeneration.com/tags/djhi/</link>
+      <pubDate>Thu, 28 Apr 2011 18:33:49 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/djhi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>uClibc</title>
+      <link>https://losinggeneration.com/tags/uclibc/</link>
+      <pubDate>Thu, 28 Apr 2011 18:33:49 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/uclibc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Assembly</title>
+      <link>https://losinggeneration.com/tags/assembly/</link>
+      <pubDate>Sat, 05 Mar 2011 00:00:40 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/assembly/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GG</title>
+      <link>https://losinggeneration.com/tags/gg/</link>
+      <pubDate>Sat, 05 Mar 2011 00:00:40 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/gg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Retro</title>
+      <link>https://losinggeneration.com/tags/retro/</link>
+      <pubDate>Sat, 05 Mar 2011 00:00:40 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/retro/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SMS</title>
+      <link>https://losinggeneration.com/tags/sms/</link>
+      <pubDate>Sat, 05 Mar 2011 00:00:40 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/sms/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Z80</title>
+      <link>https://losinggeneration.com/tags/z80/</link>
+      <pubDate>Sat, 05 Mar 2011 00:00:40 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/z80/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>server</title>
+      <link>https://losinggeneration.com/tags/server/</link>
+      <pubDate>Thu, 03 Mar 2011 21:46:52 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/server/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Binding</title>
+      <link>https://losinggeneration.com/tags/binding/</link>
+      <pubDate>Thu, 02 Dec 2010 23:00:12 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/binding/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Luabind</title>
+      <link>https://losinggeneration.com/tags/luabind/</link>
+      <pubDate>Thu, 02 Dec 2010 23:00:12 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/luabind/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OOLua</title>
+      <link>https://losinggeneration.com/tags/oolua/</link>
+      <pubDate>Thu, 02 Dec 2010 23:00:12 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/oolua/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lessons Learned</title>
+      <link>https://losinggeneration.com/tags/lessons-learned/</link>
+      <pubDate>Thu, 11 Nov 2010 04:36:35 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/lessons-learned/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://losinggeneration.com/tags/linux/</link>
+      <pubDate>Fri, 02 Jul 2010 09:33:17 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MSP430</title>
+      <link>https://losinggeneration.com/tags/msp430/</link>
+      <pubDate>Fri, 02 Jul 2010 09:33:17 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/msp430/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MSP430 Launchpad</title>
+      <link>https://losinggeneration.com/tags/msp430-launchpad/</link>
+      <pubDate>Fri, 02 Jul 2010 09:33:17 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/msp430-launchpad/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Game Gear</title>
+      <link>https://losinggeneration.com/tags/game-gear/</link>
+      <pubDate>Thu, 10 Jun 2010 22:30:50 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/game-gear/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sega Master System</title>
+      <link>https://losinggeneration.com/tags/sega-master-system/</link>
+      <pubDate>Thu, 10 Jun 2010 22:30:50 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/sega-master-system/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OpenGL ES</title>
+      <link>https://losinggeneration.com/tags/opengl-es/</link>
+      <pubDate>Thu, 29 Apr 2010 06:13:40 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/opengl-es/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Buildcross</title>
+      <link>https://losinggeneration.com/tags/buildcross/</link>
+      <pubDate>Wed, 21 Apr 2010 06:02:09 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/buildcross/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AVR</title>
+      <link>https://losinggeneration.com/tags/avr/</link>
+      <pubDate>Sun, 17 Jan 2010 06:01:21 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/avr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fuzebox</title>
+      <link>https://losinggeneration.com/tags/fuzebox/</link>
+      <pubDate>Sun, 17 Jan 2010 06:01:21 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/fuzebox/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Uzebox</title>
+      <link>https://losinggeneration.com/tags/uzebox/</link>
+      <pubDate>Sun, 17 Jan 2010 06:01:21 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/uzebox/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Backups</title>
+      <link>https://losinggeneration.com/tags/backups/</link>
+      <pubDate>Tue, 22 Dec 2009 18:33:50 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/backups/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Debian</title>
+      <link>https://losinggeneration.com/tags/debian/</link>
+      <pubDate>Tue, 22 Dec 2009 18:33:50 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/debian/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MyQSL</title>
+      <link>https://losinggeneration.com/tags/myqsl/</link>
+      <pubDate>Tue, 22 Dec 2009 18:33:50 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/myqsl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>apache</title>
+      <link>https://losinggeneration.com/tags/apache/</link>
+      <pubDate>Tue, 22 Dec 2009 16:15:23 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/apache/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>php</title>
+      <link>https://losinggeneration.com/tags/php/</link>
+      <pubDate>Tue, 22 Dec 2009 16:15:23 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/php/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;</title>
+      <link>https://losinggeneration.com/tags/c&#43;&#43;/</link>
+      <pubDate>Sun, 22 Nov 2009 08:43:20 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/c&#43;&#43;/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Qt</title>
+      <link>https://losinggeneration.com/tags/qt/</link>
+      <pubDate>Sun, 22 Nov 2009 08:43:20 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/qt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ArchLinux</title>
+      <link>https://losinggeneration.com/tags/archlinux/</link>
+      <pubDate>Mon, 26 Oct 2009 03:54:59 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/archlinux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ArchLinuxPPC</title>
+      <link>https://losinggeneration.com/tags/archlinuxppc/</link>
+      <pubDate>Mon, 26 Oct 2009 03:54:59 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/archlinuxppc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kernels</title>
+      <link>https://losinggeneration.com/tags/kernels/</link>
+      <pubDate>Fri, 16 Oct 2009 19:28:15 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/kernels/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Upgrading</title>
+      <link>https://losinggeneration.com/tags/upgrading/</link>
+      <pubDate>Fri, 16 Oct 2009 19:28:15 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/upgrading/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Halloween</title>
+      <link>https://losinggeneration.com/tags/halloween/</link>
+      <pubDate>Wed, 07 Oct 2009 00:27:24 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/halloween/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>identi.ca</title>
+      <link>https://losinggeneration.com/tags/identi.ca/</link>
+      <pubDate>Sat, 03 Oct 2009 08:45:30 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/identi.ca/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>!GNU</title>
+      <link>https://losinggeneration.com/tags/gnu/</link>
+      <pubDate>Sat, 03 Oct 2009 08:22:21 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/gnu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>chroot</title>
+      <link>https://losinggeneration.com/tags/chroot/</link>
+      <pubDate>Mon, 28 Sep 2009 23:36:41 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/chroot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mod_chroot</title>
+      <link>https://losinggeneration.com/tags/mod_chroot/</link>
+      <pubDate>Wed, 16 Sep 2009 02:39:36 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/mod_chroot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>FwBuilder</title>
+      <link>https://losinggeneration.com/tags/fwbuilder/</link>
+      <pubDate>Tue, 15 Sep 2009 05:00:44 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/fwbuilder/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>iptables</title>
+      <link>https://losinggeneration.com/tags/iptables/</link>
+      <pubDate>Tue, 15 Sep 2009 05:00:44 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/iptables/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>It lives</title>
+      <link>https://losinggeneration.com/tags/it-lives/</link>
+      <pubDate>Tue, 15 Sep 2009 05:00:44 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/it-lives/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NAT</title>
+      <link>https://losinggeneration.com/tags/nat/</link>
+      <pubDate>Tue, 15 Sep 2009 05:00:44 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/nat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cgit</title>
+      <link>https://losinggeneration.com/tags/cgit/</link>
+      <pubDate>Sun, 13 Sep 2009 21:19:42 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/cgit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dmz</title>
+      <link>https://losinggeneration.com/tags/dmz/</link>
+      <pubDate>Sun, 13 Sep 2009 21:19:42 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/dmz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>exim4</title>
+      <link>https://losinggeneration.com/tags/exim4/</link>
+      <pubDate>Sun, 13 Sep 2009 21:19:42 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/exim4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://losinggeneration.com/tags/git/</link>
+      <pubDate>Sun, 13 Sep 2009 21:19:42 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>public server</title>
+      <link>https://losinggeneration.com/tags/public-server/</link>
+      <pubDate>Sun, 13 Sep 2009 21:19:42 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/public-server/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ssh</title>
+      <link>https://losinggeneration.com/tags/ssh/</link>
+      <pubDate>Sun, 13 Sep 2009 21:19:42 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/tags/ssh/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

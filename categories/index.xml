@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Losinggeneration Coding Blog</title>
+    <link>https://losinggeneration.com/categories/</link>
+    <description>Recent content in Categories on Losinggeneration Coding Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>©2009-2020 Harley Laue</copyright>
+    <lastBuildDate>Tue, 12 Jan 2016 05:58:49 +0000</lastBuildDate>
+    
+	<atom:link href="https://losinggeneration.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Go</title>
+      <link>https://losinggeneration.com/categories/go/</link>
+      <pubDate>Tue, 12 Jan 2016 05:58:49 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/categories/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Programming</title>
+      <link>https://losinggeneration.com/categories/programming/</link>
+      <pubDate>Tue, 12 Jan 2016 05:58:49 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/categories/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lua</title>
+      <link>https://losinggeneration.com/categories/lua/</link>
+      <pubDate>Sat, 11 Jan 2014 08:35:04 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/categories/lua/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Moonscript</title>
+      <link>https://losinggeneration.com/categories/moonscript/</link>
+      <pubDate>Sat, 11 Jan 2014 08:35:04 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/categories/moonscript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Servers</title>
+      <link>https://losinggeneration.com/categories/servers/</link>
+      <pubDate>Thu, 04 Jul 2013 09:45:09 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/categories/servers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C</title>
+      <link>https://losinggeneration.com/categories/c/</link>
+      <pubDate>Tue, 27 Nov 2012 07:55:16 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/categories/c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;</title>
+      <link>https://losinggeneration.com/categories/c&#43;&#43;/</link>
+      <pubDate>Tue, 27 Nov 2012 07:55:16 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/categories/c&#43;&#43;/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Uncategorized</title>
+      <link>https://losinggeneration.com/categories/uncategorized/</link>
+      <pubDate>Tue, 18 Oct 2011 07:23:30 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/categories/uncategorized/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://losinggeneration.com/categories/linux/</link>
+      <pubDate>Thu, 14 Jul 2011 16:16:34 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WordPress</title>
+      <link>https://losinggeneration.com/categories/wordpress/</link>
+      <pubDate>Thu, 14 Jul 2011 16:16:34 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/categories/wordpress/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Didj</title>
+      <link>https://losinggeneration.com/categories/didj/</link>
+      <pubDate>Thu, 28 Apr 2011 18:33:49 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/categories/didj/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Z80 Assembly</title>
+      <link>https://losinggeneration.com/categories/z80-assembly/</link>
+      <pubDate>Sat, 05 Mar 2011 00:00:40 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/categories/z80-assembly/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

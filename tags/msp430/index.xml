@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MSP430 on Losinggeneration Coding Blog</title>
+    <link>https://losinggeneration.com/tags/msp430/</link>
+    <description>Recent content in MSP430 on Losinggeneration Coding Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>©2009-2020 Harley Laue</copyright>
+    <lastBuildDate>Fri, 02 Jul 2010 09:33:17 +0000</lastBuildDate>
+    
+	<atom:link href="https://losinggeneration.com/tags/msp430/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>MSP430 Launchpad on Linux</title>
+      <link>https://losinggeneration.com/2010/07/02/msp430-launchpad-on-linux/</link>
+      <pubDate>Fri, 02 Jul 2010 09:33:17 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2010/07/02/msp430-launchpad-on-linux/</guid>
+      <description>I got an MSP430 Launchpad in the mail a couple of days ago. So I&amp;rsquo;ve been playing with that the last couple of days. The first day I went through the tools on the wiki and grabbed both IDE&amp;rsquo;s and all the downloadable links I could. This had to be done on Windows since it&amp;rsquo;s the only platform they support. Being a Linux user 99% of the time, I wasn&amp;rsquo;t too pleased with this situation, so I investigated the tools available for Linux, and that&amp;rsquo;s what I did all of yesterday.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Losinggeneration Coding Blog</title>
+    <link>https://losinggeneration.com/tags/linux/</link>
+    <description>Recent content in Linux on Losinggeneration Coding Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>©2009-2020 Harley Laue</copyright>
+    <lastBuildDate>Fri, 02 Jul 2010 09:33:17 +0000</lastBuildDate>
+    
+	<atom:link href="https://losinggeneration.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>MSP430 Launchpad on Linux</title>
+      <link>https://losinggeneration.com/2010/07/02/msp430-launchpad-on-linux/</link>
+      <pubDate>Fri, 02 Jul 2010 09:33:17 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2010/07/02/msp430-launchpad-on-linux/</guid>
+      <description>I got an MSP430 Launchpad in the mail a couple of days ago. So I&amp;rsquo;ve been playing with that the last couple of days. The first day I went through the tools on the wiki and grabbed both IDE&amp;rsquo;s and all the downloadable links I could. This had to be done on Windows since it&amp;rsquo;s the only platform they support. Being a Linux user 99% of the time, I wasn&amp;rsquo;t too pleased with this situation, so I investigated the tools available for Linux, and that&amp;rsquo;s what I did all of yesterday.</description>
+    </item>
+    
+    <item>
+      <title>DJHI</title>
+      <link>https://losinggeneration.com/2010/04/21/djhi/</link>
+      <pubDate>Wed, 21 Apr 2010 06:02:09 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2010/04/21/djhi/</guid>
+      <description>Well, I now have my Didj, a Serial-&amp;gt;USB breakoutboard, and a DJHI v2.0 prototype board. With these I&amp;rsquo;m able to get serial access to the Didj. I&amp;rsquo;ve flashed a new version of the Lightning Boot bootloader which jburks has been hard at work on. It adds a boot menu which is very useful for booting new kernels off of an SD card. jburks also has a preliminary kernel driver to access the SD card from within Linux.</description>
+    </item>
+    
+    <item>
+      <title>Didj</title>
+      <link>https://losinggeneration.com/2010/03/30/didj/</link>
+      <pubDate>Tue, 30 Mar 2010 13:39:10 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2010/03/30/didj/</guid>
+      <description>On Woot yesterday they had these Didj systems. I&amp;rsquo;ve read about it on Hack a Day several times, and I decided to get one and (hopefully) join in with some of the fun. I don&amp;rsquo;t have any real concrete plans for this cool little Linux device. I just want to see what cool things can be done with it (first hand.)</description>
+    </item>
+    
+    <item>
+      <title>Arch Linux PPC KDELibs</title>
+      <link>https://losinggeneration.com/2009/10/25/arch-linux-ppc-kdelibs/</link>
+      <pubDate>Mon, 26 Oct 2009 03:54:59 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/10/25/arch-linux-ppc-kdelibs/</guid>
+      <description>So, while I&amp;rsquo;ve been trying to get kdelibs 4.3.2 built on Arch Linux PPC. I decided since Arch PPC hasn&amp;rsquo;t had any packages updated in about six months that I should probably do something crazy like grab the official Arch&amp;rsquo;s ABS to build all the packages from. Now, 130 built packages later I&amp;rsquo;m close. Perhaps I should put into perspective what was needed to be updated. The packages ranged from GCC, Binutils, &amp;amp; Glibc, to xulrunner, to hal, to mysql, to pygtk, to gnome-vfs.</description>
+    </item>
+    
+    <item>
+      <title>Why Arch Linux’s Kernel Upgrades Suck</title>
+      <link>https://losinggeneration.com/2009/10/16/why-arch-linuxs-kernel-upgrades-suck/</link>
+      <pubDate>Fri, 16 Oct 2009 19:28:15 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/10/16/why-arch-linuxs-kernel-upgrades-suck/</guid>
+      <description>Update Sept 04, 2011 As this still gets comments occasionally, I should clearly note that this is (and has been for some time) an accepted issue on Arch&amp;rsquo;s bug tracker. There is a basic accepted game plan for how it will be implemented, but is currently marked as low-priority. If you&amp;rsquo;re interested in the details look at: https://bugs.archlinux.org/task/16702#comment80122. Also, please do not comment on that bug report because it&amp;rsquo;s very close to being closed just to keep people from further commenting &amp;ldquo;new &amp;lsquo;solutions&amp;rsquo; that we simply won&amp;rsquo;t implement.</description>
+    </item>
+    
+    <item>
+      <title>Server hammered</title>
+      <link>https://losinggeneration.com/2009/10/03/server-hammered/</link>
+      <pubDate>Sat, 03 Oct 2009 08:45:30 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/10/03/server-hammered/</guid>
+      <description>So, I recently set a link to my discussion of Linux, GNU, and OS&amp;rsquo;s to someone on Identi.ca. I made a point not to add groups to !linux and !gnu because I knew my server would probably get hit hard (if you&amp;rsquo;ve looked at my server&amp;rsquo;s specs, you&amp;rsquo;ll know it doesn&amp;rsquo;t take much to be considered hit hard.) Well, they read it, after which they posted a link to my blog with the groups !</description>
+    </item>
+    
+    <item>
+      <title>Linux is the OS</title>
+      <link>https://losinggeneration.com/2009/10/03/linux-is-the-os/</link>
+      <pubDate>Sat, 03 Oct 2009 08:22:21 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/10/03/linux-is-the-os/</guid>
+      <description>So, the comments got a bit long in the last post. I think I&amp;rsquo;ll clean it up, and get the interesting tidbits out of there and present them here in a clear fashion. Also, while I appreciate ﻿Michael B. Trausch&amp;rsquo;s discussion on the topic, and provided some interesting discussion points (which will be discussed further here.) Also, reading through my arguments that I put in the comments of the last post really didn&amp;rsquo;t flow together.</description>
+    </item>
+    
+    <item>
+      <title>It’s still Linux, not GNU/Linux.</title>
+      <link>https://losinggeneration.com/2009/09/30/its-still-linux-not-gnulinux/</link>
+      <pubDate>Thu, 01 Oct 2009 01:31:21 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/09/30/its-still-linux-not-gnulinux/</guid>
+      <description>I&amp;rsquo;m in the process of rewriting this with some information and rebuttals to some of the comments. Stay tuned for that later tonight. Sorry to anyone on identi.ca in !ubuntu !linux or !gnu that may be writting a comment now. I&amp;rsquo;m locking comments so the newer one will get the traffic (since it&amp;rsquo;s going to be much better written than this one which I spent all of 10 minutes on.) &amp;lt;/end edit&amp;gt; I don&amp;rsquo;t understand why there&amp;rsquo;s so much push to have the Linux OS, called GNU/Linux.</description>
+    </item>
+    
+  </channel>
+</rss>

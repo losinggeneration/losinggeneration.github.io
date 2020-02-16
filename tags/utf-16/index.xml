@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>UTF-16 on Losinggeneration Coding Blog</title>
+    <link>https://losinggeneration.com/tags/utf-16/</link>
+    <description>Recent content in UTF-16 on Losinggeneration Coding Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>©2009-2020 Harley Laue</copyright>
+    <lastBuildDate>Wed, 24 Jul 2013 19:20:04 +0000</lastBuildDate>
+    
+	<atom:link href="https://losinggeneration.com/tags/utf-16/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Go UTF-16</title>
+      <link>https://losinggeneration.com/2013/07/24/go-utf-16/</link>
+      <pubDate>Wed, 24 Jul 2013 19:20:04 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2013/07/24/go-utf-16/</guid>
+      <description>This is just a small code fragment that prints out the Unicode characters from the Fullwidth Latin Letters (range 0xFF01-0xFFEF). This works on little &amp;amp; big endian machines (tested with qemu-arm &amp;amp; qemu-mips compiled using gccgo 4.7.) I thought it might have issues with the way it decodes the int32 into a byte array and re-encodes it to a uint16 array.
+package main import ( &amp;#34;bytes&amp;#34; &amp;#34;encoding/binary&amp;#34; &amp;#34;fmt&amp;#34; &amp;#34;unicode/utf16&amp;#34; ) func main() { for i := int32(0xFF00); i &amp;lt;= 0xFFEF; i++ { c := new(bytes.</description>
+    </item>
+    
+  </channel>
+</rss>

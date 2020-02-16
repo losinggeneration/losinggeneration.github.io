@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C&#43;&#43; on Losinggeneration Coding Blog</title>
+    <link>https://losinggeneration.com/tags/c&#43;&#43;/</link>
+    <description>Recent content in C&#43;&#43; on Losinggeneration Coding Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>©2009-2020 Harley Laue</copyright>
+    <lastBuildDate>Sun, 22 Nov 2009 08:43:20 +0000</lastBuildDate>
+    
+	<atom:link href="https://losinggeneration.com/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CrabEmu</title>
+      <link>https://losinggeneration.com/2009/11/22/crabemu/</link>
+      <pubDate>Sun, 22 Nov 2009 08:43:20 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/11/22/crabemu/</guid>
+      <description>Because of my renewed interest in Z80 and wanting to better learn assembly programming, I ultimately want to do a bit with Game Gear/SMS coding. For this though, an emulator with at least some basic debugging facilities would be useful. After searching Linux Game Gear emulators, none really had what I was looking for.
+On my first attempt, I decided Dega looked interesting, it has source available. The two major turn offs of Dega was the Z80 core which is x86 assembly, which is obviously not portable and it&amp;rsquo;s license which basically says, do what you want to the source, as long as it&amp;rsquo;s not sold.</description>
+    </item>
+    
+  </channel>
+</rss>

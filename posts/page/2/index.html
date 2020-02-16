@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Posts :: Losinggeneration Coding Blog —  Imperfect software for an imperfect world.</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://losinggeneration.com/posts/" />
+
+
+
+
+<link rel="stylesheet" href="https://losinggeneration.com/assets/style.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://losinggeneration.com/img/apple-touch-icon-144-precomposed.png">
+
+<link rel="shortcut icon" href="https://losinggeneration.com/img/favicon/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Posts :: Losinggeneration Coding Blog —  Imperfect software for an imperfect world." />
+<meta name="twitter:description" content="" />
+<meta name="twitter:site" content="https://losinggeneration.com/" />
+<meta name="twitter:creator" content="" />
+<meta name="twitter:image" content="">
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Posts :: Losinggeneration Coding Blog —  Imperfect software for an imperfect world.">
+<meta property="og:description" content="" />
+<meta property="og:url" content="https://losinggeneration.com/posts/" />
+<meta property="og:site_name" content="Posts" />
+<meta property="og:image" content="">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+
+
+
+  <link href="/posts/index.xml" rel="alternate" type="application/rss+xml" title="Losinggeneration Coding Blog" />
+
+
+
+
+
+
+
+
+
+</head>
+<body class="">
+
+
+<div class="container full headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    ~
+  </div>
+</a>
+
+    </div>
+    <div class="menu-trigger">menu</div>
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="posts">
+  
+  
+
+  
+  
+  
+
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://losinggeneration.com/2011/04/28/crabemu-for-the-didj/">CrabEmu for the Didj</a></h1>
+    <div class="post-meta">
+      <span class="post-date">
+        2011-04-28
+      </span>
+      <span class="post-author">::
+        losinggeneration</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="https://losinggeneration.com/tags/arm/">ARM</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/buildroot/">Buildroot</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/c/">C</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/didj/">Didj</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/djhi/">DJHI</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/uclibc/">uClibc</a>&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      
+      
+      Well, I’m releasing what I’ll call version 0.1.0 of CrabEmu for the Didj. It includes a custom built rootfs with no questionable code from the LF distribution (for instance, their scripts for checking various things like USB connections.) This initial release requires a DJHI or other third party card that is SD capable. The SD must also have two partitions: Fat32 &amp; Ext 3. Because of the later, you’ll also need an OS that’s able to read/write to Ext 3 file systems.
+      
+      
+    </div>
+
+    
+    <div>
+      <a class="read-more button"
+        href="/2011/04/28/crabemu-for-the-didj/">Read more →</a>
+    </div>
+    
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://losinggeneration.com/2011/03/04/sega-master-system-coding/">Sega Master System Coding</a></h1>
+    <div class="post-meta">
+      <span class="post-date">
+        2011-03-05
+      </span>
+      <span class="post-author">::
+        losinggeneration</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="https://losinggeneration.com/tags/assembly/">Assembly</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/c/">C</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/gg/">GG</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/retro/">Retro</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/sms/">SMS</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/z80/">Z80</a>&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      
+      
+      Besides updating my server, I’ve been quite busy with some Sega Master System (SMS from here-on-out) coding. I’ve decided to switch to SMS for now instead of Game Gear for now. It seems I’ve kind of went my own way with this project. From the looks of it, most people either use WLA-DX or, to a much lesser extent, z88dk. I don’t see too much about any other assemblers/compilers. Granted, I haven’t looked terribly hard for the topics though.
+      
+      
+    </div>
+
+    
+    <div>
+      <a class="read-more button"
+        href="/2011/03/04/sega-master-system-coding/">Read more →</a>
+    </div>
+    
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://losinggeneration.com/2011/03/03/server-updated/">Server updated</a></h1>
+    <div class="post-meta">
+      <span class="post-date">
+        2011-03-03
+      </span>
+      <span class="post-author">::
+        losinggeneration</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="https://losinggeneration.com/tags/server/">server</a>&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      
+      
+      I’ve now updated my home server to Debian 6.0. In the process I’ve decided to also switch to lighttpd from Apache HTTP. I do miss the fact that mod_chroot in Apache was able to basically take care of the dependencies for me and build the chroot daemon startup, but it wasn’t too much work to get everything up and going in a chroot. It ended up one of my plugins (Last.
+      
+      
+    </div>
+
+    
+    <div>
+      <a class="read-more button"
+        href="/2011/03/03/server-updated/">Read more →</a>
+    </div>
+    
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://losinggeneration.com/2010/12/02/adventures-in-lua-binding/">Adventures in Lua Binding</a></h1>
+    <div class="post-meta">
+      <span class="post-date">
+        2010-12-02
+      </span>
+      <span class="post-author">::
+        losinggeneration</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="https://losinggeneration.com/tags/binding/">Binding</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/c/">C</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/lua/">Lua</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/luabind/">Luabind</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/oolua/">OOLua</a>&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      
+      
+      I’ve mentioned before (actually, probably only in that last post) about a game I’ve been working on on and off for the last few years (I think I said three, but it’s actually been five, with it being inactive for most of that time.) I had decided long ago that it would probably be scripted with Lua and I’m just now finally getting around to experimenting with that. I’ve ultimately decided it’s going to either be using OOLua or Luabind.
+      
+      
+    </div>
+
+    
+    <div>
+      <a class="read-more button"
+        href="/2010/12/02/adventures-in-lua-binding/">Read more →</a>
+    </div>
+    
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://losinggeneration.com/2010/11/10/adventures-in-lua-embedding/">Adventures in Lua Embedding</a></h1>
+    <div class="post-meta">
+      <span class="post-date">
+        2010-11-11
+      </span>
+      <span class="post-author">::
+        losinggeneration</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="https://losinggeneration.com/tags/c/">C</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/lessons-learned/">Lessons Learned</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/lua/">Lua</a>&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      
+      
+      In a personal project which I’ve been working on and off on for the last three or so years (without really getting much done to be totally honest), I’ve decided to use Lua for the configuration file. The project itself is in C++, so this lead me to use the Lua C API to embed it in the project. Prior to deciding on Lua, I was using a manually parsed key/value format.
+      
+      
+    </div>
+
+    
+    <div>
+      <a class="read-more button"
+        href="/2010/11/10/adventures-in-lua-embedding/">Read more →</a>
+    </div>
+    
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://losinggeneration.com/2010/07/09/new-temporary-server/">New Temporary Server</a></h1>
+    <div class="post-meta">
+      <span class="post-date">
+        2010-07-09
+      </span>
+      <span class="post-author">::
+        losinggeneration</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="https://losinggeneration.com/tags/server/">server</a>&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      
+      
+      I’m going to be without internet at home for awhile it looks like. The server this blog was run from was just a computer I had in my apartment. Since that’s going to be down sometime in the near future I decided it was time to figure out something to do in the meantime. The solution was to move this blog to a server I know will stay up while I’m moving.
+      
+      
+    </div>
+
+    
+    <div>
+      <a class="read-more button"
+        href="/2010/07/09/new-temporary-server/">Read more →</a>
+    </div>
+    
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://losinggeneration.com/2010/07/02/msp430-launchpad-on-linux/">MSP430 Launchpad on Linux</a></h1>
+    <div class="post-meta">
+      <span class="post-date">
+        2010-07-02
+      </span>
+      <span class="post-author">::
+        losinggeneration</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="https://losinggeneration.com/tags/linux/">Linux</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/msp430/">MSP430</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/msp430-launchpad/">MSP430 Launchpad</a>&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      
+      
+      I got an MSP430 Launchpad in the mail a couple of days ago. So I’ve been playing with that the last couple of days. The first day I went through the tools on the wiki and grabbed both IDE’s and all the downloadable links I could. This had to be done on Windows since it’s the only platform they support. Being a Linux user 99% of the time, I wasn’t too pleased with this situation, so I investigated the tools available for Linux, and that’s what I did all of yesterday.
+      
+      
+    </div>
+
+    
+    <div>
+      <a class="read-more button"
+        href="/2010/07/02/msp430-launchpad-on-linux/">Read more →</a>
+    </div>
+    
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://losinggeneration.com/2010/06/10/game-gear-coding/">Game Gear Coding</a></h1>
+    <div class="post-meta">
+      <span class="post-date">
+        2010-06-10
+      </span>
+      <span class="post-author">::
+        losinggeneration</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="https://losinggeneration.com/tags/assembly/">Assembly</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/game-gear/">Game Gear</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/sega-master-system/">Sega Master System</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/z80/">Z80</a>&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      
+      
+      About a year or so back I got a book that the public library was giving away after a book sale on Z80 assembly. I read it, but never really did anything with that knowledge. The thought was always in the back of my head to eventually apply that and play around with some SEGA Master System/Game Gear coding. Unfortunately time has a way of getting away from you.
+The library had a book sale about a month or so back and they had quite a few books.
+      
+      
+    </div>
+
+    
+    <div>
+      <a class="read-more button"
+        href="/2010/06/10/game-gear-coding/">Read more →</a>
+    </div>
+    
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://losinggeneration.com/2010/04/29/didj-opengl-es/">Didj OpenGL ES</a></h1>
+    <div class="post-meta">
+      <span class="post-date">
+        2010-04-29
+      </span>
+      <span class="post-author">::
+        losinggeneration</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="https://losinggeneration.com/tags/didj/">Didj</a>&nbsp;
+      
+      #<a href="https://losinggeneration.com/tags/opengl-es/">OpenGL ES</a>&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      
+      
+      Well, I may be the first to get even basic OpenGL ES primitives to render. I can now make my claim that NeHe lesson02 works for the Didj. Some others have things such as OpenGL version strings, but I believe this is the first actual rendering for Didj homebrew. I’ve gone a slightly different route then what others have done. I’ve used Brio directly to satisfy some of the OpenGL ES dependencies.
+      
+      
+    </div>
+
+    
+    <div>
+      <a class="read-more button"
+        href="/2010/04/29/didj-opengl-es/">Read more →</a>
+    </div>
+    
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://losinggeneration.com/2010/04/21/adafruits-captua/">Adafruit’s Captua</a></h1>
+    <div class="post-meta">
+      <span class="post-date">
+        2010-04-21
+      </span>
+      <span class="post-author">::
+        losinggeneration</span>
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      
+      
+      I agree it’s a cool and novel idea for a WordPress plugin and I do think you’ll have to continue moderating comments because like a few of us have said, it’s not a terribly effective CAPTCHA. Not to mention when you say “please make a bot that does this, we’d love to see it,” you can bet at least one or two people will do just that (if for no other reason because you said you’d love to see it, you know, to please you)
+      
+      
+    </div>
+
+    
+    <div>
+      <a class="read-more button"
+        href="/2010/04/21/adafruits-captua/">Read more →</a>
+    </div>
+    
+  </div>
+  
+  <div class="pagination">
+  <div class="pagination__buttons">
+    
+      <span class="button previous">
+        <a href="/posts/">
+          <span class="button__icon">←</span>
+          <span class="button__text">Newer posts</span>
+        </a>
+      </span>
+    
+    
+      <span class="button next">
+        <a href="/posts/page/3/">
+          <span class="button__text">Older posts</span>
+          <span class="button__icon">→</span>
+        </a>
+      </span>
+    
+  </div>
+</div>
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>©2009-2020 Harley Laue</span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://losinggeneration.com/assets/main.js"></script>
+<script src="https://losinggeneration.com/assets/prism.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

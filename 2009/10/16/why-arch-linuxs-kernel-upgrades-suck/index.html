@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Why Arch Linux’s Kernel Upgrades Suck :: Losinggeneration Coding Blog —  Imperfect software for an imperfect world.</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="Update Sept 04, 2011 As this still gets comments occasionally, I should clearly note that this is (and has been for some time) an accepted issue on Arch&amp;rsquo;s bug tracker. There is a basic accepted game plan for how it will be implemented, but is currently marked as low-priority. If you&amp;rsquo;re interested in the details look at: https://bugs.archlinux.org/task/16702#comment80122. Also, please do not comment on that bug report because it&amp;rsquo;s very close to being closed just to keep people from further commenting &amp;ldquo;new &amp;lsquo;solutions&amp;rsquo; that we simply won&amp;rsquo;t implement."/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://losinggeneration.com/2009/10/16/why-arch-linuxs-kernel-upgrades-suck/" />
+
+
+
+
+<link rel="stylesheet" href="https://losinggeneration.com/assets/style.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://losinggeneration.com/img/apple-touch-icon-144-precomposed.png">
+
+<link rel="shortcut icon" href="https://losinggeneration.com/img/favicon/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Why Arch Linux’s Kernel Upgrades Suck :: Losinggeneration Coding Blog —  Imperfect software for an imperfect world." />
+<meta name="twitter:description" content="Update Sept 04, 2011 As this still gets comments occasionally, I should clearly note that this is (and has been for some time) an accepted issue on Arch&amp;rsquo;s bug tracker. There is a basic accepted game plan for how it will be implemented, but is currently marked as low-priority. If you&amp;rsquo;re interested in the details look at: https://bugs.archlinux.org/task/16702#comment80122. Also, please do not comment on that bug report because it&amp;rsquo;s very close to being closed just to keep people from further commenting &amp;ldquo;new &amp;lsquo;solutions&amp;rsquo; that we simply won&amp;rsquo;t implement." />
+<meta name="twitter:site" content="https://losinggeneration.com/" />
+<meta name="twitter:creator" content="losinggeneration" />
+<meta name="twitter:image" content="">
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Why Arch Linux’s Kernel Upgrades Suck :: Losinggeneration Coding Blog —  Imperfect software for an imperfect world.">
+<meta property="og:description" content="Update Sept 04, 2011 As this still gets comments occasionally, I should clearly note that this is (and has been for some time) an accepted issue on Arch&amp;rsquo;s bug tracker. There is a basic accepted game plan for how it will be implemented, but is currently marked as low-priority. If you&amp;rsquo;re interested in the details look at: https://bugs.archlinux.org/task/16702#comment80122. Also, please do not comment on that bug report because it&amp;rsquo;s very close to being closed just to keep people from further commenting &amp;ldquo;new &amp;lsquo;solutions&amp;rsquo; that we simply won&amp;rsquo;t implement." />
+<meta property="og:url" content="https://losinggeneration.com/2009/10/16/why-arch-linuxs-kernel-upgrades-suck/" />
+<meta property="og:site_name" content="Why Arch Linux’s Kernel Upgrades Suck" />
+<meta property="og:image" content="">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+<meta property="article:section" content="Linux" />
+<meta property="article:published_time" content="2009-10-16 19:28:15 &#43;0000 &#43;0000" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="">
+
+
+<div class="container full headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    ~
+  </div>
+</a>
+
+    </div>
+    <div class="menu-trigger">menu</div>
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://losinggeneration.com/2009/10/16/why-arch-linuxs-kernel-upgrades-suck/">Why Arch Linux’s Kernel Upgrades Suck</a></h1>
+  <div class="post-meta">
+      
+    <span class="post-date">
+      2009-10-16
+    </span>
+    
+    
+    <span class="post-author">::
+      losinggeneration
+    </span>
+    
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="https://losinggeneration.com/tags/archlinux/">ArchLinux</a>&nbsp;
+    
+    #<a href="https://losinggeneration.com/tags/kernels/">Kernels</a>&nbsp;
+    
+    #<a href="https://losinggeneration.com/tags/linux/">Linux</a>&nbsp;
+    
+    #<a href="https://losinggeneration.com/tags/upgrading/">Upgrading</a>&nbsp;
+    
+  </span>
+  
+
+  
+
+  <div class="post-content"><div>
+        <h3 id="update-sept-04-2011">Update Sept 04, 2011<a href="#update-sept-04-2011" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p><strong>As this still gets comments occasionally, I should clearly note that this is (and has been for some time) an accepted issue on Arch&rsquo;s bug tracker. There is a basic accepted game plan for how it will be implemented, but is currently marked as low-priority. If you&rsquo;re interested in the details look at: <a href="https://bugs.archlinux.org/task/16702#comment80122">https://bugs.archlinux.org/task/16702#comment80122</a>. Also, please do not comment on that bug report because it&rsquo;s very close to being closed just to keep people from further commenting &ldquo;new &lsquo;solutions&rsquo; that we simply won&rsquo;t implement.&quot;</strong></p>
+<p>Now, Arch Linux and I have had our differences in the past. It&rsquo;s handling of documentation for instance has always been a bit backwards IMO. What&rsquo;s that? I <em>really</em> have to recompile every single program which I want the API documentation for? Can we get with the times already and make perhaps -doc packages by default? Worried about their being lots of -doc packages when you do something like pacman -Ss some-program? Then put them in a separate repo call documentation and have it disable by default! This isn&rsquo;t a hard concept people.</p>
+<p>But that&rsquo;s not what I want to complain about today. What really annoys me about Arch Linux more than anything else is it&rsquo;s brain deadly stupid handling of kernel upgrades. Let&rsquo;s go through a typically kernel upgrade: 1) A new kernel version is out that Arch wants to upgrade to, GREAT! 2) pacman -S kernel26 3) Delete kernel, initrd, and modules for the currently installed kernel 4) Install the new kernel, modules, and initrd.</p>
+<p>Ok, there should be an obvious problem here. #3 deletes the current (typically working) kernel and replaces it. Well what if the new kernel has a serious regression in it on your hardware, or worse yet, what if it doesn&rsquo;t boot at all? You&rsquo;re now stuck. You&rsquo;ll may well have to pull out a livecd, and try compiling the old kernel version again to get back to a working system. There are lots of things that could be done to fix the issue, but the fact of the matter is, why delete a working kernel with one that may or may not work?</p>
+<p>So, there&rsquo;s a problem. What should the solution be? Well, how I would do it would be something like this: Every kernel version PKGBUILD will have a version number in the pkgname. So instead of it being just kernel26, it&rsquo;ll now be kernel-2.6.31 for instance. kernel26 will now be basically a dummy package that only depends on kernel-2.6.30. All of a sudden, whenever there&rsquo;s a new kernel version that the Arch package maintainers want to upgrade to, they&rsquo;ll change the kernel-2.6.30 PKGBUILD&rsquo;s name, and update kernel26&rsquo;s dependency to the new kernel version.</p>
+<p>In other words:</p>
+<blockquote>
+<p>pre-upgrade:
+kernel26 depends on kernel-2.6.30</p>
+<p>post upgrade:
+kernel26 depends on kernel-2.6.31
+no packages depend on kernel-2.6.30</p>
+</blockquote>
+<p>Now, the only real issue with this system would be, what do we call vmlinuz26, System.map26, &amp; kernel26.img be called and how should <!-- raw HTML omitted --> be updated? The first part could very simply just be versioned. kernel-2.6.30.img, vmlinuz-2.6.30, etc. This really shoudn&rsquo;t be that hard, and I think would work quite well. Well, that could be a bit tricky, but really, it shouldn&rsquo;t be that difficult in all honesty. We&rsquo;ll take grub for instance. It&rsquo;s very easy to just add new rules to grub and everything &ldquo;just works.&rdquo; So really, Arch could do like other distributions do (Debian I know does this, but IIRC others do too) and update grub automatically. For users that don&rsquo;t like this option, it could be turned off in rc.conf.</p>
+<p>Another option would be to still use version prefixed names for vmlinuz, but then have links that are just updated upon update (so vmlinuz26-&gt;vmlinuz-2.6.30 becomes vmlinuz26-&gt;vmlinuz-2.6.31) All of a sudden, things work pretty much how they are now, but you can still edit grub (either at boot time if the new kernel fails, or after the fact) to have your old kernel in there.</p>
+<p>Now, with this in mind, the first option my be more appealing to the more liberal Arch crowd, but for the more die-hard (the one&rsquo;s that chant KISS anytime you suggest a new feature for Arch) might not be as violently opposed to the second option. I also think most of the people in between wouldn&rsquo;t really care too much either way, but I have a feeling more would probably favor the second option.<!-- raw HTML omitted --></p>
+<p>—Edit—
+I decided to file the feature request on Arch&rsquo;s FS:
+<a href="http://bugs.archlinux.org/task/16702">http://bugs.archlinux.org/task/16702</a>
+You can comment there if you directly want to let the developers know how you feel, or here if you&rsquo;re just wanting to tell me the idea sucks or if you like it, if you too have had problems with it, etc. In other words, I&rsquo;d suggest commenting on the feature request if you have constructive input on how it may be implemented or why it shouldn&rsquo;t, and here for anything else.</p>
+
+      </div></div>
+  
+  <div class="pagination">
+    <div class="pagination__title">
+      <span
+        class="pagination__title-h">Read other posts</span>
+      <hr />
+    </div>
+    <div class="pagination__buttons">
+      
+      <span class="button previous">
+        <a href="https://losinggeneration.com/2009/10/25/arch-linux-ppc-kdelibs/">
+          <span class="button__icon">←</span>
+          <span class="button__text">Arch Linux PPC KDELibs</span>
+        </a>
+      </span>
+      
+      
+      <span class="button next">
+        <a href="https://losinggeneration.com/2009/10/14/spam-and-si-captcha/">
+          <span class="button__text">Spam and SI Captcha</span>
+          <span class="button__icon">→</span>
+        </a>
+      </span>
+      
+    </div>
+  </div>
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>©2009-2020 Harley Laue</span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://losinggeneration.com/assets/main.js"></script>
+<script src="https://losinggeneration.com/assets/prism.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

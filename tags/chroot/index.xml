@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>chroot on Losinggeneration Coding Blog</title>
+    <link>https://losinggeneration.com/tags/chroot/</link>
+    <description>Recent content in chroot on Losinggeneration Coding Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>©2009-2020 Harley Laue</copyright>
+    <lastBuildDate>Mon, 28 Sep 2009 23:36:41 +0000</lastBuildDate>
+    
+	<atom:link href="https://losinggeneration.com/tags/chroot/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Spam and Server stuff</title>
+      <link>https://losinggeneration.com/2009/09/28/spam-and-server-stuff/</link>
+      <pubDate>Mon, 28 Sep 2009 23:36:41 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/09/28/spam-and-server-stuff/</guid>
+      <description>So, I&amp;rsquo;ve only been up for about three weeks and I&amp;rsquo;ve already got my first spam comment (which is why I moderate all comments ATM.) Also, it was kind of strange, I went to go here at work today and I wasn&amp;rsquo;t able to connect. So, I logged into my router. I thought that my iptables were screwy again, so I started trying to fix them by hand. Deleted a rule and BAM no more connectivity to my router (at all.</description>
+    </item>
+    
+  </channel>
+</rss>

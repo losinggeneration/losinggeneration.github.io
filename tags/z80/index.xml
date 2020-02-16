@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Z80 on Losinggeneration Coding Blog</title>
+    <link>https://losinggeneration.com/tags/z80/</link>
+    <description>Recent content in Z80 on Losinggeneration Coding Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>©2009-2020 Harley Laue</copyright>
+    <lastBuildDate>Sat, 05 Mar 2011 00:00:40 +0000</lastBuildDate>
+    
+	<atom:link href="https://losinggeneration.com/tags/z80/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Sega Master System Coding</title>
+      <link>https://losinggeneration.com/2011/03/04/sega-master-system-coding/</link>
+      <pubDate>Sat, 05 Mar 2011 00:00:40 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2011/03/04/sega-master-system-coding/</guid>
+      <description>Besides updating my server, I&amp;rsquo;ve been quite busy with some Sega Master System (SMS from here-on-out) coding. I&amp;rsquo;ve decided to switch to SMS for now instead of Game Gear for now. It seems I&amp;rsquo;ve kind of went my own way with this project. From the looks of it, most people either use WLA-DX or, to a much lesser extent, z88dk. I don&amp;rsquo;t see too much about any other assemblers/compilers. Granted, I haven&amp;rsquo;t looked terribly hard for the topics though.</description>
+    </item>
+    
+    <item>
+      <title>Game Gear Coding</title>
+      <link>https://losinggeneration.com/2010/06/10/game-gear-coding/</link>
+      <pubDate>Thu, 10 Jun 2010 22:30:50 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2010/06/10/game-gear-coding/</guid>
+      <description>About a year or so back I got a book that the public library was giving away after a book sale on Z80 assembly. I read it, but never really did anything with that knowledge. The thought was always in the back of my head to eventually apply that and play around with some SEGA Master System/Game Gear coding. Unfortunately time has a way of getting away from you.
+The library had a book sale about a month or so back and they had quite a few books.</description>
+    </item>
+    
+    <item>
+      <title>CrabEmu</title>
+      <link>https://losinggeneration.com/2009/11/22/crabemu/</link>
+      <pubDate>Sun, 22 Nov 2009 08:43:20 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/11/22/crabemu/</guid>
+      <description>Because of my renewed interest in Z80 and wanting to better learn assembly programming, I ultimately want to do a bit with Game Gear/SMS coding. For this though, an emulator with at least some basic debugging facilities would be useful. After searching Linux Game Gear emulators, none really had what I was looking for.
+On my first attempt, I decided Dega looked interesting, it has source available. The two major turn offs of Dega was the Z80 core which is x86 assembly, which is obviously not portable and it&amp;rsquo;s license which basically says, do what you want to the source, as long as it&amp;rsquo;s not sold.</description>
+    </item>
+    
+    <item>
+      <title>Z80 Assembly</title>
+      <link>https://losinggeneration.com/2009/11/04/z80-assembly/</link>
+      <pubDate>Thu, 05 Nov 2009 05:04:13 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/11/04/z80-assembly/</guid>
+      <description>I&amp;rsquo;m currently learning Z80 assembly (I&amp;rsquo;ve read the book once, but now I&amp;rsquo;m actually working through the exercises.) I have to say, it&amp;rsquo;s fun and a bit challenging at times. The challenge is partly learning the tools. I&amp;rsquo;m currently using z80pack. From that I&amp;rsquo;m using z80asm and z80sim. I&amp;rsquo;ve played a bit with the cpm2&amp;amp;3sim emulator that comes with it, but I currently only really need z80sim. z80asm can be a bit strange at time (or perhaps just more strict then the book.</description>
+    </item>
+    
+  </channel>
+</rss>

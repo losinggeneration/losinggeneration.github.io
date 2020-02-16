@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Sega Master System Coding :: Losinggeneration Coding Blog —  Imperfect software for an imperfect world.</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="Besides updating my server, I&amp;rsquo;ve been quite busy with some Sega Master System (SMS from here-on-out) coding. I&amp;rsquo;ve decided to switch to SMS for now instead of Game Gear for now. It seems I&amp;rsquo;ve kind of went my own way with this project. From the looks of it, most people either use WLA-DX or, to a much lesser extent, z88dk. I don&amp;rsquo;t see too much about any other assemblers/compilers. Granted, I haven&amp;rsquo;t looked terribly hard for the topics though."/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://losinggeneration.com/2011/03/04/sega-master-system-coding/" />
+
+
+
+
+<link rel="stylesheet" href="https://losinggeneration.com/assets/style.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://losinggeneration.com/img/apple-touch-icon-144-precomposed.png">
+
+<link rel="shortcut icon" href="https://losinggeneration.com/img/favicon/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Sega Master System Coding :: Losinggeneration Coding Blog —  Imperfect software for an imperfect world." />
+<meta name="twitter:description" content="Besides updating my server, I&amp;rsquo;ve been quite busy with some Sega Master System (SMS from here-on-out) coding. I&amp;rsquo;ve decided to switch to SMS for now instead of Game Gear for now. It seems I&amp;rsquo;ve kind of went my own way with this project. From the looks of it, most people either use WLA-DX or, to a much lesser extent, z88dk. I don&amp;rsquo;t see too much about any other assemblers/compilers. Granted, I haven&amp;rsquo;t looked terribly hard for the topics though." />
+<meta name="twitter:site" content="https://losinggeneration.com/" />
+<meta name="twitter:creator" content="losinggeneration" />
+<meta name="twitter:image" content="">
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Sega Master System Coding :: Losinggeneration Coding Blog —  Imperfect software for an imperfect world.">
+<meta property="og:description" content="Besides updating my server, I&amp;rsquo;ve been quite busy with some Sega Master System (SMS from here-on-out) coding. I&amp;rsquo;ve decided to switch to SMS for now instead of Game Gear for now. It seems I&amp;rsquo;ve kind of went my own way with this project. From the looks of it, most people either use WLA-DX or, to a much lesser extent, z88dk. I don&amp;rsquo;t see too much about any other assemblers/compilers. Granted, I haven&amp;rsquo;t looked terribly hard for the topics though." />
+<meta property="og:url" content="https://losinggeneration.com/2011/03/04/sega-master-system-coding/" />
+<meta property="og:site_name" content="Sega Master System Coding" />
+<meta property="og:image" content="">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+<meta property="article:section" content="C" /><meta property="article:section" content="Programming" /><meta property="article:section" content="Z80 Assembly" />
+<meta property="article:published_time" content="2011-03-05 00:00:40 &#43;0000 &#43;0000" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="">
+
+
+<div class="container full headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    ~
+  </div>
+</a>
+
+    </div>
+    <div class="menu-trigger">menu</div>
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://losinggeneration.com/2011/03/04/sega-master-system-coding/">Sega Master System Coding</a></h1>
+  <div class="post-meta">
+      
+    <span class="post-date">
+      2011-03-05
+    </span>
+    
+    
+    <span class="post-author">::
+      losinggeneration
+    </span>
+    
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="https://losinggeneration.com/tags/assembly/">Assembly</a>&nbsp;
+    
+    #<a href="https://losinggeneration.com/tags/c/">C</a>&nbsp;
+    
+    #<a href="https://losinggeneration.com/tags/gg/">GG</a>&nbsp;
+    
+    #<a href="https://losinggeneration.com/tags/retro/">Retro</a>&nbsp;
+    
+    #<a href="https://losinggeneration.com/tags/sms/">SMS</a>&nbsp;
+    
+    #<a href="https://losinggeneration.com/tags/z80/">Z80</a>&nbsp;
+    
+  </span>
+  
+
+  
+
+  <div class="post-content"><div>
+        <p>Besides updating my server, I&rsquo;ve been quite busy with some Sega Master System (SMS from here-on-out) coding. I&rsquo;ve decided to switch to SMS for now instead of Game Gear for now. It seems I&rsquo;ve kind of went my own way with this project. From the looks of it, most people either use WLA-DX or, to a much lesser extent, z88dk. I don&rsquo;t see too much about any other assemblers/compilers. Granted, I haven&rsquo;t looked terribly hard for the topics though. So even from the get-go with using z80asm instead of WLA-DX I was using a different assembler than the rest.</p>
+<p>I did an evaluation after a bit of a hiatus and it was pretty clear that I still have a long ways to go in terms of how I organize my assembly code. Enter C.</p>
+<p>I had mentioned before that I had considered trying to use SDCC for a C compiler, but when I first started playing around, I didn&rsquo;t have much of a foundation to work from. Really, the initial tests I did in pure Z80 proved to be very useful when it came to getting SDCC working. I had no problems editing the default crt0.s to work with the SMS. Getting that to compile and run on CrabEmu ended up being easy too. From the start, I knew I&rsquo;d probably want some kind of utility library to help me out along the way. The first thing I did was create a couple simple macros to that do in/out in Z80 assembly so I could actually do something useful with the hardware. From there I converted my assembly to C and used the in/out macros.</p>
+<p>With basic I/O in place, I quickly went on to write some functions. First I changed in/out to functions, added some register defines, tested, and things still worked. With some excitement I went to write some utilities functions for the SN79489 and TMS9918a. All of these functions ended up calling the in/out functions. Did some testing, worked out a few bugs here and there, but for the most part these worked well too. From there I decided it was time to try some real usage. The first thing I did was did a clear_vram function. The code was basically this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">clear_vram</span>() {
+	uint16_t x;
+	tms9918a_vram_set_write_address(<span style="color:#ae81ff">0</span>);<span style="color:#f92672">&amp;</span>lt;br <span style="color:#f92672">/</span><span style="color:#f92672">&gt;</span>
+	<span style="color:#66d9ef">for</span>(x <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; x <span style="color:#f92672">&amp;</span>lt; <span style="color:#ae81ff">0x4000</span>; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>x)
+		tms9918a_ram_write(<span style="color:#ae81ff">0</span>);
+}
+</code></pre></div><p>tms9918a_vram_set_write_address sets the VDP&rsquo;s RAM address to the start of the RAM, and then loops through the entire 16K writing zero&rsquo;s to every byte. After this I did a few tiles (and after struggling for quite some time) drew them to the screen.</p>
+<p>There was a problem here. It took a couple seconds before my couple tiles were displayed after the bios screen. I ended up blaming the fact that tms9918a_ram_write was a function call that called another function that ran inline assembly that then returned from a return. This may not sound like much, but on a Z80, 32K of function calls add up to quite a few CPU cycles and memory access. So I went to the SDCC documentation and found something very useful under the Z80 Storage Class Language Extensions: &ldquo;sfr (in/out to 8-bit addresses).&rdquo;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">__sfr __at <span style="color:#ae81ff">0x78</span> IoPort;  <span style="color:#75715e">/* define a var in I/O space at 78h called IoPort */</span>
+IoPort <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x01</span>;
+</code></pre></div><p>generates the following assembly code:</p>
+<pre><code class="language-z80" data-lang="z80">ld a,#0x01
+out (_IoPort),a
+</code></pre><p>Alright, you&rsquo;ve got my attention with that. Sound extremely straight forward, even if it is an SDCC only language extension. So I tried it out. I created the following macros:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">define io_vdp_data __sfr __at 0xBE io_vdp_data</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">define tms9918a_write(d) io_vdp_data = d</span><span style="color:#75715e">
+</span></code></pre></div><p>Replaced tms9918a_ram_write with tms9918a_write. Ran it again, and now the clear_vram ran in roughly half the time (ok, this is just a best guess since I didn&rsquo;t do any kind of real performance measurements.) So I ended up defining a few more macros to expose all useful SMS I/O ports. With these in place I can do useful things like:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>(io_ab_reg <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">0x20</span>)) {
+	<span style="color:#75715e">// Do something on player one press of button 1
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>Where I&rsquo;m currently at is I draw the entire tile based level map and can do trivial animation on tiles. I can also output trivial tones, but I&rsquo;ve been focusing on graphics currently so I don&rsquo;t have too much to say about sound right now. It&rsquo;s probably going to be cutting it very close for submitting something to the 2011 SMS Coding Competition, but I&rsquo;ve been trying my hardest to keep on it. I have a feeling that I&rsquo;ll miss the deadline though. Hopefully I&rsquo;ll be able to get it mostly working since it seems like a good deal of work went very smoothly the last few days.</p>
+<p>A few other random thoughts on the subject. While I&rsquo;m currently targeting the SMS, I&rsquo;ll probably also a &ldquo;port&rdquo; of this current project to the Game Gear. It&rsquo;ll take advantage of the much larger color palette for sure. On the other hand, I&rsquo;ll also have to have at least a basic AI in place for single player play. As for z88dk and why I went with SDCC instead, well, to start with because I didn&rsquo;t know about z88dk. Later because I was having fun writing my own functions for my project. Basically, that&rsquo;s all there is to it. It was more fun to do it myself then to get started faster. Eventually the GPL&rsquo;d project source and LGPL&rsquo;d library source (still not totally sure on these licenses) will be released. For now though, I haven&rsquo;t released anything, and the library isn&rsquo;t in a very releasable form yet. Hell, I&rsquo;d even say that without fairly intimate knowledge of the SMS/GG hardware, it&rsquo;s not even that useful. Another small utility that I wrote before I noticed there was (most likely) one already was a header checker/correcter. This should fix the header so it can be played on actual hardware. It was thrown together extremely quickly and doesn&rsquo;t do much besides add in the correct checksum and a few other things. Again, it&rsquo;s likely not going to be terribly useful, and there&rsquo;s already the source to a tool that does basically this. In any case, it&rsquo;s currently integrated into my build processes and happens automatically. It seems to work fine against a real bios dump and the CrabEmu-Bios. This leaves me with little reason currently to change it to something else.</p>
+<p>In any case, that&rsquo;s what I&rsquo;v been primarily up to for the past 3 months. Really though, the C code has all been over the last month (Jan 27 was the Git commit date.) I&rsquo;ll try to remember to post an image of the current level map animation that I have.</p>
+
+      </div></div>
+  
+  <div class="pagination">
+    <div class="pagination__title">
+      <span
+        class="pagination__title-h">Read other posts</span>
+      <hr />
+    </div>
+    <div class="pagination__buttons">
+      
+      <span class="button previous">
+        <a href="https://losinggeneration.com/2011/04/28/crabemu-for-the-didj/">
+          <span class="button__icon">←</span>
+          <span class="button__text">CrabEmu for the Didj</span>
+        </a>
+      </span>
+      
+      
+      <span class="button next">
+        <a href="https://losinggeneration.com/2011/03/03/server-updated/">
+          <span class="button__text">Server updated</span>
+          <span class="button__icon">→</span>
+        </a>
+      </span>
+      
+    </div>
+  </div>
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>©2009-2020 Harley Laue</span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://losinggeneration.com/assets/main.js"></script>
+<script src="https://losinggeneration.com/assets/prism.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

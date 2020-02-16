@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Uzebox on Losinggeneration Coding Blog</title>
+    <link>https://losinggeneration.com/tags/uzebox/</link>
+    <description>Recent content in Uzebox on Losinggeneration Coding Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>©2009-2020 Harley Laue</copyright>
+    <lastBuildDate>Sun, 17 Jan 2010 06:01:21 +0000</lastBuildDate>
+    
+	<atom:link href="https://losinggeneration.com/tags/uzebox/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Fuzebox</title>
+      <link>https://losinggeneration.com/2010/01/17/fuzebox/</link>
+      <pubDate>Sun, 17 Jan 2010 06:01:21 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2010/01/17/fuzebox/</guid>
+      <description>Yesterday I went ahead and bought a Fuzebox which is an open source 8-bit console that is compatible with the Uzebox. Sadly, it won&amp;rsquo;t be here till next month (most likely.) It&amp;rsquo;s currently back ordered (which I knew while ordering it) but is expected to be back in stock the 29th. So hopefully early next month it&amp;rsquo;ll be here. Of course, it&amp;rsquo;s probably better that it&amp;rsquo;ll be a couple weeks it gets here.</description>
+    </item>
+    
+    <item>
+      <title>Uzebox</title>
+      <link>https://losinggeneration.com/2009/12/29/uzebox/</link>
+      <pubDate>Tue, 29 Dec 2009 15:37:55 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/12/29/uzebox/</guid>
+      <description>I’ve been sort of obsessing over Uzebox lately. Even without purchasing the hardware yet, I’m getting a pretty excited about the possibilities of this small little console. Not just from the programming aspect, but also because Fuzebox looks like a great exercise in assembling/soldering. I’ve also been considering how/where I should cut the case that Fuzebox provides in their “Starter Kit.” For instance, the one of the things I imagine I’ll be using often is the FTDI to upload code to test and play with.</description>
+    </item>
+    
+  </channel>
+</rss>

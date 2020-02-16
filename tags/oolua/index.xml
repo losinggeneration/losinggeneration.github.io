@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OOLua on Losinggeneration Coding Blog</title>
+    <link>https://losinggeneration.com/tags/oolua/</link>
+    <description>Recent content in OOLua on Losinggeneration Coding Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>©2009-2020 Harley Laue</copyright>
+    <lastBuildDate>Thu, 02 Dec 2010 23:00:12 +0000</lastBuildDate>
+    
+	<atom:link href="https://losinggeneration.com/tags/oolua/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Adventures in Lua Binding</title>
+      <link>https://losinggeneration.com/2010/12/02/adventures-in-lua-binding/</link>
+      <pubDate>Thu, 02 Dec 2010 23:00:12 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2010/12/02/adventures-in-lua-binding/</guid>
+      <description>I&amp;rsquo;ve mentioned before (actually, probably only in that last post) about a game I&amp;rsquo;ve been working on on and off for the last few years (I think I said three, but it&amp;rsquo;s actually been five, with it being inactive for most of that time.) I had decided long ago that it would probably be scripted with Lua and I&amp;rsquo;m just now finally getting around to experimenting with that. I&amp;rsquo;ve ultimately decided it&amp;rsquo;s going to either be using OOLua or Luabind.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mod_chroot on Losinggeneration Coding Blog</title>
+    <link>https://losinggeneration.com/tags/mod_chroot/</link>
+    <description>Recent content in mod_chroot on Losinggeneration Coding Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>©2009-2020 Harley Laue</copyright>
+    <lastBuildDate>Wed, 16 Sep 2009 02:39:36 +0000</lastBuildDate>
+    
+	<atom:link href="https://losinggeneration.com/tags/mod_chroot/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Taken care of</title>
+      <link>https://losinggeneration.com/2009/09/15/taken-care-of/</link>
+      <pubDate>Wed, 16 Sep 2009 02:39:36 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/09/15/taken-care-of/</guid>
+      <description>Well, I think I have all the previous issues taken care of. Caching may or may not work, but it&amp;rsquo;s supposed to be happening now. So mail and DNS lookups work now (DNS only being useful from my side.) So, all-in-all I hope this beast can just run for several months and I&amp;rsquo;ll see what (if anything) needs to be done in that time. So now that my server should be stable, I&amp;rsquo;m free to work on other endevors!</description>
+    </item>
+    
+    <item>
+      <title>Few more things that I should fix yet</title>
+      <link>https://losinggeneration.com/2009/09/15/few-more-things-that-i-should-fix-yet/</link>
+      <pubDate>Tue, 15 Sep 2009 14:56:30 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/09/15/few-more-things-that-i-should-fix-yet/</guid>
+      <description>Well now that the system is live, I think there&amp;rsquo;s going to be a few things I&amp;rsquo;m going to need to fix. Most all of them are from using mod_chroot. Most aren&amp;rsquo;t anything critical, but things that should be addressed (sooner rather than later.) For instance, I think DNS lookups are failing from inside WordPress. I breifly read in the mod_chroot caveates that this may happen, and I think this is happening now.</description>
+    </item>
+    
+  </channel>
+</rss>

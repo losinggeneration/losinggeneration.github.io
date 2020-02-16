@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C on Losinggeneration Coding Blog</title>
+    <link>https://losinggeneration.com/categories/c/</link>
+    <description>Recent content in C on Losinggeneration Coding Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>©2009-2020 Harley Laue</copyright>
+    <lastBuildDate>Tue, 27 Nov 2012 07:55:16 +0000</lastBuildDate>
+    
+	<atom:link href="https://losinggeneration.com/categories/c/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>HGE Go work</title>
+      <link>https://losinggeneration.com/2012/11/27/hge-go-work/</link>
+      <pubDate>Tue, 27 Nov 2012 07:55:16 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2012/11/27/hge-go-work/</guid>
+      <description>I just realized I never actually posted about why I was doing a C binding of C++. Basically I bound most of Haaf&amp;rsquo;s Game Engine (HGE) from C++ to C. I ended up getting a bit stuck on the GUI elements and getting a nice way to let them do simple inheritance and polymorphism based on the current C++ classes. This actually wasn&amp;rsquo;t a problem for my end-game which was to take that C binding and make a Go version with cgo.</description>
+    </item>
+    
+    <item>
+      <title>C Bindings for C&#43;&#43;</title>
+      <link>https://losinggeneration.com/2012/08/08/c-bindings-for-c/</link>
+      <pubDate>Wed, 08 Aug 2012 16:49:44 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2012/08/08/c-bindings-for-c/</guid>
+      <description>Lately I&amp;rsquo;ve been playing around with writing C bindings for a C++ library. Your first thought might be, &amp;ldquo;Why would you bind a C++ to C?&amp;rdquo; Those of you who have ever had to do bindings to other languages may already know the answer. In general, it&amp;rsquo;s much easier to bind C to another language than it is to bind C++ directly. Another, albeit less likely, reason might be because a client wants a C interface instead.</description>
+    </item>
+    
+    <item>
+      <title>Chipmunk Physics</title>
+      <link>https://losinggeneration.com/2011/09/08/chipmunk-physics/</link>
+      <pubDate>Thu, 08 Sep 2011 09:42:56 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2011/09/08/chipmunk-physics/</guid>
+      <description>I&amp;rsquo;ve been hard at work at my project which I&amp;rsquo;m yet to call by name on here (and will continue to be that way until I have a playable demo.) First, a status update. I&amp;rsquo;ve ditched the idea of doing the entire engine myself and have now migrated to HGE (Haaf&amp;rsquo;s Game Engine) which fairly recently had a port to *nix and OS X by Ryan C. Gordon. I&amp;rsquo;ve worked a bit on the engine itself after the source release and my changes were pulled in upstream (mostly it adding a CMake build system, but I also did some things like get the tutorial/examples working, silenced warnings, etc.</description>
+    </item>
+    
+    <item>
+      <title>CrabEmu for the Didj</title>
+      <link>https://losinggeneration.com/2011/04/28/crabemu-for-the-didj/</link>
+      <pubDate>Thu, 28 Apr 2011 18:33:49 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2011/04/28/crabemu-for-the-didj/</guid>
+      <description>Well, I&amp;rsquo;m releasing what I&amp;rsquo;ll call version 0.1.0 of CrabEmu for the Didj. It includes a custom built rootfs with no questionable code from the LF distribution (for instance, their scripts for checking various things like USB connections.) This initial release requires a DJHI or other third party card that is SD capable. The SD must also have two partitions: Fat32 &amp;amp; Ext 3. Because of the later, you&amp;rsquo;ll also need an OS that&amp;rsquo;s able to read/write to Ext 3 file systems.</description>
+    </item>
+    
+    <item>
+      <title>Sega Master System Coding</title>
+      <link>https://losinggeneration.com/2011/03/04/sega-master-system-coding/</link>
+      <pubDate>Sat, 05 Mar 2011 00:00:40 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2011/03/04/sega-master-system-coding/</guid>
+      <description>Besides updating my server, I&amp;rsquo;ve been quite busy with some Sega Master System (SMS from here-on-out) coding. I&amp;rsquo;ve decided to switch to SMS for now instead of Game Gear for now. It seems I&amp;rsquo;ve kind of went my own way with this project. From the looks of it, most people either use WLA-DX or, to a much lesser extent, z88dk. I don&amp;rsquo;t see too much about any other assemblers/compilers. Granted, I haven&amp;rsquo;t looked terribly hard for the topics though.</description>
+    </item>
+    
+    <item>
+      <title>Uzebox</title>
+      <link>https://losinggeneration.com/2009/12/29/uzebox/</link>
+      <pubDate>Tue, 29 Dec 2009 15:37:55 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/12/29/uzebox/</guid>
+      <description>I’ve been sort of obsessing over Uzebox lately. Even without purchasing the hardware yet, I’m getting a pretty excited about the possibilities of this small little console. Not just from the programming aspect, but also because Fuzebox looks like a great exercise in assembling/soldering. I’ve also been considering how/where I should cut the case that Fuzebox provides in their “Starter Kit.” For instance, the one of the things I imagine I’ll be using often is the FTDI to upload code to test and play with.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Upgrading on Losinggeneration Coding Blog</title>
+    <link>https://losinggeneration.com/tags/upgrading/</link>
+    <description>Recent content in Upgrading on Losinggeneration Coding Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>©2009-2020 Harley Laue</copyright>
+    <lastBuildDate>Fri, 16 Oct 2009 19:28:15 +0000</lastBuildDate>
+    
+	<atom:link href="https://losinggeneration.com/tags/upgrading/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Why Arch Linux’s Kernel Upgrades Suck</title>
+      <link>https://losinggeneration.com/2009/10/16/why-arch-linuxs-kernel-upgrades-suck/</link>
+      <pubDate>Fri, 16 Oct 2009 19:28:15 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/2009/10/16/why-arch-linuxs-kernel-upgrades-suck/</guid>
+      <description>Update Sept 04, 2011 As this still gets comments occasionally, I should clearly note that this is (and has been for some time) an accepted issue on Arch&amp;rsquo;s bug tracker. There is a basic accepted game plan for how it will be implemented, but is currently marked as low-priority. If you&amp;rsquo;re interested in the details look at: https://bugs.archlinux.org/task/16702#comment80122. Also, please do not comment on that bug report because it&amp;rsquo;s very close to being closed just to keep people from further commenting &amp;ldquo;new &amp;lsquo;solutions&amp;rsquo; that we simply won&amp;rsquo;t implement.</description>
+    </item>
+    
+  </channel>
+</rss>

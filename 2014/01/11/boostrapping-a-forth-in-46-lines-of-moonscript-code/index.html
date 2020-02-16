@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Boostrapping a Forth in 46 lines of Moonscript code :: Losinggeneration Coding Blog —  Imperfect software for an imperfect world.</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="There&amp;rsquo;s an article called Boostrapping a Forth in 40 lines of Lua code that&amp;rsquo;s been around since around 2007. It&amp;rsquo;s a great article and I&amp;rsquo;d highly recommend reading it. However, I only recently found it after some interest in Forth.
+This is the Forth outer interpreter in Lua from the above article reformatted a bit:
+eval = function (str) return assert(loadstring(str))() end subj = &amp;#34;&amp;#34; pos = 1 parsebypattern = function (pat) local capture, newpos = string."/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://losinggeneration.com/2014/01/11/boostrapping-a-forth-in-46-lines-of-moonscript-code/" />
+
+
+
+
+<link rel="stylesheet" href="https://losinggeneration.com/assets/style.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://losinggeneration.com/img/apple-touch-icon-144-precomposed.png">
+
+<link rel="shortcut icon" href="https://losinggeneration.com/img/favicon/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Boostrapping a Forth in 46 lines of Moonscript code :: Losinggeneration Coding Blog —  Imperfect software for an imperfect world." />
+<meta name="twitter:description" content="There&amp;rsquo;s an article called Boostrapping a Forth in 40 lines of Lua code that&amp;rsquo;s been around since around 2007. It&amp;rsquo;s a great article and I&amp;rsquo;d highly recommend reading it. However, I only recently found it after some interest in Forth.
+This is the Forth outer interpreter in Lua from the above article reformatted a bit:
+eval = function (str) return assert(loadstring(str))() end subj = &amp;#34;&amp;#34; pos = 1 parsebypattern = function (pat) local capture, newpos = string." />
+<meta name="twitter:site" content="https://losinggeneration.com/" />
+<meta name="twitter:creator" content="losinggeneration" />
+<meta name="twitter:image" content="">
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Boostrapping a Forth in 46 lines of Moonscript code :: Losinggeneration Coding Blog —  Imperfect software for an imperfect world.">
+<meta property="og:description" content="There&amp;rsquo;s an article called Boostrapping a Forth in 40 lines of Lua code that&amp;rsquo;s been around since around 2007. It&amp;rsquo;s a great article and I&amp;rsquo;d highly recommend reading it. However, I only recently found it after some interest in Forth.
+This is the Forth outer interpreter in Lua from the above article reformatted a bit:
+eval = function (str) return assert(loadstring(str))() end subj = &amp;#34;&amp;#34; pos = 1 parsebypattern = function (pat) local capture, newpos = string." />
+<meta property="og:url" content="https://losinggeneration.com/2014/01/11/boostrapping-a-forth-in-46-lines-of-moonscript-code/" />
+<meta property="og:site_name" content="Boostrapping a Forth in 46 lines of Moonscript code" />
+<meta property="og:image" content="">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+<meta property="article:section" content="Lua" /><meta property="article:section" content="Moonscript" /><meta property="article:section" content="Programming" />
+<meta property="article:published_time" content="2014-01-11 08:35:04 &#43;0000 &#43;0000" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="">
+
+
+<div class="container full headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    ~
+  </div>
+</a>
+
+    </div>
+    <div class="menu-trigger">menu</div>
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://losinggeneration.com/2014/01/11/boostrapping-a-forth-in-46-lines-of-moonscript-code/">Boostrapping a Forth in 46 lines of Moonscript code</a></h1>
+  <div class="post-meta">
+      
+    <span class="post-date">
+      2014-01-11
+    </span>
+    
+    
+    <span class="post-author">::
+      losinggeneration
+    </span>
+    
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="https://losinggeneration.com/tags/forth/">Forth</a>&nbsp;
+    
+    #<a href="https://losinggeneration.com/tags/lua/">Lua</a>&nbsp;
+    
+    #<a href="https://losinggeneration.com/tags/moonscript/">Moonscript</a>&nbsp;
+    
+  </span>
+  
+
+  
+
+  <div class="post-content"><div>
+        <p>There&rsquo;s an article called <a href="http://angg.twu.net/miniforth-article.html">Boostrapping a Forth in 40 lines of Lua code</a> that&rsquo;s been around since around 2007. It&rsquo;s a great article and I&rsquo;d highly recommend reading it. However, I only recently found it after some interest in Forth.</p>
+<p>This is the Forth outer interpreter in Lua from the above article reformatted a bit:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-coffee" data-lang="coffee">eval <span style="color:#f92672">=</span> <span style="color:#a6e22e">function</span> (<span style="color:#a6e22e">str</span>) <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">assert</span>(<span style="color:#a6e22e">loadstring</span>(<span style="color:#a6e22e">str</span>))() <span style="color:#a6e22e">end</span>
+
+subj = <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span>
+pos = <span style="color:#ae81ff">1</span>
+
+parsebypattern = <span style="color:#a6e22e">function</span> (<span style="color:#a6e22e">pat</span>)
+	<span style="color:#a6e22e">local</span> <span style="color:#a6e22e">capture</span>, newpos = <span style="color:#a6e22e">string</span>.<span style="color:#a6e22e">match</span>(<span style="color:#a6e22e">subj</span>, <span style="color:#a6e22e">pat</span>, <span style="color:#a6e22e">pos</span>)
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">newpos</span> <span style="color:#66d9ef">then</span>
+		pos = <span style="color:#a6e22e">newpos</span>
+		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">capture</span>
+	<span style="color:#a6e22e">end</span>
+<span style="color:#a6e22e">end</span>
+
+parsespaces	 = <span style="color:#a6e22e">function</span> () <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">parsebypattern</span>(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">^([ </span><span style="color:#e6db74">\t</span><span style="color:#e6db74">]*)()</span><span style="color:#e6db74">&#34;</span>) <span style="color:#a6e22e">end</span>
+parseword	 = <span style="color:#a6e22e">function</span> () <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">parsebypattern</span>(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">^([^ </span><span style="color:#e6db74">\t</span><span style="color:#e6db74">\n</span><span style="color:#e6db74">]+)()</span><span style="color:#e6db74">&#34;</span>) <span style="color:#a6e22e">end</span>
+parsenewline	= <span style="color:#a6e22e">function</span> () <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">parsebypattern</span>(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">^(</span><span style="color:#e6db74">\n</span><span style="color:#e6db74">)()</span><span style="color:#e6db74">&#34;</span>) <span style="color:#a6e22e">end</span>
+parserestofline = <span style="color:#a6e22e">function</span> () <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">parsebypattern</span>(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">^([^</span><span style="color:#e6db74">\n</span><span style="color:#e6db74">]*)()</span><span style="color:#e6db74">&#34;</span>) <span style="color:#a6e22e">end</span>
+parsewordornewline = <span style="color:#a6e22e">function</span> () <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">parseword</span>() <span style="color:#f92672">or</span> <span style="color:#a6e22e">parsenewline</span>() <span style="color:#a6e22e">end</span>
+
+getword = <span style="color:#a6e22e">function</span> ()
+	<span style="color:#a6e22e">parsespaces</span>()
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">parseword</span>()
+<span style="color:#a6e22e">end</span>
+
+getwordornewline = <span style="color:#a6e22e">function</span> ()
+	<span style="color:#a6e22e">parsespaces</span>()
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">parsewordornewline</span>()
+<span style="color:#a6e22e">end</span>
+
+_F = {}
+<span style="color:#a6e22e">_F</span>[<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%L</span><span style="color:#e6db74">&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">function</span> () eval(<span style="color:#a6e22e">parserestofline</span>()) <span style="color:#a6e22e">end</span>
+
+mode= <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">interpret</span><span style="color:#e6db74">&#34;</span>
+modes = {}
+
+run = <span style="color:#a6e22e">function</span> () <span style="color:#66d9ef">while</span> <span style="color:#a6e22e">mode</span> <span style="color:#f92672">~</span><span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">stop</span><span style="color:#e6db74">&#34;</span> <span style="color:#a6e22e">do</span> <span style="color:#a6e22e">modes</span>[<span style="color:#a6e22e">mode</span>]() <span style="color:#a6e22e">end</span> <span style="color:#a6e22e">end</span>
+
+interpretprimitive = <span style="color:#a6e22e">function</span> ()
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">type</span>(<span style="color:#a6e22e">_F</span>[<span style="color:#a6e22e">word</span>]) <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">function</span><span style="color:#e6db74">&#34;</span> <span style="color:#66d9ef">then</span>
+		<span style="color:#a6e22e">_F</span>[<span style="color:#a6e22e">word</span>]()
+		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+	<span style="color:#a6e22e">end</span>
+<span style="color:#a6e22e">end</span>
+
+interpretnonprimitive = <span style="color:#a6e22e">function</span> () <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span> <span style="color:#a6e22e">end</span> <span style="color:#f92672">-</span><span style="color:#f92672">-</span> <span style="color:#a6e22e">stub</span>
+interpretnumber  = <span style="color:#a6e22e">function</span> () <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span> <span style="color:#a6e22e">end</span> <span style="color:#f92672">-</span><span style="color:#f92672">-</span> <span style="color:#a6e22e">stub</span>
+p_s_i = <span style="color:#a6e22e">function</span> () <span style="color:#a6e22e">end</span> <span style="color:#f92672">-</span><span style="color:#f92672">-</span> <span style="color:#a6e22e">print</span> <span style="color:#a6e22e">state</span>, <span style="color:#66d9ef">for</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">interpret</span><span style="color:#e6db74">&#34;</span> (<span style="color:#a6e22e">stub</span>)
+
+modes.interpret = <span style="color:#a6e22e">function</span> ()
+	word = <span style="color:#a6e22e">getwordornewline</span>() <span style="color:#f92672">or</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span>
+	<span style="color:#a6e22e">p_s_i</span>()
+	<span style="color:#a6e22e">local</span> _ = <span style="color:#a6e22e">interpretprimitive</span>() <span style="color:#f92672">or</span>
+			<span style="color:#a6e22e">interpretnonprimitive</span>() <span style="color:#f92672">or</span>
+			<span style="color:#a6e22e">interpretnumber</span>() <span style="color:#f92672">or</span>
+			<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Can</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">t interpret: </span><span style="color:#e6db74">&#34;</span>..<span style="color:#a6e22e">word</span>)
+<span style="color:#a6e22e">end</span>
+</code></pre></div><p>This ends up being 56 lines of Lua code. However, without regard for readability, it&rsquo;s easy to get the code &lt; 30 lines of code. There are 11 lines of extra whitespace. In any case, it&rsquo;s quite concise even as presented. The aforementioned article goes into implementing a few basic Forth words and some other domain specific languages. I&rsquo;m, however, going to focus more on the implementation of the interpreter and the Forth word implementation. Some things you should note about the above code before moving on:</p>
+<ul>
+<li>pos and subj are global variables that must be set before calling run()</li>
+<li>The implementation focuses on defining the language syntax from within the interpreter with the ability to call Lua code</li>
+<li>As-is, it&rsquo;s a bit awkward to be used by other code. I.e. it&rsquo;s not structured like a normal Lua module.
+When I went about converting the code to Moonscript I wanted to try to take advantage of the features that Moonscript provides such as clases, modules, among others. This changes the design a bit, but I think it still provides a fair amount of flexibility. However, I couldn&rsquo;t find a good way to use Lua or Moonscript within the interpreter like the original did. The actual lines of code ended up being 46 lines with 9 lines of extra white space.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-coffee" data-lang="coffee"><span style="color:#a6e22e">import</span> <span style="color:#a6e22e">extend</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">require</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">moon</span><span style="color:#e6db74">&#34;</span>
+
+<span style="color:#a6e22e">export</span> <span style="color:#f92672">^</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MiniForth</span>
+    <span style="color:#66d9ef">new</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">(subj = &#34;&#34;) =&gt;</span>
+        @subject = <span style="color:#a6e22e">subj</span>
+        @position = <span style="color:#ae81ff">1</span>
+        @dictionary = {}
+        @mode = <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">interpret</span><span style="color:#e6db74">&#34;</span>
+        @modes = {interpret: <span style="color:#a6e22e">-&gt;</span>
+            @word = <span style="color:#a6e22e">@</span><span style="color:#a6e22e">get_word_or_newline</span><span style="color:#f92672">!</span> <span style="color:#f92672">or</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span>
+            <span style="color:#a6e22e">@</span><span style="color:#a6e22e">p_s_i</span><span style="color:#f92672">!</span>
+            <span style="color:#a6e22e">@</span><span style="color:#a6e22e">interpret_primitive</span><span style="color:#f92672">!</span> <span style="color:#f92672">or</span> <span style="color:#a6e22e">@</span><span style="color:#a6e22e">interpret_nonprimitive</span><span style="color:#f92672">!</span> <span style="color:#f92672">or</span> <span style="color:#a6e22e">@</span><span style="color:#a6e22e">interpret_number</span><span style="color:#f92672">!</span> <span style="color:#f92672">or</span> <span style="color:#a6e22e">error</span> <span style="color:#a6e22e">string</span>.<span style="color:#a6e22e">format</span>[[<span style="color:#a6e22e">Can</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">t interpret: </span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">]], @word
+</span><span style="color:#e6db74">        }
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    add_words: (words) =&gt; extend(@dictionary, words)
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    parse_by_pattern: (pat) =&gt;
+</span><span style="color:#e6db74">        cap, newpos = string.match @subject, pat, @position
+</span><span style="color:#e6db74">        if newpos
+</span><span style="color:#e6db74">            @position = newpos
+</span><span style="color:#e6db74">            cap
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    parse_spaces: =&gt; @parse_by_pattern </span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">^([ </span><span style="color:#e6db74">\t</span><span style="color:#e6db74">]*)()</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    parse_word: =&gt; @parse_by_pattern </span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">^(%S+)()</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    parse_newline: =&gt; @parse_by_pattern </span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">^(</span><span style="color:#e6db74">\n</span><span style="color:#e6db74">)()</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    parse_rest_of_line: =&gt; @parse_by_pattern </span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">^([^</span><span style="color:#e6db74">\n</span><span style="color:#e6db74">]*)()</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    parse_word_or_newline: =&gt; @parse_word! or @parse_newline!
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    get_word: =&gt;
+</span><span style="color:#e6db74">        @parse_spaces!
+</span><span style="color:#e6db74">        @parse_word!
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    get_word_or_newline: =&gt;
+</span><span style="color:#e6db74">        @parse_spaces!
+</span><span style="color:#e6db74">        @parse_word_or_newline!
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    interpret_primitive: =&gt; if type(@dictionary[@word]) == </span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">function</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> then
+</span><span style="color:#e6db74">        @dictionary[@word]!
+</span><span style="color:#e6db74">        true
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    interpret_nonprimitive: =&gt; false
+</span><span style="color:#e6db74">    interpret_number: =&gt; false
+</span><span style="color:#e6db74">    p_s_i: =&gt;
+</span><span style="color:#e6db74">    run: =&gt; while @mode != </span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">stop</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> do @modes[@mode]!
+</span></code></pre></div><p>I think the code is fairly straight forward. I converted many of the constructs from the Lua version, but within a class. The biggest things to note are:</p>
+<ul>
+<li>There is only one global variable, the class</li>
+<li>The class takes the subject as an argument (all the other members are accessible after construction.)</li>
+<li>add_words member function adds words to the dictionary (more on this later.)</li>
+</ul>
+<p>Now, lets switch back to Lua code and examine how things are put implemented in miniforth.lua</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-coffee" data-lang="coffee">subj = [<span style="color:#f92672">==</span>[
+<span style="color:#f92672">%</span><span style="color:#a6e22e">L</span> <span style="color:#a6e22e">_F</span>[<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">\n</span><span style="color:#e6db74">&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">function</span> () <span style="color:#a6e22e">end</span>
+<span style="color:#f92672">%</span><span style="color:#a6e22e">L</span> <span style="color:#a6e22e">_F</span>[<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span>]   <span style="color:#f92672">=</span> <span style="color:#a6e22e">function</span> () mode = <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">stop</span><span style="color:#e6db74">&#34;</span> <span style="color:#a6e22e">end</span>
+<span style="color:#f92672">%</span><span style="color:#a6e22e">L</span> <span style="color:#a6e22e">_F</span>[<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">[L</span><span style="color:#e6db74">&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">function</span> () eval(<span style="color:#a6e22e">parsebypattern</span>(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">^(.-)%sL]()</span><span style="color:#e6db74">&#34;</span>)) <span style="color:#a6e22e">end</span>
+[<span style="color:#a6e22e">L</span>
+    DS = { n = <span style="color:#ae81ff">0</span> }
+    push = <span style="color:#a6e22e">function</span> (<span style="color:#a6e22e">stack</span>, <span style="color:#a6e22e">x</span>) stack.n = <span style="color:#a6e22e">stack</span>.<span style="color:#a6e22e">n</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">stack</span>[<span style="color:#a6e22e">stack</span>.<span style="color:#a6e22e">n</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">x</span> <span style="color:#a6e22e">end</span>
+    pop  = <span style="color:#a6e22e">function</span> (<span style="color:#a6e22e">stack</span>) <span style="color:#a6e22e">local</span> x = <span style="color:#a6e22e">stack</span>[<span style="color:#a6e22e">stack</span>.<span style="color:#a6e22e">n</span>]; <span style="color:#a6e22e">stack</span>[<span style="color:#a6e22e">stack</span>.<span style="color:#a6e22e">n</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">nil</span>;
+    stack.n = <span style="color:#a6e22e">stack</span>.<span style="color:#a6e22e">n</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">x</span> <span style="color:#a6e22e">endipt</span>. <span style="color:#a6e22e">I</span> <span style="color:#a6e22e">haven</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">t done anything to examine potential limitations with the Moonscript version.
+</span><span style="color:#e6db74">    _F[</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">5</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">]   = function () push(DS, 5) end
+</span><span style="color:#e6db74">    _F[</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">DUP</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">] = function () push(DS, DS[DS.n]) end
+</span><span style="color:#e6db74">    _F[</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">*</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">]   = function () push(DS, pop(DS) * pop(DS)) end
+</span><span style="color:#e6db74">    _F[</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">.</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">]   = function () io.write(</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">..pop(DS)) end
+</span><span style="color:#e6db74">L]
+</span><span style="color:#e6db74">]==]
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">pos = 1
+</span><span style="color:#e6db74">mode = </span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">interpret</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">run()
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">subj = </span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">5 DUP * .</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">pos = 1
+</span><span style="color:#e6db74">mode = </span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">interpret</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">run()
+</span></code></pre></div><p>This basically creates some new words within the dictionary. However, it does it from within the interpreter. First by creating a few basic words to handle new lines and empty lines (meaning &ldquo;stop&rdquo;.) Then a new word (&quot;[L&rdquo;) is created that aipt. I haven&rsquo;t done anything to examine potential limitations with the Moonscript version.llows multiline Lua expressions. Then a datastack (&ldquo;DS&rdquo;) is created with two functions (&ldquo;push&rdquo; &amp; &ldquo;pop&rdquo;), and then the rest of the words to make the subject &ldquo;5 DUP * .&rdquo; work as it would in Forth. This is put 5 on the stack, duplicate the top stack item, multiply the top two items on the stack, and printing the result.<!-- raw HTML omitted --><a href="#note-1">1</a><!-- raw HTML omitted --></p>
+<p>As I said, almost the entirety of the above is implemented from within the interpreter. This is in stark contrast to the Moonscript miniforth which implements everything outside the interpreter, in the class and subclasses.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-coffee" data-lang="coffee"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">stack</span>
+    <span style="color:#66d9ef">new</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">=&gt;</span>
+        @s = {}
+
+    peek: <span style="color:#a6e22e">=&gt;</span>
+        <span style="color:#a6e22e">@</span><span style="color:#a6e22e">s</span>[<span style="color:#75715e">#@s]
+</span><span style="color:#75715e"></span>
+    push: <span style="color:#a6e22e">(...) =&gt;</span>
+        <span style="color:#66d9ef">for</span> n = <span style="color:#ae81ff">1</span>, <span style="color:#75715e">#arg do
+</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">@</span><span style="color:#a6e22e">s</span>[<span style="color:#75715e">#@s + 1] = arg[n]
+</span><span style="color:#75715e"></span>
+    pop: <span style="color:#a6e22e">(n = 1) =&gt;</span>
+        x = {}
+        <span style="color:#66d9ef">while</span> <span style="color:#a6e22e">n</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#a6e22e">do</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#75715e">#@s &gt; 0
+</span><span style="color:#75715e"></span>                <span style="color:#a6e22e">table</span>.<span style="color:#a6e22e">insert</span> <span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">@</span><span style="color:#a6e22e">s</span>[<span style="color:#75715e">#@s]
+</span><span style="color:#75715e"></span>                <span style="color:#a6e22e">@</span><span style="color:#a6e22e">s</span>[<span style="color:#75715e">#@s] = nil
+</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">n</span> <span style="color:#f92672">-=</span> <span style="color:#ae81ff">1</span>
+        <span style="color:#a6e22e">unpack</span> <span style="color:#a6e22e">x</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MoonForth</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">MiniForth</span>
+    <span style="color:#66d9ef">new</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">(subj = &#34;&#34;) =&gt;</span>
+        <span style="color:#66d9ef">super</span> <span style="color:#a6e22e">subj</span>
+        @DS = <span style="color:#a6e22e">stack</span><span style="color:#f92672">!</span>
+        <span style="color:#a6e22e">@</span><span style="color:#a6e22e">add_words</span> {
+            <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">5</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">-&gt;</span> <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">push</span> <span style="color:#ae81ff">5</span>
+            <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">DUP</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">-&gt;</span> <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">push</span> <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">peek</span><span style="color:#f92672">!</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">peek</span><span style="color:#f92672">!</span>
+            <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">*</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">-&gt;</span> <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">push</span> <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">pop</span><span style="color:#f92672">!</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">pop</span><span style="color:#f92672">!</span>
+            <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">.</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">-&gt;</span> <span style="color:#a6e22e">io</span>.<span style="color:#a6e22e">write</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#34;</span> .. <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">pop</span><span style="color:#f92672">!</span>
+            <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">-&gt;</span> @mode = <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">stop</span><span style="color:#e6db74">&#34;</span>
+        }
+
+mf = <span style="color:#a6e22e">MoonForth</span> [[ <span style="color:#ae81ff">5</span> <span style="color:#a6e22e">DUP</span> <span style="color:#f92672">*</span> . ]]
+<span style="color:#a6e22e">mf</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">run</span><span style="color:#f92672">!</span>
+</code></pre></div><p>This code assumes all is in the same file (though I personally have them in separate files with the proper export &amp; requires.) So I first go about implementing a stack class and then the MoonForth class&rsquo;s constructor creates a stack member and adds the required words to the dictionary. The words themselves are quite similar. The way they&rsquo;re added to the dictionary are very different. (However, the Lua version obviously could have been pure Lua pretty easily.)</p>
+<p>I&rsquo;ve also went a bit further with implementing many of the easy core words from ANS Forth</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-coffee" data-lang="coffee"><span style="color:#a6e22e">require</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">miniforth</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#a6e22e">require</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">stack</span><span style="color:#e6db74">&#34;</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MoonForth</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">MiniForth</span>
+    <span style="color:#66d9ef">new</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">(subj = &#34;&#34;) =&gt;</span>
+        <span style="color:#66d9ef">super</span> <span style="color:#a6e22e">subj</span>
+        @DS = <span style="color:#a6e22e">stack</span><span style="color:#f92672">!</span>
+        <span style="color:#a6e22e">@</span><span style="color:#a6e22e">add_words</span> {
+            <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">?DUP</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">-&gt;</span> <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">push</span> <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">peek</span><span style="color:#f92672">!</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">peek</span><span style="color:#f92672">!</span> <span style="color:#f92672">~</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+            <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">2DUP</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">-&gt;</span>
+                <span style="color:#a6e22e">s1</span>, s2 = <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">pop</span> <span style="color:#ae81ff">2</span>
+                <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">push</span> <span style="color:#a6e22e">s2</span>, <span style="color:#a6e22e">s1</span>, <span style="color:#a6e22e">s2</span>, <span style="color:#a6e22e">s1</span>
+            <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">DUP</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">-&gt;</span> <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">push</span> <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">peek</span><span style="color:#f92672">!</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">peek</span><span style="color:#f92672">!</span>
+            <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">2DROP</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">-&gt;</span> <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">pop</span> <span style="color:#ae81ff">2</span>
+            <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">DROP</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">-&gt;</span> <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">pop</span><span style="color:#f92672">!</span>
+            <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">ROT</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">-&gt;</span>
+                <span style="color:#a6e22e">f</span>, <span style="color:#a6e22e">s</span>, t = <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">pop</span> <span style="color:#ae81ff">3</span>
+                <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">push</span> <span style="color:#a6e22e">f</span>, <span style="color:#a6e22e">t</span>, <span style="color:#a6e22e">s</span>
+            <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">SWAP</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">-&gt;</span>
+                <span style="color:#a6e22e">f</span>, s = <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">pop</span><span style="color:#f92672">!</span> <span style="color:#ae81ff">2</span>
+                <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">push</span> <span style="color:#a6e22e">f</span>, <span style="color:#a6e22e">s</span>
+
+            <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">+</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">-&gt;</span> <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">push</span> <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">pop</span><span style="color:#f92672">!</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">pop</span><span style="color:#f92672">!</span>
+            <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">-</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">-&gt;</span>
+                <span style="color:#a6e22e">@</span><span style="color:#a6e22e">dictionary</span>.<span style="color:#a6e22e">SWAP</span><span style="color:#f92672">!</span>
+                <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">push</span> <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">pop</span><span style="color:#f92672">!</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">pop</span><span style="color:#f92672">!</span>
+            <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">*</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">-&gt;</span> <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">push</span> <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">pop</span><span style="color:#f92672">!</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">pop</span><span style="color:#f92672">!</span>
+            <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">/</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">-&gt;</span>
+                <span style="color:#a6e22e">@</span><span style="color:#a6e22e">dictionary</span>.<span style="color:#a6e22e">SWAP</span><span style="color:#f92672">!</span>
+                <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">push</span> <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">pop</span><span style="color:#f92672">!</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">pop</span><span style="color:#f92672">!</span>
+            <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">*/</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">-&gt;</span>
+                <span style="color:#a6e22e">@</span><span style="color:#a6e22e">dictionary</span>[<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">/</span><span style="color:#e6db74">&#34;</span>]<span style="color:#f92672">!</span>
+                <span style="color:#a6e22e">@</span><span style="color:#a6e22e">dictionary</span>[<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">*</span><span style="color:#e6db74">&#34;</span>]<span style="color:#f92672">!</span>
+            <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">MOD</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">-&gt;</span>
+                <span style="color:#a6e22e">@</span><span style="color:#a6e22e">dictionary</span>.<span style="color:#a6e22e">SWAP</span><span style="color:#f92672">!</span>
+                <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">push</span> <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">fmod</span> <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">pop</span><span style="color:#f92672">!</span>, <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">pop</span><span style="color:#f92672">!</span>
+            <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">NEGATE</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">-&gt;</span> <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">push</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">pop</span><span style="color:#f92672">!</span>
+
+            <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">1+</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">-&gt;</span>
+                <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">push</span> <span style="color:#ae81ff">1</span>
+                <span style="color:#a6e22e">@</span><span style="color:#a6e22e">dictionary</span>[<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">+</span><span style="color:#e6db74">&#34;</span>]<span style="color:#f92672">!</span>
+            <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">1-</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">-&gt;</span>
+                <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">push</span> <span style="color:#ae81ff">1</span>
+                <span style="color:#a6e22e">@</span><span style="color:#a6e22e">dictionary</span>[<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">-</span><span style="color:#e6db74">&#34;</span>]<span style="color:#f92672">!</span>
+
+            <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">.</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">-&gt;</span> <span style="color:#a6e22e">io</span>.<span style="color:#a6e22e">write</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#34;</span> .. <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">pop</span><span style="color:#f92672">!</span>
+
+            <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">ABS</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">-&gt;</span> <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">push</span> <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">abs</span> <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">pop</span><span style="color:#f92672">!</span>
+            <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">MAX</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">-&gt;</span> <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">push</span> <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">max</span> <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">pop</span> <span style="color:#ae81ff">2</span>
+            <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">MIN</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">-&gt;</span> <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">push</span> <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">min</span> <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">pop</span> <span style="color:#ae81ff">2</span>
+
+            <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">-&gt;</span> @mode = <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">stop</span><span style="color:#e6db74">&#34;</span>
+        }
+
+    interpret_number: <span style="color:#a6e22e">=&gt;</span>
+        number = <span style="color:#a6e22e">tonumber</span> <span style="color:#a6e22e">@</span><span style="color:#a6e22e">word</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">number</span> <span style="color:#66d9ef">then</span>
+            <span style="color:#a6e22e">@</span><span style="color:#a6e22e">DS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">push</span> <span style="color:#a6e22e">number</span>
+            <span style="color:#66d9ef">true</span>
+
+mf = <span style="color:#a6e22e">MoonForth</span> [[ <span style="color:#ae81ff">4</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">+</span> <span style="color:#a6e22e">DUP</span> <span style="color:#f92672">*</span> . ]]
+<span style="color:#a6e22e">mf</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">run</span><span style="color:#f92672">!</span>
+</code></pre></div><p>In all, it was fun playing with Forth from Moonscript. I haven&rsquo;t done anything to examine potential limitations with the Moonscript version. Some interesting possibilities might be to implement Forth words that interact with Löve or OpenResty. Really, with either miniforth implementation, it should be possible to have a Forth-like syntax usable anywhere Moonscript and Lua are supported.</p>
+<p>Code for Miniforth can be downloaded from: <a href="https://github.com/losinggeneration/miniforth-moonscript">https://github.com/losinggeneration/miniforth-moonscript</a></p>
+<p><!-- raw HTML omitted -->1.<!-- raw HTML omitted --> This is only partially correct with regard to the stack. More accurately multiply pops the top two items, multiplies them, puts the result on the stack, and then &lsquo;.&rsquo; pops the stack to display whatever was on the stack.</p>
+
+      </div></div>
+  
+  <div class="pagination">
+    <div class="pagination__title">
+      <span
+        class="pagination__title-h">Read other posts</span>
+      <hr />
+    </div>
+    <div class="pagination__buttons">
+      
+      <span class="button previous">
+        <a href="https://losinggeneration.com/2016/01/11/go-gcc-vs-gc/">
+          <span class="button__icon">←</span>
+          <span class="button__text">Go GCC vs GC</span>
+        </a>
+      </span>
+      
+      
+      <span class="button next">
+        <a href="https://losinggeneration.com/2013/07/24/go-utf-16/">
+          <span class="button__text">Go UTF-16</span>
+          <span class="button__icon">→</span>
+        </a>
+      </span>
+      
+    </div>
+  </div>
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>©2009-2020 Harley Laue</span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://losinggeneration.com/assets/main.js"></script>
+<script src="https://losinggeneration.com/assets/prism.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

@@ -3,12 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://losinggeneration.com/categories/</loc>
-    <lastmod>2016-01-12T05:58:49+00:00</lastmod>
+    <loc>https://losinggeneration.com/tags/hugo/</loc>
+    <lastmod>2020-02-16T04:42:42-08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://losinggeneration.com/tags/go/</loc>
+    <loc>https://losinggeneration.com/</loc>
+    <lastmod>2020-02-16T04:42:42-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://losinggeneration.com/posts/2020-02-16-move-to-hugo/</loc>
+    <lastmod>2020-02-16T04:42:42-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://losinggeneration.com/posts/</loc>
+    <lastmod>2020-02-16T04:42:42-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://losinggeneration.com/tags/</loc>
+    <lastmod>2020-02-16T04:42:42-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://losinggeneration.com/tags/wordpress/</loc>
+    <lastmod>2020-02-16T04:42:42-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://losinggeneration.com/categories/</loc>
     <lastmod>2016-01-12T05:58:49+00:00</lastmod>
   </url>
   
@@ -18,27 +43,17 @@
   </url>
   
   <url>
+    <loc>https://losinggeneration.com/tags/go/</loc>
+    <lastmod>2016-01-12T05:58:49+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://losinggeneration.com/2016/01/11/go-gcc-vs-gc/</loc>
     <lastmod>2016-01-12T05:58:49+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://losinggeneration.com/</loc>
-    <lastmod>2016-01-12T05:58:49+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://losinggeneration.com/posts/</loc>
-    <lastmod>2016-01-12T05:58:49+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://losinggeneration.com/categories/programming/</loc>
-    <lastmod>2016-01-12T05:58:49+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://losinggeneration.com/tags/</loc>
     <lastmod>2016-01-12T05:58:49+00:00</lastmod>
   </url>
   
@@ -198,11 +213,6 @@
   </url>
   
   <url>
-    <loc>https://losinggeneration.com/tags/wordpress/</loc>
-    <lastmod>2011-07-14T16:16:34+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://losinggeneration.com/2011/07/14/wordpress-backup-script/</loc>
     <lastmod>2011-07-14T16:16:34+00:00</lastmod>
   </url>
@@ -248,12 +258,12 @@
   </url>
   
   <url>
-    <loc>https://losinggeneration.com/categories/didj/</loc>
+    <loc>https://losinggeneration.com/tags/didj/</loc>
     <lastmod>2011-04-28T18:33:49+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://losinggeneration.com/tags/didj/</loc>
+    <loc>https://losinggeneration.com/categories/didj/</loc>
     <lastmod>2011-04-28T18:33:49+00:00</lastmod>
   </url>
   

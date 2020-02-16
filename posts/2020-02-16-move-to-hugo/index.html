@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Move to Hugo :: Losinggeneration Coding Blog —  Imperfect software for an imperfect world.</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="This blog has seen a lot of changes over the last decade, from being hosted in my apartment on a machine with 128MB of RAM with dynamic DNS, to being hosted at on company servers (with permission of course), to being hosted by Digital Ocean in a couple Docker containers, to now, finally being hosted on Github Pages. This most recent move is the most significant because it&amp;rsquo;s the switch from a dynamic content generator (Wordpress) to a static content generator (Hugo."/>
+<meta name="keywords" content="wordpress, hugo"/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://losinggeneration.com/posts/2020-02-16-move-to-hugo/" />
+
+
+
+
+<link rel="stylesheet" href="https://losinggeneration.com/assets/style.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://losinggeneration.com/img/apple-touch-icon-144-precomposed.png">
+
+<link rel="shortcut icon" href="https://losinggeneration.com/img/favicon/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Move to Hugo :: Losinggeneration Coding Blog —  Imperfect software for an imperfect world." />
+<meta name="twitter:description" content="This blog has seen a lot of changes over the last decade, from being hosted in my apartment on a machine with 128MB of RAM with dynamic DNS, to being hosted at on company servers (with permission of course), to being hosted by Digital Ocean in a couple Docker containers, to now, finally being hosted on Github Pages. This most recent move is the most significant because it&amp;rsquo;s the switch from a dynamic content generator (Wordpress) to a static content generator (Hugo." />
+<meta name="twitter:site" content="https://losinggeneration.com/" />
+<meta name="twitter:creator" content="losinggeneration" />
+<meta name="twitter:image" content="">
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Move to Hugo :: Losinggeneration Coding Blog —  Imperfect software for an imperfect world.">
+<meta property="og:description" content="This blog has seen a lot of changes over the last decade, from being hosted in my apartment on a machine with 128MB of RAM with dynamic DNS, to being hosted at on company servers (with permission of course), to being hosted by Digital Ocean in a couple Docker containers, to now, finally being hosted on Github Pages. This most recent move is the most significant because it&amp;rsquo;s the switch from a dynamic content generator (Wordpress) to a static content generator (Hugo." />
+<meta property="og:url" content="https://losinggeneration.com/posts/2020-02-16-move-to-hugo/" />
+<meta property="og:site_name" content="Move to Hugo" />
+<meta property="og:image" content="">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+<meta property="article:published_time" content="2020-02-16 04:42:42 -0800 PST" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="">
+
+
+<div class="container full headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    ~
+  </div>
+</a>
+
+    </div>
+    <div class="menu-trigger">menu</div>
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://losinggeneration.com/posts/2020-02-16-move-to-hugo/">Move to Hugo</a></h1>
+  <div class="post-meta">
+      
+    <span class="post-date">
+      2020-02-16
+    </span>
+    
+    
+    <span class="post-author">::
+      losinggeneration
+    </span>
+    
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="https://losinggeneration.com/tags/wordpress/">wordpress</a>&nbsp;
+    
+    #<a href="https://losinggeneration.com/tags/hugo/">hugo</a>&nbsp;
+    
+  </span>
+  
+
+  
+
+  <div class="post-content"><div>
+        <p>This blog has seen a lot of changes over the last decade, from being hosted in my
+apartment on a machine with 128MB of RAM with dynamic DNS, to being hosted at
+on company servers (with permission of course), to being hosted by Digital
+Ocean in a couple Docker containers, to now, finally being hosted on Github
+Pages. This most recent move is the most significant because it&rsquo;s the switch
+from a dynamic content generator (Wordpress) to a static content generator
+(Hugo.) I&rsquo;ve been wanting to make this conversion for at least there years now,
+but it&rsquo;s never been a priority. However, that&rsquo;s changed for a couple of
+reasons. I clearly haven&rsquo;t been doing much to update the content here, and as
+a quick way to get SSL on the site I used a load balancer on Digital Ocean to
+have it use Let&rsquo;s Encrypt. However, the load balancer was two thirds of my bill
+each month for DO. That, mixed with the fact that in order to update Wordpress
+I&rsquo;ll have spin up a new container with PHP updated, meant it was time to bite
+the bullet &amp; spend a few hours converting &amp; reviewing the converted content.</p>
+<p>When all was said &amp; done, the process to switch it over wasn&rsquo;t too bad. The
+thing that took the longest was because plugins &amp; other things affected the
+content in Wordpress already causing them to not render correctly there, so
+they obviously didn&rsquo;t work in Hugo either. All in all, though, the process
+wasn&rsquo;t too bad.</p>
+<p>This has motivated me a bit more to make more updates here. The work flow is
+much more in line with what I want to use, Wordress has done very well over,
+but it&rsquo;s time for me to move on.</p>
+
+      </div></div>
+  
+  <div class="pagination">
+    <div class="pagination__title">
+      <span
+        class="pagination__title-h">Read other posts</span>
+      <hr />
+    </div>
+    <div class="pagination__buttons">
+      
+      
+      <span class="button next">
+        <a href="https://losinggeneration.com/2016/01/11/go-gcc-vs-gc/">
+          <span class="button__text">Go GCC vs GC</span>
+          <span class="button__icon">→</span>
+        </a>
+      </span>
+      
+    </div>
+  </div>
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>©2009-2020 Harley Laue</span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://losinggeneration.com/assets/main.js"></script>
+<script src="https://losinggeneration.com/assets/prism.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

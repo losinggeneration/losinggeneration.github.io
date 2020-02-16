@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>©2009-2020 Harley Laue</copyright>
-    <lastBuildDate>Thu, 14 Jul 2011 16:16:34 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 16 Feb 2020 04:42:42 -0800</lastBuildDate>
     
 	<atom:link href="https://losinggeneration.com/tags/wordpress/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Move to Hugo</title>
+      <link>https://losinggeneration.com/posts/2020-02-16-move-to-hugo/</link>
+      <pubDate>Sun, 16 Feb 2020 04:42:42 -0800</pubDate>
+      
+      <guid>https://losinggeneration.com/posts/2020-02-16-move-to-hugo/</guid>
+      <description>This blog has seen a lot of changes over the last decade, from being hosted in my apartment on a machine with 128MB of RAM with dynamic DNS, to being hosted at on company servers (with permission of course), to being hosted by Digital Ocean in a couple Docker containers, to now, finally being hosted on Github Pages. This most recent move is the most significant because it&amp;rsquo;s the switch from a dynamic content generator (Wordpress) to a static content generator (Hugo.</description>
+    </item>
     
     <item>
       <title>WordPress Backup Script</title>

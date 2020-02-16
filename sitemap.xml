@@ -63,12 +63,12 @@
   </url>
   
   <url>
-    <loc>https://losinggeneration.com/tags/moonscript/</loc>
+    <loc>https://losinggeneration.com/categories/moonscript/</loc>
     <lastmod>2014-01-11T08:35:04+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://losinggeneration.com/categories/moonscript/</loc>
+    <loc>https://losinggeneration.com/tags/moonscript/</loc>
     <lastmod>2014-01-11T08:35:04+00:00</lastmod>
   </url>
   
@@ -135,26 +135,6 @@
   <url>
     <loc>https://losinggeneration.com/2012/08/08/c-bindings-for-c/</loc>
     <lastmod>2012-08-08T16:49:44+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://losinggeneration.com/tags/guitar/</loc>
-    <lastmod>2011-10-18T07:23:30+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://losinggeneration.com/2011/10/18/guitar-painting-and-modifications/</loc>
-    <lastmod>2011-10-18T07:23:30+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://losinggeneration.com/tags/paint/</loc>
-    <lastmod>2011-10-18T07:23:30+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://losinggeneration.com/categories/uncategorized/</loc>
-    <lastmod>2011-10-18T07:23:30+00:00</lastmod>
   </url>
   
   <url>
@@ -268,12 +248,12 @@
   </url>
   
   <url>
-    <loc>https://losinggeneration.com/tags/didj/</loc>
+    <loc>https://losinggeneration.com/categories/didj/</loc>
     <lastmod>2011-04-28T18:33:49+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://losinggeneration.com/categories/didj/</loc>
+    <loc>https://losinggeneration.com/tags/didj/</loc>
     <lastmod>2011-04-28T18:33:49+00:00</lastmod>
   </url>
   
@@ -414,6 +394,11 @@
   
   <url>
     <loc>https://losinggeneration.com/2010/04/21/adafruits-captua/</loc>
+    <lastmod>2010-04-21T19:12:25+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://losinggeneration.com/categories/uncategorized/</loc>
     <lastmod>2010-04-21T19:12:25+00:00</lastmod>
   </url>
   

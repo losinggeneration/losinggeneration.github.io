@@ -76,15 +76,6 @@
     </item>
     
     <item>
-      <title>Uncategorized</title>
-      <link>https://losinggeneration.com/categories/uncategorized/</link>
-      <pubDate>Tue, 18 Oct 2011 07:23:30 +0000</pubDate>
-      
-      <guid>https://losinggeneration.com/categories/uncategorized/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Linux</title>
       <link>https://losinggeneration.com/categories/linux/</link>
       <pubDate>Thu, 14 Jul 2011 16:16:34 +0000</pubDate>
@@ -117,6 +108,15 @@
       <pubDate>Sat, 05 Mar 2011 00:00:40 +0000</pubDate>
       
       <guid>https://losinggeneration.com/categories/z80-assembly/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Uncategorized</title>
+      <link>https://losinggeneration.com/categories/uncategorized/</link>
+      <pubDate>Wed, 21 Apr 2010 19:12:25 +0000</pubDate>
+      
+      <guid>https://losinggeneration.com/categories/uncategorized/</guid>
       <description></description>
     </item>
     

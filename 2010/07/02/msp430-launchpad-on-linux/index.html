@@ -142,17 +142,99 @@
   <div class="post-content"><div>
         <p>I got an MSP430 Launchpad in the mail a couple of days ago. So I&rsquo;ve been playing with that the last couple of days. The first day I went through the tools on the wiki and grabbed both IDE&rsquo;s and all the downloadable links I could. This had to be done on Windows since it&rsquo;s the only platform they support. Being a Linux user 99% of the time, I wasn&rsquo;t too pleased with this situation, so I investigated the tools available for Linux, and that&rsquo;s what I did all of yesterday.</p>
 <p>First, I searched the Arch Linux repos (including AUR) for MSP430 related tools. I used yaourt and searched for both msp &amp; msp430. I compiled and installed the compiler, the C library, and two debuggers (more on this later.) After these were installed I grabbed the source to the temperature demo that comes preloaded on the chip. First thing I had to do was change the source in order for it to build with msp430-gcc. The changes were trivial and it didn&rsquo;t take too long to get it compiled. What took me the longest time was trying to figure out if I needed to define what mcu I&rsquo;m using. After a bit of research I fired up the debugger, erased the flash, reflashed, and did some light debugging.</p>
-<p>Now, for how it&rsquo;s done. The packages you&rsquo;ll need are as follows: Updated 2012-06-13<code>binutils-msp430 2.21.1-2&lt;br /&gt; gcc-msp430 4.6.3-1&lt;br /&gt; msp430-gdb 7.2-3&lt;br /&gt; msp430-libc 20120224-2&lt;br /&gt; msp430mcu 20120406-2&lt;br /&gt; mspdebug 0.8-1</code>If you&rsquo;re using a distro other than Arch, it&rsquo;s up to you to figure out how to get and/or build the programs from the source. If you&rsquo;re using Arch, you can obviously use the AUR packages with ABS. If you&rsquo;re an i686 user you can grab my prebuild binaries if you&rsquo;d like from <a href="/wp-upload/msp430/">here</a>. Now that you have a toolchain, I&rsquo;m sure you&rsquo;ll want to test it out. <!-- raw HTML omitted -->Grab my &ldquo;ported&rdquo; <a href="/wp-upload/msp430/temperature-demo.tar.bz2">temperature demo</a>.<!-- raw HTML omitted --><strong>UPDATE</strong> The here&rsquo;s the fully working <a href="/wp-upload/msp430/temperature-demo.tgz">temperature demo.</a> You&rsquo;ll need to extract it, fire up a terminal, go to that directory, and you should be able to just type: make. If all goes as planned, you&rsquo;ll have main.elf in that directory. So now it&rsquo;s time to try it out, fire up mspdebug. The actual command is probably going to be something like: sudo mspdebug -R. Permissions on the USB device might be able to be changed so it doesn&rsquo;t have to be run as root, but for me and for now, it&rsquo;s not too big of a deal. You should get something like this: `sudo mspdebug -R<!-- raw HTML omitted -->
-MSPDebug version 0.8 - debugging tool for MSP430 MCUs<!-- raw HTML omitted -->
-Copyright (C) 2009, 2010 Daniel Beer <a href="mailto:daniel@tortek.co.nz">daniel@tortek.co.nz</a><!-- raw HTML omitted -->
-This is free software; see the source for copying conditions.  There is NO<!-- raw HTML omitted -->
-warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.<!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
+<p>Now, for how it&rsquo;s done. The packages you&rsquo;ll need are as follows: Updated 2012-06-13</p>
+<pre><code>binutils-msp430 2.21.1-2
+gcc-msp430 4.6.3-1
+msp430-gdb 7.2-3
+msp430-libc 20120224-2
+msp430mcu 20120406-2
+mspdebug 0.8-1
+</code></pre><p>If you&rsquo;re using a distro other than Arch, it&rsquo;s up to you to figure out how to get and/or build the programs from the source. If you&rsquo;re using Arch, you can obviously use the AUR packages with ABS. If you&rsquo;re an i686 user you can grab my prebuild binaries if you&rsquo;d like from here<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. Now that you have a toolchain, I&rsquo;m sure you&rsquo;ll want to test it out. <!-- raw HTML omitted -->Grab my &ldquo;ported&rdquo; temperature demo<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>.<!-- raw HTML omitted --><strong>UPDATE</strong> The here&rsquo;s the fully working temperature demo.<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> You&rsquo;ll need to extract it, fire up a terminal, go to that directory, and you should be able to just type: make. If all goes as planned, you&rsquo;ll have main.elf in that directory. So now it&rsquo;s time to try it out, fire up mspdebug. The actual command is probably going to be something like: sudo mspdebug -R. Permissions on the USB device might be able to be changed so it doesn&rsquo;t have to be run as root, but for me and for now, it&rsquo;s not too big of a deal. You should get something like this:</p>
+<pre><code>sudo mspdebug -R
+MSPDebug version 0.8 - debugging tool for MSP430 MCUs
+Copyright (C) 2009, 2010 Daniel Beer daniel@tortek.co.nz
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+Trying to open interface 1 on 027
+FET protocol version is 30066536
+Configured for Spy-Bi-Wire
+Set Vcc: 3000 mV
+Device ID: 0xf201
+Device: MSP430F2013
+Code memory starts at 0xf800
+Available commands:
+    =        erase    hexout   mw       read     run      sym
+    cgraph   gdb      isearch  opt      regs     set
+    dis      help     md       prog     reset    step
+Available options:
+    color
+Type &quot;help topic&quot; for more information.
+Press Ctrl+D to quit.
+(mspdebug)
+</code></pre><p>You&rsquo;re now ready to do some damage!. First, let&rsquo;s just erase the flash. Just type: erase.</p>
+<pre><code>(mspdebug) erase
+Erasing...
+(mspdebug)
+</code></pre><p>If you&rsquo;d like to check that the flash is indeed erased, try this:</p>
+<pre><code>(mspdebug) dis 0xf800 2048
+    f800: ff ff ff ff         AND.B   @R15+,           0xffff(R15)
+    f804: ff ff ff ff         AND.B   @R15+,           0xffff(R15)
+    f808: ff ff ff ff         AND.B   @R15+,           0xffff(R15)
+...........
+    fff4: ff ff ff ff         AND.B   @R15+,           0xffff(R15)
+    fff8: ff ff ff ff         AND.B   @R15+,           0xffff(R15)
+    fffc: ff ff ff ff         AND.B   @R15+,           0xffff(R15)
+(mspdebug)
+</code></pre><p>As you can see, the entire 2kb of flash is erased. So, now that it&rsquo;s all gone, and the original demo lights turned off (because the program that was running was toasted) we&rsquo;ll want to load our built program into flash:</p>
+<pre><code>(mspdebug) prog main.elf
+Erasing...
+Writing 128 bytes to fc00...
+Writing 128 bytes to fc80...
+Writing 128 bytes to fd00...
+Writing 128 bytes to fd80...
+Writing 128 bytes to fe00...
+Writing   8 bytes to fe80...
+Writing  32 bytes to ffe0...
+(mspdebug)
+</code></pre><p>As you can see, erasing the first time was most likely not needed. Now we&rsquo;re ready to fire up GDB:</p>
+<pre><code>(mspdebug) gdb
+Bound to port 2000. Now waiting for connection...
+</code></pre><p>At this point you&rsquo;ll want to fire up another terminal, browse back to the source directory, and do:</p>
+<pre><code>msp430-gdb main.elf
+GNU gdb (GDB) 7.0.1
+Copyright (C) 2009 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later http://gnu.org/licenses/gpl.html
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type &quot;show copying&quot;
+and &quot;show warranty&quot; for details.
+This GDB was configured as &quot;--host=i686-pc-linux-gnu --target=msp430&quot;.
+For bug reporting instructions, please see:
+http://www.gnu.org/software/gdb/bugs/
+Reading symbols from /home/harley/Source/msp430/MSP-EXP430G2-Launchpad/main.elf...done.
+(gdb) target remote localhost:2000
+Remote debugging using localhost:2000
+0x0000fc00 in _reset_vector__ ()
+(gdb)
+</code></pre><p>Basically, start up msp430-gdb with main.elf, set the target to a remote machine (in this case localhost at port 2000), and msp430-gdb and mspdebug do some magic, and you&rsquo;re ready to start debugging. Since you&rsquo;re debugging a remote target, remember you &ldquo;continue&rdquo; instead of &ldquo;run.&rdquo;</p>
 <p>There you have it, you should be in pretty good shape to start experimenting with the MSP430 Launchpad on Linux.</p>
 <p>Addendum:
-Big thanks to Henry von Tresckow (hvontres) who fixed the temperature demo to fully work with mspgcc. <!-- raw HTML omitted -->I&rsquo;m yet to test it, but his changes look convincing enough.<!-- raw HTML omitted --> I&rsquo;ve tested the changes and they seem to work fine. Here&rsquo;s the <a href="/wp-upload/msp430/temperature-demo.tgz">updated temperature demo</a> (updated 2012-06-13.)</p>
+Big thanks to Henry von Tresckow (hvontres) who fixed the temperature demo to fully work with mspgcc. <!-- raw HTML omitted -->I&rsquo;m yet to test it, but his changes look convincing enough.<!-- raw HTML omitted --> I&rsquo;ve tested the changes and they seem to work fine. Here&rsquo;s the [updated temperature demo][3] (updated 2012-06-13.)</p>
 <p>Update:
 Added msp430mcu as a required package. Thanks Frankie Robertson for pointing that out in the comments. 🙂</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p><a href="/uploads/msp430/">broken link</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p><a href="/uploads/msp430/temperature-demo.tar.bz2">broken link</a> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p><a href="/uploads/msp430/temperature-demo.tgz">broken link</a> <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
 
       </div></div>
   

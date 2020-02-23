@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Bootstrapping a Forth in 46 lines of Moonscript code :: Losinggeneration&#39;s Coding and Projects</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="There&amp;rsquo;s an article called Boostrapping a Forth in 40 lines of Lua code[sic]1 that&amp;rsquo;s been around since around 2007. It&amp;rsquo;s a great article and I&amp;rsquo;d highly recommend reading it. However, I only recently found it after some interest in Forth.
+This is the Forth outer interpreter in Lua from the above article reformatted a bit:
+eval = function (str) return assert(loadstring(str))() end subj = &amp;#34;&amp;#34; pos = 1 parsebypattern = function (pat) local capture, newpos = string."/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://losinggeneration.com/2014/01/11/bootstrapping-a-forth-in-46-lines-of-moonscript-code/" />
+
+
+
+
+<link rel="stylesheet" href="https://losinggeneration.com/assets/style.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://losinggeneration.com/img/apple-touch-icon-144-precomposed.png">
+
+<link rel="shortcut icon" href="https://losinggeneration.com/img/favicon/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Bootstrapping a Forth in 46 lines of Moonscript code :: Losinggeneration&#39;s Coding and Projects — " />
+<meta name="twitter:description" content="There&amp;rsquo;s an article called Boostrapping a Forth in 40 lines of Lua code[sic]1 that&amp;rsquo;s been around since around 2007. It&amp;rsquo;s a great article and I&amp;rsquo;d highly recommend reading it. However, I only recently found it after some interest in Forth.
+This is the Forth outer interpreter in Lua from the above article reformatted a bit:
+eval = function (str) return assert(loadstring(str))() end subj = &amp;#34;&amp;#34; pos = 1 parsebypattern = function (pat) local capture, newpos = string." />
+<meta name="twitter:site" content="https://losinggeneration.com/" />
+<meta name="twitter:creator" content="losinggeneration" />
+<meta name="twitter:image" content="">
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Bootstrapping a Forth in 46 lines of Moonscript code :: Losinggeneration&#39;s Coding and Projects — ">
+<meta property="og:description" content="There&amp;rsquo;s an article called Boostrapping a Forth in 40 lines of Lua code[sic]1 that&amp;rsquo;s been around since around 2007. It&amp;rsquo;s a great article and I&amp;rsquo;d highly recommend reading it. However, I only recently found it after some interest in Forth.
+This is the Forth outer interpreter in Lua from the above article reformatted a bit:
+eval = function (str) return assert(loadstring(str))() end subj = &amp;#34;&amp;#34; pos = 1 parsebypattern = function (pat) local capture, newpos = string." />
+<meta property="og:url" content="https://losinggeneration.com/2014/01/11/bootstrapping-a-forth-in-46-lines-of-moonscript-code/" />
+<meta property="og:site_name" content="Bootstrapping a Forth in 46 lines of Moonscript code" />
+<meta property="og:image" content="">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+<meta property="article:section" content="Lua" /><meta property="article:section" content="Moonscript" /><meta property="article:section" content="Programming" />
+<meta property="article:published_time" content="2014-01-11 08:35:04 &#43;0000 &#43;0000" />
+
+
+
+
+
+
+
+
+<link rel="stylesheet"
+      href="/css/styles/gruvbox-dark.css">
+<script src="/js/highlight-9.18.1.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+</head>
+<body class="">
+
+
+<div class="container full headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    ~losinggeneration
+  </div>
+</a>
+
+    </div>
+    <div class="menu-trigger">menu</div>
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://losinggeneration.com/2014/01/11/bootstrapping-a-forth-in-46-lines-of-moonscript-code/">Bootstrapping a Forth in 46 lines of Moonscript code</a></h1>
+  <div class="post-meta">
+      
+    <span class="post-date">
+      2014-01-11
+    </span>
+    
+    
+    <span class="post-author">::
+      losinggeneration
+    </span>
+    
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="https://losinggeneration.com/tags/forth/">Forth</a>&nbsp;
+    
+    #<a href="https://losinggeneration.com/tags/lua/">Lua</a>&nbsp;
+    
+    #<a href="https://losinggeneration.com/tags/moonscript/">Moonscript</a>&nbsp;
+    
+  </span>
+  
+
+  
+
+  <div class="post-content"><div>
+        <p>There&rsquo;s an article called <em>Boostrapping a Forth in 40 lines of Lua code</em>[sic]<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> that&rsquo;s been around since around 2007. It&rsquo;s a great article and I&rsquo;d highly recommend reading it. However, I only recently found it after some interest in Forth.</p>
+<p>This is the Forth outer interpreter in Lua from the above article reformatted a bit:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lua" data-lang="lua">eval <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (str) <span style="color:#66d9ef">return</span> assert(loadstring(str))() <span style="color:#66d9ef">end</span>
+
+subj <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span>
+pos <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+
+parsebypattern <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (pat)
+	<span style="color:#66d9ef">local</span> capture, newpos <span style="color:#f92672">=</span> string.match(subj, pat, pos)
+	<span style="color:#66d9ef">if</span> newpos <span style="color:#66d9ef">then</span>
+		pos <span style="color:#f92672">=</span> newpos
+		<span style="color:#66d9ef">return</span> capture
+	<span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+
+parsespaces	 <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () <span style="color:#66d9ef">return</span> parsebypattern(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">^([ </span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">]*)()</span><span style="color:#e6db74">&#34;</span>) <span style="color:#66d9ef">end</span>
+parseword	 <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () <span style="color:#66d9ef">return</span> parsebypattern(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">^([^ </span><span style="color:#ae81ff">\t</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">]+)()</span><span style="color:#e6db74">&#34;</span>) <span style="color:#66d9ef">end</span>
+parsenewline	<span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () <span style="color:#66d9ef">return</span> parsebypattern(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">^(</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">)()</span><span style="color:#e6db74">&#34;</span>) <span style="color:#66d9ef">end</span>
+parserestofline <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () <span style="color:#66d9ef">return</span> parsebypattern(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">^([^</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">]*)()</span><span style="color:#e6db74">&#34;</span>) <span style="color:#66d9ef">end</span>
+parsewordornewline <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () <span style="color:#66d9ef">return</span> parseword() <span style="color:#f92672">or</span> parsenewline() <span style="color:#66d9ef">end</span>
+
+getword <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> ()
+	parsespaces()
+	<span style="color:#66d9ef">return</span> parseword()
+<span style="color:#66d9ef">end</span>
+
+getwordornewline <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> ()
+	parsespaces()
+	<span style="color:#66d9ef">return</span> parsewordornewline()
+<span style="color:#66d9ef">end</span>
+
+_F <span style="color:#f92672">=</span> {}
+_F[<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%L</span><span style="color:#e6db74">&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () eval(parserestofline()) <span style="color:#66d9ef">end</span>
+
+mode<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">interpret</span><span style="color:#e6db74">&#34;</span>
+modes <span style="color:#f92672">=</span> {}
+
+run <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () <span style="color:#66d9ef">while</span> mode <span style="color:#f92672">~=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">stop</span><span style="color:#e6db74">&#34;</span> <span style="color:#66d9ef">do</span> modes[mode]() <span style="color:#66d9ef">end</span> <span style="color:#66d9ef">end</span>
+
+interpretprimitive <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> ()
+	<span style="color:#66d9ef">if</span> type(_F[word]) <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">function</span><span style="color:#e6db74">&#34;</span> <span style="color:#66d9ef">then</span>
+		_F[word]()
+		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+	<span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+
+interpretnonprimitive <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span> <span style="color:#66d9ef">end</span> <span style="color:#75715e">-- stub</span>
+interpretnumber  <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span> <span style="color:#66d9ef">end</span> <span style="color:#75715e">-- stub</span>
+p_s_i <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () <span style="color:#66d9ef">end</span> <span style="color:#75715e">-- print state, for &#34;interpret&#34; (stub)</span>
+
+modes.interpret <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> ()
+	word <span style="color:#f92672">=</span> getwordornewline() <span style="color:#f92672">or</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span>
+	p_s_i()
+	<span style="color:#66d9ef">local</span> _ <span style="color:#f92672">=</span> interpretprimitive() <span style="color:#f92672">or</span>
+			interpretnonprimitive() <span style="color:#f92672">or</span>
+			interpretnumber() <span style="color:#f92672">or</span>
+			error(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Can&#39;t interpret: </span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">..</span>word)
+<span style="color:#66d9ef">end</span>
+</code></pre></div><p>This ends up being 56 lines of Lua code. However, without regard for readability, it&rsquo;s easy to get the code &lt; 30 lines of code. There are 11 lines of extra whitespace. In any case, it&rsquo;s quite concise even as presented. The aforementioned article goes into implementing a few basic Forth words and some other domain specific languages. I&rsquo;m, however, going to focus more on the implementation of the interpreter and the Forth word implementation. Some things you should note about the above code before moving on:</p>
+<ul>
+<li>pos and subj are global variables that must be set before calling run()</li>
+<li>The implementation focuses on defining the language syntax from within the interpreter with the ability to call Lua code</li>
+<li>As-is, it&rsquo;s a bit awkward to be used by other code. I.e. it&rsquo;s not structured like a normal Lua module.
+When I went about converting the code to Moonscript I wanted to try to take advantage of the features that Moonscript provides such as clases, modules, among others. This changes the design a bit, but I think it still provides a fair amount of flexibility. However, I couldn&rsquo;t find a good way to use Lua or Moonscript within the interpreter like the original did. The actual lines of code ended up being 46 lines with 9 lines of extra white space.</li>
+</ul>
+<pre><code class="language-moonscript" data-lang="moonscript">import extend from require &quot;moon&quot;
+
+export ^
+
+class MiniForth
+    new: (subj = &quot;&quot;) =&gt;
+        @subject = subj
+        @position = 1
+        @dictionary = {}
+        @mode = &quot;interpret&quot;
+        @modes = {interpret: -&gt;
+            @word = @get_word_or_newline! or &quot;&quot;
+            @p_s_i!
+            @interpret_primitive! or @interpret_nonprimitive! or @interpret_number! or error string.format[[Can't interpret: &quot;%s&quot;]], @word
+        }
+
+    add_words: (words) =&gt; extend(@dictionary, words)
+
+    parse_by_pattern: (pat) =&gt;
+        cap, newpos = string.match @subject, pat, @position
+        if newpos
+            @position = newpos
+            cap
+
+    parse_spaces: =&gt; @parse_by_pattern &quot;^([ \t]*)()&quot;
+    parse_word: =&gt; @parse_by_pattern &quot;^(%S+)()&quot;
+    parse_newline: =&gt; @parse_by_pattern &quot;^(\n)()&quot;
+    parse_rest_of_line: =&gt; @parse_by_pattern &quot;^([^\n]*)()&quot;
+    parse_word_or_newline: =&gt; @parse_word! or @parse_newline!
+
+    get_word: =&gt;
+        @parse_spaces!
+        @parse_word!
+
+    get_word_or_newline: =&gt;
+        @parse_spaces!
+        @parse_word_or_newline!
+
+    interpret_primitive: =&gt; if type(@dictionary[@word]) == &quot;function&quot; then
+        @dictionary[@word]!
+        true
+
+    interpret_nonprimitive: =&gt; false
+    interpret_number: =&gt; false
+    p_s_i: =&gt;
+    run: =&gt; while @mode != &quot;stop&quot; do @modes[@mode]!
+</code></pre><p>I think the code is fairly straight forward. I converted many of the constructs from the Lua version, but within a class. The biggest things to note are:</p>
+<ul>
+<li>There is only one global variable, the class</li>
+<li>The class takes the subject as an argument (all the other members are accessible after construction.)</li>
+<li>add_words member function adds words to the dictionary (more on this later.)</li>
+</ul>
+<p>Now, lets switch back to Lua code and examine how things are put implemented in miniforth.lua</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lua" data-lang="lua">subj <span style="color:#f92672">=</span> <span style="color:#e6db74">[==[
+</span><span style="color:#e6db74">%L _F[&#34;\n&#34;] = function () end
+</span><span style="color:#e6db74">%L _F[&#34;&#34;]   = function () mode = &#34;stop&#34; end
+</span><span style="color:#e6db74">%L _F[&#34;[L&#34;] = function () eval(parsebypattern(&#34;^(.-)%sL]()&#34;)) end
+</span><span style="color:#e6db74">[L
+</span><span style="color:#e6db74">    DS = { n = 0 }
+</span><span style="color:#e6db74">    push = function (stack, x) stack.n = stack.n + 1; stack[stack.n] = x end
+</span><span style="color:#e6db74">    pop  = function (stack) local x = stack[stack.n]; stack[stack.n] = nil;
+</span><span style="color:#e6db74">    stack.n = stack.n - 1; return x endipt. I haven&#39;t done anything to examine potential limitations with the Moonscript version.
+</span><span style="color:#e6db74">    _F[&#34;5&#34;]   = function () push(DS, 5) end
+</span><span style="color:#e6db74">    _F[&#34;DUP&#34;] = function () push(DS, DS[DS.n]) end
+</span><span style="color:#e6db74">    _F[&#34;*&#34;]   = function () push(DS, pop(DS) * pop(DS)) end
+</span><span style="color:#e6db74">    _F[&#34;.&#34;]   = function () io.write(&#34; &#34;..pop(DS)) end
+</span><span style="color:#e6db74">L]
+</span><span style="color:#e6db74">]==]</span>
+
+pos <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+mode <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">interpret</span><span style="color:#e6db74">&#34;</span>
+run()
+
+subj <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">5 DUP * .</span><span style="color:#e6db74">&#34;</span>
+pos <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+mode <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">interpret</span><span style="color:#e6db74">&#34;</span>
+run()
+</code></pre></div><p>This basically creates some new words within the dictionary. However, it does it from within the interpreter. First by creating a few basic words to handle new lines and empty lines (meaning &ldquo;stop&rdquo;.) Then a new word (&quot;[L&rdquo;) is created that aipt. I haven&rsquo;t done anything to examine potential limitations with the Moonscript version.llows multiline Lua expressions. Then a datastack (&ldquo;DS&rdquo;) is created with two functions (&ldquo;push&rdquo; &amp; &ldquo;pop&rdquo;), and then the rest of the words to make the subject &ldquo;5 DUP * .&rdquo; work as it would in Forth. This is put 5 on the stack, duplicate the top stack item, multiply the top two items on the stack, and printing the result.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<p>As I said, almost the entirety of the above is implemented from within the interpreter. This is in stark contrast to the Moonscript miniforth which implements everything outside the interpreter, in the class and subclasses.</p>
+<pre><code class="language-moonscript" data-lang="moonscript">class stack
+    new: =&gt;
+        @s = {}
+
+    peek: =&gt;
+        @s[#@s]
+
+    push: (...) =&gt;
+        for n = 1, #arg do
+            @s[#@s + 1] = arg[n]
+
+    pop: (n = 1) =&gt;
+        x = {}
+        while n &gt; 0 do
+            if #@s &gt; 0
+                table.insert x, @s[#@s]
+                @s[#@s] = nil
+            n -= 1
+        unpack x
+
+class MoonForth extends MiniForth
+    new: (subj = &quot;&quot;) =&gt;
+        super subj
+        @DS = stack!
+        @add_words {
+            &quot;5&quot;: -&gt; @DS\push 5
+            &quot;DUP&quot;: -&gt; @DS\push @DS\peek! if @DS\peek!
+            &quot;*&quot;: -&gt; @DS\push @DS\pop! * @DS\pop!
+            &quot;.&quot;: -&gt; io.write &quot; &quot; .. @DS\pop!
+            &quot;&quot;: -&gt; @mode = &quot;stop&quot;
+        }
+
+mf = MoonForth [[ 5 DUP * . ]]
+mf\run!
+</code></pre><p>This code assumes all is in the same file (though I personally have them in separate files with the proper export &amp; requires.) So I first go about implementing a stack class and then the MoonForth class&rsquo;s constructor creates a stack member and adds the required words to the dictionary. The words themselves are quite similar. The way they&rsquo;re added to the dictionary are very different. (However, the Lua version obviously could have been pure Lua pretty easily.)</p>
+<p>I&rsquo;ve also went a bit further with implementing many of the easy core words from ANS Forth</p>
+<pre><code class="language-moonscript" data-lang="moonscript">require &quot;miniforth&quot;
+require &quot;stack&quot;
+
+class MoonForth extends MiniForth
+    new: (subj = &quot;&quot;) =&gt;
+        super subj
+        @DS = stack!
+        @add_words {
+            &quot;?DUP&quot;: -&gt; @DS\push @DS\peek! if @DS\peek! ~= 0
+            &quot;2DUP&quot;: -&gt;
+                s1, s2 = @DS\pop 2
+                @DS\push s2, s1, s2, s1
+            &quot;DUP&quot;: -&gt; @DS\push @DS\peek! if @DS\peek!
+            &quot;2DROP&quot;: -&gt; @DS\pop 2
+            &quot;DROP&quot;: -&gt; @DS\pop!
+            &quot;ROT&quot;: -&gt;
+                f, s, t = @DS\pop 3
+                @DS\push f, t, s
+            &quot;SWAP&quot;: -&gt;
+                f, s = @DS\pop! 2
+                @DS\push f, s
+
+            &quot;+&quot;: -&gt; @DS\push @DS\pop! + @DS\pop!
+            &quot;-&quot;: -&gt;
+                @dictionary.SWAP!
+                @DS\push @DS\pop! - @DS\pop!
+            &quot;*&quot;: -&gt; @DS\push @DS\pop! * @DS\pop!
+            &quot;/&quot;: -&gt;
+                @dictionary.SWAP!
+                @DS\push @DS\pop! / @DS\pop!
+            &quot;*/&quot;: -&gt;
+                @dictionary[&quot;/&quot;]!
+                @dictionary[&quot;*&quot;]!
+            &quot;MOD&quot;: -&gt;
+                @dictionary.SWAP!
+                @DS\push math.fmod @DS\pop!, @DS\pop!
+            &quot;NEGATE&quot;: -&gt; @DS\push -1 * @DS\pop!
+
+            &quot;1+&quot;: -&gt;
+                @DS\push 1
+                @dictionary[&quot;+&quot;]!
+            &quot;1-&quot;: -&gt;
+                @DS\push 1
+                @dictionary[&quot;-&quot;]!
+
+            &quot;.&quot;: -&gt; io.write &quot; &quot; .. @DS\pop!
+
+            &quot;ABS&quot;: -&gt; @DS\push math.abs @DS\pop!
+            &quot;MAX&quot;: -&gt; @DS\push math.max @DS\pop 2
+            &quot;MIN&quot;: -&gt; @DS\push math.min @DS\pop 2
+
+            &quot;&quot;: -&gt; @mode = &quot;stop&quot;
+        }
+
+    interpret_number: =&gt;
+        number = tonumber @word
+        if number then
+            @DS\push number
+            true
+
+mf = MoonForth [[ 4 1+ DUP * . ]]
+mf\run!
+</code></pre><p>In all, it was fun playing with Forth from Moonscript. I haven&rsquo;t done anything to examine potential limitations with the Moonscript version. Some interesting possibilities might be to implement Forth words that interact with Löve or OpenResty. Really, with either miniforth implementation, it should be possible to have a Forth-like syntax usable anywhere Moonscript and Lua are supported.</p>
+<p>Code for Miniforth can be downloaded from: <a href="https://github.com/losinggeneration/miniforth-moonscript">https://github.com/losinggeneration/miniforth-moonscript</a></p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p><a href="http://angg.twu.net/miniforth-article.html">http://angg.twu.net/miniforth-article.html</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>This is only partially correct with regard to the stack. More accurately multiply pops the top two items, multiplies them, puts the result on the stack, and then &lsquo;.&rsquo; pops the stack to display whatever was on the stack. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+      </div></div>
+  
+  <div class="pagination">
+    <div class="pagination__title">
+      <span
+        class="pagination__title-h">Read other posts</span>
+      <hr />
+    </div>
+    <div class="pagination__buttons">
+      
+      <span class="button previous">
+        <a href="https://losinggeneration.com/2016/01/11/go-gcc-vs-gc/">
+          <span class="button__icon">←</span>
+          <span class="button__text">Go GCC vs GC</span>
+        </a>
+      </span>
+      
+      
+      <span class="button next">
+        <a href="https://losinggeneration.com/2013/07/24/go-utf-16/">
+          <span class="button__text">Go UTF-16</span>
+          <span class="button__icon">→</span>
+        </a>
+      </span>
+      
+    </div>
+  </div>
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>©2009-2020 Harley Laue</span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://losinggeneration.com/assets/main.js"></script>
+<script src="https://losinggeneration.com/assets/prism.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

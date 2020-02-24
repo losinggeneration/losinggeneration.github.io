@@ -152,6 +152,31 @@ This brings me to the second plugin, Conditional CAPTCHA." />
 <p>This hopefully shouldn&rsquo;t alienate anyone wanting to comment. Typically, if Akismet flags your comment as spam, there&rsquo;s something fishy about your comment to begin with (too short, nonsensical, many links, etc.) I&rsquo;m sorry to anyone who dislikes CAPTCHA&rsquo;s (either for accessibility reasons, or otherwise.) This is just required because I don&rsquo;t typically have the time to scan through more than 25 spam comments to see if any valid ones were false positives. (Seriously, sometimes I&rsquo;ll check, and after a couple days, the site is hammered and there&rsquo;s 200 new spam comments.)</p>
 
       </div></div>
+  <div class="comments">
+    <div class="comments__title">
+      <span class="comments__title-h">Comments</span>
+      <hr />
+    </div>
+    <link rel="stylesheet" href="/css/styles/comments.css">
+<div id="remark42"></div>
+<script>
+  var remark_config = {
+    host: "https://comments.losinggeneration.com",
+    site_id: 'remark',
+    theme: 'dark',
+  };
+
+  (function(c) {
+    for(var i = 0; i < c.length; i++){
+      var d = document, s = d.createElement('script');
+      s.src = remark_config.host + '/web/' +c[i] +'.js';
+      s.defer = true;
+      (d.head || d.body).appendChild(s);
+    }
+  })(remark_config.components || ['embed']);
+</script>
+
+  </div>
   
   <div class="pagination">
     <div class="pagination__title">
@@ -179,9 +204,6 @@ This brings me to the second plugin, Conditional CAPTCHA." />
     </div>
   </div>
   
-
-  
-
 </div>
 
   </div>

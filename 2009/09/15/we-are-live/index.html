@@ -145,6 +145,31 @@
         <p>Well, technically we&rsquo;ve been live for about 4 hours, but I didn&rsquo;t realize at the time that using DNAT with iptables actually caused the NATed server to become unavailable from the LAN. I was actually trying to get everything setup in FwBuilder, but I may have hit a limitation since I could not find a way to do &ldquo;-A POSTROUTING -s 192.168.0.0/16 -j SNAT —to-source 206.127.184.118&rdquo; I must say this was an interesting learning experience. I just now hope that I did enough to secure my server. This whole process would have been much simpler if I only had known what I know now (what&rsquo;s that you&rsquo;re saying? Hindsight is 20/20?) Well, it&rsquo;s almost midnight now, and I should be getting to sleep. What a worthwhile and frustrating night it&rsquo;s been!</p>
 
       </div></div>
+  <div class="comments">
+    <div class="comments__title">
+      <span class="comments__title-h">Comments</span>
+      <hr />
+    </div>
+    <link rel="stylesheet" href="/css/styles/comments.css">
+<div id="remark42"></div>
+<script>
+  var remark_config = {
+    host: "https://comments.losinggeneration.com",
+    site_id: 'remark',
+    theme: 'dark',
+  };
+
+  (function(c) {
+    for(var i = 0; i < c.length; i++){
+      var d = document, s = d.createElement('script');
+      s.src = remark_config.host + '/web/' +c[i] +'.js';
+      s.defer = true;
+      (d.head || d.body).appendChild(s);
+    }
+  })(remark_config.components || ['embed']);
+</script>
+
+  </div>
   
   <div class="pagination">
     <div class="pagination__title">
@@ -172,9 +197,6 @@
     </div>
   </div>
   
-
-  
-
 </div>
 
   </div>

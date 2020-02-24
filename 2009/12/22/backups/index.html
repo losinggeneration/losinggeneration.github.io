@@ -147,6 +147,31 @@
         <p>I decided it was time to have some form of backups in place. Currently all I&rsquo;m really (automatically) backing up is the WordPress MySQL table since it&rsquo;s the thing to changes on a regular basis. Everything else on this server can be backed up by hand when/if I make changes. It would be faster if/when something does fail (hard drive most likely) to have a recent full backup image to restore from, but really, a good backup of the MySQL table(s), a backup of important configuration files (since they rarely change, I back them up manually after change(s)), and a backup up various directories that&rsquo;d be nice to restore quickly (most of which change infrequently.) Since the server is so small, and non-mission critical, this is a very satisfactory backup solution since I&rsquo;ll be able to reinstall and restore things quite quickly when/if it&rsquo;s needed.</p>
 
       </div></div>
+  <div class="comments">
+    <div class="comments__title">
+      <span class="comments__title-h">Comments</span>
+      <hr />
+    </div>
+    <link rel="stylesheet" href="/css/styles/comments.css">
+<div id="remark42"></div>
+<script>
+  var remark_config = {
+    host: "https://comments.losinggeneration.com",
+    site_id: 'remark',
+    theme: 'dark',
+  };
+
+  (function(c) {
+    for(var i = 0; i < c.length; i++){
+      var d = document, s = d.createElement('script');
+      s.src = remark_config.host + '/web/' +c[i] +'.js';
+      s.defer = true;
+      (d.head || d.body).appendChild(s);
+    }
+  })(remark_config.components || ['embed']);
+</script>
+
+  </div>
   
   <div class="pagination">
     <div class="pagination__title">
@@ -174,9 +199,6 @@
     </div>
   </div>
   
-
-  
-
 </div>
 
   </div>

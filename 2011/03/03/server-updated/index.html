@@ -139,6 +139,31 @@
         <p>I&rsquo;ve now updated my home server to Debian 6.0. In the process I&rsquo;ve decided to also switch to lighttpd from Apache HTTP. I do miss the fact that mod_chroot in Apache was able to basically take care of the dependencies for me and build the chroot daemon startup, but it wasn&rsquo;t too much work to get everything up and going in a chroot. It ended up one of my plugins (Last.fm for WordPress) was causing the entire site to stall while it waited for a response, so that&rsquo;s been disabled now. It&rsquo;s nice having my server up and running again. It&rsquo;s also running ddclient because my IP seems to change fairly frequently. All-in-all it was well worth getting set back up.</p>
 
       </div></div>
+  <div class="comments">
+    <div class="comments__title">
+      <span class="comments__title-h">Comments</span>
+      <hr />
+    </div>
+    <link rel="stylesheet" href="/css/styles/comments.css">
+<div id="remark42"></div>
+<script>
+  var remark_config = {
+    host: "https://comments.losinggeneration.com",
+    site_id: 'remark',
+    theme: 'dark',
+  };
+
+  (function(c) {
+    for(var i = 0; i < c.length; i++){
+      var d = document, s = d.createElement('script');
+      s.src = remark_config.host + '/web/' +c[i] +'.js';
+      s.defer = true;
+      (d.head || d.body).appendChild(s);
+    }
+  })(remark_config.components || ['embed']);
+</script>
+
+  </div>
   
   <div class="pagination">
     <div class="pagination__title">
@@ -166,9 +191,6 @@
     </div>
   </div>
   
-
-  
-
 </div>
 
   </div>

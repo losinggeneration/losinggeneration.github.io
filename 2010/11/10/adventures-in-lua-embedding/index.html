@@ -144,6 +144,31 @@
 <p>Now, things weren&rsquo;t all quick and easy. I learned a pretty hard lesson along the way. Anyone can tell you that it&rsquo;s good practice to keep the stack balanced. In my case it was totally required. At some point I either overlooked or got careless to the fact that lua_to* does not remove the element off the stack. So as I was trying to push and pull variables from Lua I was encountering crashes. I&rsquo;m ashamed to say it took me more hours than I&rsquo;d like to say before I thought to check my logic to see if the stack was getting out of balance. It seems like one of those, &ldquo;I don&rsquo;t ever want to have to spend that long tracking down something so silly again,&rdquo; mistakes. I think I will always make sure the stack is well balanced when working with Lua from now on (unless there&rsquo;s a good reason to leave things there.) So I suppose it was worth it to learn to be more careful in the future.</p>
 
       </div></div>
+  <div class="comments">
+    <div class="comments__title">
+      <span class="comments__title-h">Comments</span>
+      <hr />
+    </div>
+    <link rel="stylesheet" href="/css/styles/comments.css">
+<div id="remark42"></div>
+<script>
+  var remark_config = {
+    host: "https://comments.losinggeneration.com",
+    site_id: 'remark',
+    theme: 'dark',
+  };
+
+  (function(c) {
+    for(var i = 0; i < c.length; i++){
+      var d = document, s = d.createElement('script');
+      s.src = remark_config.host + '/web/' +c[i] +'.js';
+      s.defer = true;
+      (d.head || d.body).appendChild(s);
+    }
+  })(remark_config.components || ['embed']);
+</script>
+
+  </div>
   
   <div class="pagination">
     <div class="pagination__title">
@@ -171,9 +196,6 @@
     </div>
   </div>
   
-
-  
-
 </div>
 
   </div>

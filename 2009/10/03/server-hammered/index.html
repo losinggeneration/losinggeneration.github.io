@@ -143,6 +143,31 @@
         <p>So, I recently set a link to my discussion of Linux, GNU, and OS&rsquo;s to someone on Identi.ca. I made a point not to add groups to !linux and !gnu because I knew my server would probably get hit hard (if you&rsquo;ve looked at my server&rsquo;s specs, you&rsquo;ll know it doesn&rsquo;t take much to be considered hit hard.) Well, they read it, after which they posted a link to my blog with the groups !linux and !gnu. It then took me almost 20 minutes just to log in and stop Apache. The server was swapping like mad, and made everything near unresponsive. I was a bit frustrated at the time, but really, it was kind of a good thing because it forced me to change Apache&rsquo;s connection limits. Less Apache server processes are started, and less clients are allowed (I actually set these very low, in the single digits!) Now I think things are working better. If my blog ever becomes popular enough that I need higher limits, I&rsquo;ll hopefully have upgraded the RAM by then. If not (or if it ever becomes a problem) ambyr00 on Identi.ca gave me an interesting suggestion of using <a href="http://wordpress.org/extend/plugins/free-cdn/">http://wordpress.org/extend/plugins/free-cdn/</a> which uses an external cache at <a href="http://www.coralcdn.org/">http://www.coralcdn.org/</a> Very cool idea. Like I said, if it ever becomes an issue, I may have to go that route.</p>
 
       </div></div>
+  <div class="comments">
+    <div class="comments__title">
+      <span class="comments__title-h">Comments</span>
+      <hr />
+    </div>
+    <link rel="stylesheet" href="/css/styles/comments.css">
+<div id="remark42"></div>
+<script>
+  var remark_config = {
+    host: "https://comments.losinggeneration.com",
+    site_id: 'remark',
+    theme: 'dark',
+  };
+
+  (function(c) {
+    for(var i = 0; i < c.length; i++){
+      var d = document, s = d.createElement('script');
+      s.src = remark_config.host + '/web/' +c[i] +'.js';
+      s.defer = true;
+      (d.head || d.body).appendChild(s);
+    }
+  })(remark_config.components || ['embed']);
+</script>
+
+  </div>
   
   <div class="pagination">
     <div class="pagination__title">
@@ -170,9 +195,6 @@
     </div>
   </div>
   
-
-  
-
 </div>
 
   </div>

@@ -141,6 +141,31 @@
         <p>Well, I&rsquo;m going to try to cut down on the spam (only a few spam bots so far have attempted to post, but I know there will be more.) I&rsquo;m trying out SI Captcha to see if that helps. I just wish it had an option to still email upon failed comment posts (or something similar till I&rsquo;m sure it&rsquo;s working.) Oh well, I&rsquo;ll still be moderating comments, but I hope this will help cut down on the amount of spam comments I have to moderate. If not, I don&rsquo;t think I&rsquo;m not any worse off than I was before.</p>
 
       </div></div>
+  <div class="comments">
+    <div class="comments__title">
+      <span class="comments__title-h">Comments</span>
+      <hr />
+    </div>
+    <link rel="stylesheet" href="/css/styles/comments.css">
+<div id="remark42"></div>
+<script>
+  var remark_config = {
+    host: "https://comments.losinggeneration.com",
+    site_id: 'remark',
+    theme: 'dark',
+  };
+
+  (function(c) {
+    for(var i = 0; i < c.length; i++){
+      var d = document, s = d.createElement('script');
+      s.src = remark_config.host + '/web/' +c[i] +'.js';
+      s.defer = true;
+      (d.head || d.body).appendChild(s);
+    }
+  })(remark_config.components || ['embed']);
+</script>
+
+  </div>
   
   <div class="pagination">
     <div class="pagination__title">
@@ -168,9 +193,6 @@
     </div>
   </div>
   
-
-  
-
 </div>
 
   </div>

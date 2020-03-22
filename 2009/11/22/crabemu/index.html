@@ -60,7 +60,11 @@ On my first attempt, I decided Dega looked interesting, it has source available.
 <link rel="stylesheet"
       href="/css/styles/gruvbox-dark.css">
 <script src="/js/highlight-9.18.1.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+<script src="/js/highlightjs-zig.js"></script>
+<script>
+      hljs.registerLanguage('zig', window.hljsDefineZig);
+      hljs.initHighlightingOnLoad();
+</script>
 
 
 </head>

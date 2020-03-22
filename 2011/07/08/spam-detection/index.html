@@ -60,7 +60,11 @@ This brings me to the second plugin, Conditional CAPTCHA." />
 <link rel="stylesheet"
       href="/css/styles/gruvbox-dark.css">
 <script src="/js/highlight-9.18.1.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+<script src="/js/highlightjs-zig.js"></script>
+<script>
+      hljs.registerLanguage('zig', window.hljsDefineZig);
+      hljs.initHighlightingOnLoad();
+</script>
 
 
 </head>

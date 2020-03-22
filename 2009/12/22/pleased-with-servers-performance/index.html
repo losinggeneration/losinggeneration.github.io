@@ -60,7 +60,11 @@ $ free -m total used free shared buffers cached Mem: 121 90 31 0 2 46 -/&#43; bu
 <link rel="stylesheet"
       href="/css/styles/gruvbox-dark.css">
 <script src="/js/highlight-9.18.1.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+<script src="/js/highlightjs-zig.js"></script>
+<script>
+      hljs.registerLanguage('zig', window.hljsDefineZig);
+      hljs.initHighlightingOnLoad();
+</script>
 
 
 </head>

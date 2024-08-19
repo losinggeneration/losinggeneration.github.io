@@ -7,7 +7,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 <meta name="description" content="﻿
-As I prepare to have my server public, I&amp;rsquo;ve chrooted my server&amp;rsquo;s Apache with mod_chroot. This allows me to have the advantages of a chroot environment without as many of the draw backs. There is still some strangeness to work out. For instance &amp;ldquo;Warning: timezone_open() [function.timezone-open]: Unknown or bad timezone (America/Chicago) in /wp/wp-includes/functions.phpon line 3160&amp;rdquo;
+As I prepare to have my server public, I&amp;rsquo;ve chrooted my server&amp;rsquo;s Apache with mod_chroot. This allows me to have the advantages of a chroot environment without as many of the draw backs. There is still some strangeness to work out. For instance &amp;ldquo;Warning: timezone_open() [function.timezone-open]: Unknown or bad timezone (America/Chicago) in /wp/wp-includes/functions.php on line 3160&amp;rdquo;
 I&amp;rsquo;ll get this figured out, but honestly, it&amp;rsquo;s not a huge deal. I may have to have Apache load the zoneinfo file, or perhaps not… Really, the only change I had to make to WordPress was to have it connect to the MySQL database on 127."/>
 <meta name="keywords" content=""/>
 <meta name="robots" content="noodp"/>
@@ -32,7 +32,7 @@ I&amp;rsquo;ll get this figured out, but honestly, it&amp;rsquo;s not a huge dea
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Chrooted Apache :: Losinggeneration&#39;s Coding and Projects — " />
 <meta name="twitter:description" content="﻿
-As I prepare to have my server public, I&amp;rsquo;ve chrooted my server&amp;rsquo;s Apache with mod_chroot. This allows me to have the advantages of a chroot environment without as many of the draw backs. There is still some strangeness to work out. For instance &amp;ldquo;Warning: timezone_open() [function.timezone-open]: Unknown or bad timezone (America/Chicago) in /wp/wp-includes/functions.phpon line 3160&amp;rdquo;
+As I prepare to have my server public, I&amp;rsquo;ve chrooted my server&amp;rsquo;s Apache with mod_chroot. This allows me to have the advantages of a chroot environment without as many of the draw backs. There is still some strangeness to work out. For instance &amp;ldquo;Warning: timezone_open() [function.timezone-open]: Unknown or bad timezone (America/Chicago) in /wp/wp-includes/functions.php on line 3160&amp;rdquo;
 I&amp;rsquo;ll get this figured out, but honestly, it&amp;rsquo;s not a huge deal. I may have to have Apache load the zoneinfo file, or perhaps not… Really, the only change I had to make to WordPress was to have it connect to the MySQL database on 127." />
 <meta name="twitter:site" content="https://losinggeneration.com/" />
 <meta name="twitter:creator" content="losinggeneration" />
@@ -43,7 +43,7 @@ I&amp;rsquo;ll get this figured out, but honestly, it&amp;rsquo;s not a huge dea
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Chrooted Apache :: Losinggeneration&#39;s Coding and Projects — ">
 <meta property="og:description" content="﻿
-As I prepare to have my server public, I&amp;rsquo;ve chrooted my server&amp;rsquo;s Apache with mod_chroot. This allows me to have the advantages of a chroot environment without as many of the draw backs. There is still some strangeness to work out. For instance &amp;ldquo;Warning: timezone_open() [function.timezone-open]: Unknown or bad timezone (America/Chicago) in /wp/wp-includes/functions.phpon line 3160&amp;rdquo;
+As I prepare to have my server public, I&amp;rsquo;ve chrooted my server&amp;rsquo;s Apache with mod_chroot. This allows me to have the advantages of a chroot environment without as many of the draw backs. There is still some strangeness to work out. For instance &amp;ldquo;Warning: timezone_open() [function.timezone-open]: Unknown or bad timezone (America/Chicago) in /wp/wp-includes/functions.php on line 3160&amp;rdquo;
 I&amp;rsquo;ll get this figured out, but honestly, it&amp;rsquo;s not a huge deal. I may have to have Apache load the zoneinfo file, or perhaps not… Really, the only change I had to make to WordPress was to have it connect to the MySQL database on 127." />
 <meta property="og:url" content="https://losinggeneration.com/2009/09/13/chrooted-apache/" />
 <meta property="og:site_name" content="Chrooted Apache" />
@@ -155,7 +155,7 @@ I&amp;rsquo;ll get this figured out, but honestly, it&amp;rsquo;s not a huge dea
 
   <div class="post-content"><div>
         <p>﻿</p>
-<p>As I prepare to have my server public, I&rsquo;ve chrooted my server&rsquo;s Apache with mod_chroot. This allows me to have the advantages of a chroot environment without as many of the draw backs. There is still some strangeness to work out. For instance &ldquo;<!-- raw HTML omitted --><!-- raw HTML omitted -->Warning<!-- raw HTML omitted -->: timezone_open() [<!-- raw HTML omitted -->function.timezone-open<!-- raw HTML omitted -->]: Unknown or bad timezone (America/Chicago) in <!-- raw HTML omitted -->/wp/wp-includes/functions.php<!-- raw HTML omitted --> on line <!-- raw HTML omitted -->3160<!-- raw HTML omitted --><!-- raw HTML omitted -->&rdquo;</p>
+<p>As I prepare to have my server public, I&rsquo;ve chrooted my server&rsquo;s Apache with mod_chroot. This allows me to have the advantages of a chroot environment without as many of the draw backs. There is still some strangeness to work out. For instance &ldquo;<span id="autosave"><strong>Warning</strong>: timezone_open() [<a href="function.timezone-open">function.timezone-open</a>]: Unknown or bad timezone (America/Chicago) in <strong>/wp/wp-includes/functions.php</strong> on line <strong>3160</strong></span>&rdquo;</p>
 <p>I&rsquo;ll get this figured out, but honestly, it&rsquo;s not a huge deal. I may have to have Apache load the zoneinfo file, or perhaps not… Really, the only change I had to make to WordPress was to have it connect to the MySQL database on 127.0.0.1 instead of localhost. With localhost it tries to use the socket (which I hear can be about 20% faster.) Since the socket isn&rsquo;t in the chrooted directory, I&rsquo;ll just use TCP and take a minor performance hit.</p>
 <p>As for the hardware itself, I&rsquo;m relatively pleased with this hand-me-down. I think I&rsquo;d like  to boost the ram from 128 to at least 384, and perhaps eventually max it out to 512. Spending the $20 on the 256 megs should at least have my server sitting pretty comfortable without swapping quite as much. After that it should also be able to take over the responsibilities of hosting my Quassel core server (which is currently on my router.) I should probably have this one take over hosting my Git repos then my router will only be a router and not a server, which is fine by me.</p>
 <p>I should hopefully get this beast of a machine public by Wednesday. It should be accessible via <a href="http://losinggeneration.with-linux.com">http://losinggeneration.with-linux.com</a> when I&rsquo;m finished. I still have to create the new firewall to have this server as a DMZ.</p>
@@ -222,7 +222,7 @@ I&amp;rsquo;ll get this figured out, but honestly, it&amp;rsquo;s not a huge dea
   <div class="footer__inner">
     
       <div class="copyright copyright--user">
-        <span>©2009-2020 Harley Laue</span>
+        <span>©2009-2022 Harley Laue</span>
     
         <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
       </div>

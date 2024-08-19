@@ -160,9 +160,9 @@ kernel26 depends on kernel-2.6.30</p>
 kernel26 depends on kernel-2.6.31
 no packages depend on kernel-2.6.30</p>
 </blockquote>
-<p>Now, the only real issue with this system would be, what do we call vmlinuz26, System.map26, &amp; kernel26.img be called and how should <!-- raw HTML omitted --> be updated? The first part could very simply just be versioned. kernel-2.6.30.img, vmlinuz-2.6.30, etc. This really shoudn&rsquo;t be that hard, and I think would work quite well. Well, that could be a bit tricky, but really, it shouldn&rsquo;t be that difficult in all honesty. We&rsquo;ll take grub for instance. It&rsquo;s very easy to just add new rules to grub and everything &ldquo;just works.&rdquo; So really, Arch could do like other distributions do (Debian I know does this, but IIRC others do too) and update grub automatically. For users that don&rsquo;t like this option, it could be turned off in rc.conf.</p>
+<p>Now, the only real issue with this system would be, what do we call vmlinuz26, System.map26, &amp; kernel26.img be called and how should <insert boot loader here> be updated? The first part could very simply just be versioned. kernel-2.6.30.img, vmlinuz-2.6.30, etc. This really shoudn&rsquo;t be that hard, and I think would work quite well. Well, that could be a bit tricky, but really, it shouldn&rsquo;t be that difficult in all honesty. We&rsquo;ll take grub for instance. It&rsquo;s very easy to just add new rules to grub and everything &ldquo;just works.&rdquo; So really, Arch could do like other distributions do (Debian I know does this, but IIRC others do too) and update grub automatically. For users that don&rsquo;t like this option, it could be turned off in rc.conf.</p>
 <p>Another option would be to still use version prefixed names for vmlinuz, but then have links that are just updated upon update (so vmlinuz26-&gt;vmlinuz-2.6.30 becomes vmlinuz26-&gt;vmlinuz-2.6.31) All of a sudden, things work pretty much how they are now, but you can still edit grub (either at boot time if the new kernel fails, or after the fact) to have your old kernel in there.</p>
-<p>Now, with this in mind, the first option my be more appealing to the more liberal Arch crowd, but for the more die-hard (the one&rsquo;s that chant KISS anytime you suggest a new feature for Arch) might not be as violently opposed to the second option. I also think most of the people in between wouldn&rsquo;t really care too much either way, but I have a feeling more would probably favor the second option.<!-- raw HTML omitted --></p>
+<p>Now, with this in mind, the first option my be more appealing to the more liberal Arch crowd, but for the more die-hard (the one&rsquo;s that chant KISS anytime you suggest a new feature for Arch) might not be as violently opposed to the second option. I also think most of the people in between wouldn&rsquo;t really care too much either way, but I have a feeling more would probably favor the second option.</insert></p>
 <p>—Edit—
 I decided to file the feature request on Arch&rsquo;s FS:
 <a href="http://bugs.archlinux.org/task/16702">http://bugs.archlinux.org/task/16702</a>
@@ -230,7 +230,7 @@ You can comment there if you directly want to let the developers know how you fe
   <div class="footer__inner">
     
       <div class="copyright copyright--user">
-        <span>©2009-2020 Harley Laue</span>
+        <span>©2009-2022 Harley Laue</span>
     
         <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
       </div>

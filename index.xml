@@ -6,7 +6,7 @@
     <description>Recent content on Losinggeneration&#39;s Coding and Projects</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>©2009-2020 Harley Laue</copyright>
+    <copyright>©2009-2022 Harley Laue</copyright>
     <lastBuildDate>Sun, 16 Feb 2020 04:42:42 -0800</lastBuildDate>
     
 	<atom:link href="https://losinggeneration.com/index.xml" rel="self" type="application/rss+xml" />
@@ -395,7 +395,7 @@ On my first attempt, I decided Dega looked interesting, it has source available.
       
       <guid>https://losinggeneration.com/2009/09/13/chrooted-apache/</guid>
       <description>﻿
-As I prepare to have my server public, I&amp;rsquo;ve chrooted my server&amp;rsquo;s Apache with mod_chroot. This allows me to have the advantages of a chroot environment without as many of the draw backs. There is still some strangeness to work out. For instance &amp;ldquo;Warning: timezone_open() [function.timezone-open]: Unknown or bad timezone (America/Chicago) in /wp/wp-includes/functions.phpon line 3160&amp;rdquo;
+As I prepare to have my server public, I&amp;rsquo;ve chrooted my server&amp;rsquo;s Apache with mod_chroot. This allows me to have the advantages of a chroot environment without as many of the draw backs. There is still some strangeness to work out. For instance &amp;ldquo;Warning: timezone_open() [function.timezone-open]: Unknown or bad timezone (America/Chicago) in /wp/wp-includes/functions.php on line 3160&amp;rdquo;
 I&amp;rsquo;ll get this figured out, but honestly, it&amp;rsquo;s not a huge deal. I may have to have Apache load the zoneinfo file, or perhaps not… Really, the only change I had to make to WordPress was to have it connect to the MySQL database on 127.</description>
     </item>
     
@@ -405,7 +405,8 @@ I&amp;rsquo;ll get this figured out, but honestly, it&amp;rsquo;s not a huge dea
       <pubDate>Sat, 12 Sep 2009 00:06:29 +0000</pubDate>
       
       <guid>https://losinggeneration.com/about/</guid>
-      <description>I’m currently a developer in Oregon writing code in Go &amp;amp; some Javascript. My passion tends to be in languages like Go, Lua, and Forth to name a few. At some point I’d like to make a game or two. Sega Master System &amp;amp; Dreamcast homebrew are some things that I wish I had more time to work on.</description>
+      <description>I&#39;m currently a developer in Oregon writing code in Go &amp; some Javascript. My passion tends to be in languages like Go, Lua, and Forth to name a few. At some point I&#39;d like to make a game or two. Sega Master System &amp; Dreamcast homebrew are some things that I wish I had more time to work on.
+ Some other interests are in servers, operating systems that runs with less that 64M of RAM, and playing guitar and ukulele.</description>
     </item>
     
     <item>

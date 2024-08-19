@@ -153,7 +153,7 @@ msp430-gdb 7.2-3
 msp430-libc 20120224-2
 msp430mcu 20120406-2
 mspdebug 0.8-1
-</code></pre><p>If you&rsquo;re using a distro other than Arch, it&rsquo;s up to you to figure out how to get and/or build the programs from the source. If you&rsquo;re using Arch, you can obviously use the AUR packages with ABS. If you&rsquo;re an i686 user you can grab my prebuild binaries if you&rsquo;d like from here<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. Now that you have a toolchain, I&rsquo;m sure you&rsquo;ll want to test it out. <!-- raw HTML omitted -->Grab my &ldquo;ported&rdquo; temperature demo<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>.<!-- raw HTML omitted --><strong>UPDATE</strong> The here&rsquo;s the fully working temperature demo.<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> You&rsquo;ll need to extract it, fire up a terminal, go to that directory, and you should be able to just type: make. If all goes as planned, you&rsquo;ll have main.elf in that directory. So now it&rsquo;s time to try it out, fire up mspdebug. The actual command is probably going to be something like: sudo mspdebug -R. Permissions on the USB device might be able to be changed so it doesn&rsquo;t have to be run as root, but for me and for now, it&rsquo;s not too big of a deal. You should get something like this:</p>
+</code></pre><p>If you&rsquo;re using a distro other than Arch, it&rsquo;s up to you to figure out how to get and/or build the programs from the source. If you&rsquo;re using Arch, you can obviously use the AUR packages with ABS. If you&rsquo;re an i686 user you can grab my prebuild binaries if you&rsquo;d like from here<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. Now that you have a toolchain, I&rsquo;m sure you&rsquo;ll want to test it out. <strike>Grab my &ldquo;ported&rdquo; temperature demo<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>.</strike><strong>UPDATE</strong> The here&rsquo;s the fully working temperature demo.<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> You&rsquo;ll need to extract it, fire up a terminal, go to that directory, and you should be able to just type: make. If all goes as planned, you&rsquo;ll have main.elf in that directory. So now it&rsquo;s time to try it out, fire up mspdebug. The actual command is probably going to be something like: sudo mspdebug -R. Permissions on the USB device might be able to be changed so it doesn&rsquo;t have to be run as root, but for me and for now, it&rsquo;s not too big of a deal. You should get something like this:</p>
 <pre><code>sudo mspdebug -R
 MSPDebug version 0.8 - debugging tool for MSP430 MCUs
 Copyright (C) 2009, 2010 Daniel Beer daniel@tortek.co.nz
@@ -222,7 +222,7 @@ Remote debugging using localhost:2000
 </code></pre><p>Basically, start up msp430-gdb with main.elf, set the target to a remote machine (in this case localhost at port 2000), and msp430-gdb and mspdebug do some magic, and you&rsquo;re ready to start debugging. Since you&rsquo;re debugging a remote target, remember you &ldquo;continue&rdquo; instead of &ldquo;run.&rdquo;</p>
 <p>There you have it, you should be in pretty good shape to start experimenting with the MSP430 Launchpad on Linux.</p>
 <p>Addendum:
-Big thanks to Henry von Tresckow (hvontres) who fixed the temperature demo to fully work with mspgcc. <!-- raw HTML omitted -->I&rsquo;m yet to test it, but his changes look convincing enough.<!-- raw HTML omitted --> I&rsquo;ve tested the changes and they seem to work fine. Here&rsquo;s the [updated temperature demo][3] (updated 2012-06-13.)</p>
+Big thanks to Henry von Tresckow (hvontres) who fixed the temperature demo to fully work with mspgcc. <strike>I&rsquo;m yet to test it, but his changes look convincing enough.</strike> I&rsquo;ve tested the changes and they seem to work fine. Here&rsquo;s the [updated temperature demo][3] (updated 2012-06-13.)</p>
 <p>Update:
 Added msp430mcu as a required package. Thanks Frankie Robertson for pointing that out in the comments. 🙂</p>
 <section class="footnotes" role="doc-endnotes">
@@ -302,7 +302,7 @@ Added msp430mcu as a required package. Thanks Frankie Robertson for pointing tha
   <div class="footer__inner">
     
       <div class="copyright copyright--user">
-        <span>©2009-2020 Harley Laue</span>
+        <span>©2009-2022 Harley Laue</span>
     
         <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
       </div>

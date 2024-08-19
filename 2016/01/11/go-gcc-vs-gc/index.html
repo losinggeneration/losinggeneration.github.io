@@ -218,19 +218,61 @@ go version go1.4.2 gccgo (Debian 5.3.1-5) 5.3.1 20160101 linux/amd64</p>
 		}
 	}
 }
-</code></pre></div><!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+</code></pre></div><pre>$ go version
+go version go1.4.3 linux/amd64
+$ go test -bench .
+testing: warning: no tests to run
+PASS
+BenchmarkLinkedList       100000             14888 ns/op
+BenchmarkPureLinkedList  1000000              2166 ns/op
+</pre>
+<pre>$ go version
+go version go1.5.2 linux/amd64
+$ go test -bench .
+testing: warning: no tests to run
+PASS
+BenchmarkLinkedList-2             100000             12744 ns/op
+BenchmarkPureLinkedList-2        1000000              2179 ns/op
+</pre>
+<pre>$ go version
+go version go1.4.2 gccgo (Debian 5.3.1-5) 5.3.1 20160101 linux/amd64
+$ go test -bench .
+# _/home/harley/tmp/tests_go/test_linked_list
+ar: `u' modifier ignored since `D' is the default (see `U')
+# testmain
+ar: `u' modifier ignored since `D' is the default (see `U')
+testing: warning: no tests to run
+PASS
+BenchmarkLinkedList        50000             25005 ns/op
+BenchmarkPureLinkedList   200000             10096 ns/op
+</pre>
 <p>As you can see, Go GC 1.4 &amp; 1.5 aren&rsquo;t too far off one another (with 1.5 being a bit better in the BenchmarkLinkedList test.) However, compare that to GCC. It&rsquo;s roughly twice as slow in the first test and nearly 5x slower in the second, when compared to Go GC 1.5.</p>
 <p>Here&rsquo;s the output of pprof for GC 1.5.2</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre>(pprof) top10
+21.39s of 21.46s total (99.67%)
+Dropped 3 nodes (cum &lt; = 0.11s)
+      flat  flat%   sum%        cum   cum%
+     6.52s 30.38% 30.38%     16.40s 76.42%  main.LinkedList
+     5.01s 23.35% 53.73%      5.01s 23.35%  main.(*List).Name
+     5.01s 23.35% 77.07%      5.05s 23.53%  main.PureLinkedList
+     4.85s 22.60% 99.67%      4.85s 22.60%  main.(*List).Next
+         0     0% 99.67%     21.45s   100%  main.main
+         0     0% 99.67%     21.45s   100%  runtime.goexit
+         0     0% 99.67%     21.45s   100%  runtime.main</pre>
 <p>And the output of pprof for GCC 5.3.1</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre>(pprof) top10
+25.83s of 25.83s total (  100%)
+      flat  flat%   sum%        cum   cum%
+    25.83s   100%   100%     25.83s   100%  runtime_sigprof
+         0     0%   100%     25.83s   100%
+         0     0%   100%         8s 30.97%  __go_strcmp
+         0     0%   100%     18.16s 70.31%  main.LinkedList
+         0     0%   100%      4.97s 19.24%  main.Name.N9_main.List
+         0     0%   100%      4.63s 17.92%  main.Next.N9_main.List
+         0     0%   100%      7.67s 29.69%  main.PureLinkedList
+         0     0%   100%     25.83s   100%  main.main
+         0     0%   100%     25.83s   100%  runtime_main
+         0     0%   100%     25.83s   100%  sig_tramp_info</pre>
 <p>To me, the interesting thing is that, in both implementations, each of List.Name &amp; List.Next take almost as much time (during 30 seconds) as the PureLinkedList function takes (which is the benchmark function using direct struct &amp; pointer usage.)</p>
 <p>That code was run with <code>go run main.go</code> and then <code>go tool pprof http://localhost:6060/debug/pprof/profile</code> while main.go was running. Then I inspected the collected profile with top10.</p>
 <p>This code is very similar to the benchmark code above, but uses <code>net/http/pprof</code></p>
@@ -387,7 +429,7 @@ go version go1.4.2 gccgo (Debian 5.3.1-5) 5.3.1 20160101 linux/amd64</p>
   <div class="footer__inner">
     
       <div class="copyright copyright--user">
-        <span>©2009-2020 Harley Laue</span>
+        <span>©2009-2022 Harley Laue</span>
     
         <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
       </div>

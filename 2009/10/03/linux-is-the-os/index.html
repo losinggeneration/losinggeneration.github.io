@@ -158,7 +158,7 @@ Definition 1:</p>
 <blockquote>
 <p>﻿﻿The operating system interacts directly with the hardware, providing common services to programs and insulating them from hardware idiosyncrasies. Viewing the system as a set of layers, the operating system is commonly called the system kernel, or just the kernel, emphasizing its isolation from user programs.</p>
 </blockquote>
-<p>﻿— From ﻿ <!-- raw HTML omitted -->The Design of the UNIX Operating System<!-- raw HTML omitted --> by Maurice (c)1986.</p>
+<p>﻿— From ﻿ <u>The Design of the UNIX Operating System</u> by Maurice (c)1986.</p>
 <p>So by this definition, my program obviously fails &ldquo;is it an OS or not&rdquo; test. It doesn&rsquo;t touch the hardware itself. Thus, it&rsquo;s not an OS (or even part of an OS.) Linux on the other hand, precisely fits this definition. So, by this definition Linux is an OS. Nothing else is required by this definition. So, now let&rsquo;s look at a typical GNU program that people using the POD often argue is part of the OS. I present to you &ldquo;cp.&rdquo; Now, let&rsquo;s take a look at what actually happen when you actually invoke cp. First the command is executed with and argument or two (how or where it&rsquo;s executed doesn&rsquo;t matter, it could be directly from init=&quot;cp /my_example /my_example2&rdquo; The means by which cp isn&rsquo;t relevant.) So, after the program starts executing, it typically has logic to check for if files exist, lets ignore that for now, when it actually gets ready to copy the file (in C) the a call to open() then the file is read() into a new file. open and read is defined in the C library. While in the C library, a call to Linux&rsquo;s to filesystem is made. From the file system, a call to the hard drive driver is made and the actual location file to be opened/read (in the case of open, this may be skipped if the FS already knows where on the HD the file is. In the case of a read, this step is mandatory otherwise, the file isn&rsquo;t actually being copied by the OS.) So, in GNU systems, it&rsquo;d be:
 cp-&gt;read-&gt;glibc-&gt;FS-&gt;Linux driver-&gt;hardware.</p>
 <p>So, what actually talks to the hardware? If you said Linux, you&rsquo;d be right. my_example is very similar:
@@ -196,7 +196,7 @@ This argument carries no weight what-so-ever. I&rsquo;ve briefly explained why a
 <p>POSIX
 There is often a misunderstanding of POSIX&rsquo;s role in Linux systems. The first thing to understand is that POSIX is a specification for a UNIX system. Secondly, POSIX defines an API and some userland tools. This is to not only make things nicer for users of POSIX systems (familiar tools across POSIX compatible systems), but to also allows for programs that are (more or less) source compatible. That way less work has to be done when porting from one POSIX system to another.</p>
 <p>This should not be confused with being the OS or even part of the OS. It&rsquo;s part of the user&rsquo;s environment, but not of the operating system. Any time a system wants to be POSIX compatible, the API and userland tools must be implemented for the target OS. This is almost always done in such a way that the API and userland communicate with the OS, and then the OS takes care of the actual hardware interaction. POSIX on Linux is a layer that sits on top of Linux.</p>
-<p>I think these three points of discussion are enough to get the ball rolling. Please let me know what else needs explained or clarified to get the point across that GNU/Linux is incorrect. <!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>I think these three points of discussion are enough to get the ball rolling. Please let me know what else needs explained or clarified to get the point across that GNU/Linux is incorrect. </http></stdio></p>
 
       </div></div>
   <div class="comments">
@@ -260,7 +260,7 @@ There is often a misunderstanding of POSIX&rsquo;s role in Linux systems. The fi
   <div class="footer__inner">
     
       <div class="copyright copyright--user">
-        <span>©2009-2020 Harley Laue</span>
+        <span>©2009-2022 Harley Laue</span>
     
         <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
       </div>

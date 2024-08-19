@@ -6,7 +6,7 @@
     <description>Recent content in Posts on Losinggeneration&#39;s Coding and Projects</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>©2009-2020 Harley Laue</copyright>
+    <copyright>©2009-2022 Harley Laue</copyright>
     <lastBuildDate>Sun, 16 Feb 2020 04:42:42 -0800</lastBuildDate>
     
 	<atom:link href="https://losinggeneration.com/posts/index.xml" rel="self" type="application/rss+xml" />
@@ -395,7 +395,7 @@ On my first attempt, I decided Dega looked interesting, it has source available.
       
       <guid>https://losinggeneration.com/2009/09/13/chrooted-apache/</guid>
       <description>﻿
-As I prepare to have my server public, I&amp;rsquo;ve chrooted my server&amp;rsquo;s Apache with mod_chroot. This allows me to have the advantages of a chroot environment without as many of the draw backs. There is still some strangeness to work out. For instance &amp;ldquo;Warning: timezone_open() [function.timezone-open]: Unknown or bad timezone (America/Chicago) in /wp/wp-includes/functions.phpon line 3160&amp;rdquo;
+As I prepare to have my server public, I&amp;rsquo;ve chrooted my server&amp;rsquo;s Apache with mod_chroot. This allows me to have the advantages of a chroot environment without as many of the draw backs. There is still some strangeness to work out. For instance &amp;ldquo;Warning: timezone_open() [function.timezone-open]: Unknown or bad timezone (America/Chicago) in /wp/wp-includes/functions.php on line 3160&amp;rdquo;
 I&amp;rsquo;ll get this figured out, but honestly, it&amp;rsquo;s not a huge deal. I may have to have Apache load the zoneinfo file, or perhaps not… Really, the only change I had to make to WordPress was to have it connect to the MySQL database on 127.</description>
     </item>
     
